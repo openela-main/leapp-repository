@@ -3,6 +3,7 @@ import os
 from leapp import models
 from leapp.libraries.common import rpms
 from leapp.libraries.stdlib import api, run
+from leapp.libraries.common.config import architecture
 
 MIN_DISK_SIZE = 2 ** 22  # 4 MiB
 
@@ -57,6 +58,9 @@ def get_info(storage_info):
             # NOTE: partitions < MIN_DISK_SIZE cannot be handled by vdo and
             # the check results in unexpected outputs
             if lsblk.tp not in ('disk', 'part') or lsblk.bsize < MIN_DISK_SIZE:
+                continue
+
+            if architecture.matches_architecture(architecture.ARCH_ARM64):
                 continue
 
             if not vdo_package_installed:
