@@ -65,10 +65,10 @@ class CheckOLM(Actor):
             reporting.Title('Oracle OLM client packages detected, upgrade inhibited.'),
             reporting.Summary(summary),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR])
+            reporting.Groups([reporting.Groups.INHIBITOR])
         ])
 

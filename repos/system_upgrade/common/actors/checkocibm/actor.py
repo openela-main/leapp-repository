@@ -49,10 +49,10 @@ class CheckOCIBM(Actor):
                 'OCI BM shapes are unsupported and cannot be upgraded by leapp.\n'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.SERVICES,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.SERVICES,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR])
+            reporting.Groups([reporting.Groups.INHIBITOR])
         ])
 

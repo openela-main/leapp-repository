@@ -128,11 +128,11 @@ class CheckRDMA(Actor):
             reporting.Title('Oracle RDMA UEKR6 has been detected.'),
             reporting.Summary(summary),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.KERNEL,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.KERNEL,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR])
+            reporting.Groups([reporting.Groups.INHIBITOR])
         ])
 
     def produce_inhibitor_enable_repo(self):
@@ -142,11 +142,11 @@ class CheckRDMA(Actor):
             reporting.Title('Oracle RDMA detected, but OL9 RDMA repository has not been enabled.'),
             reporting.Summary(summary),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.KERNEL,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.KERNEL,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint='Enable the ol9_RDMA repository on the leapp command line.')
         ])
 
@@ -157,9 +157,9 @@ class CheckRDMA(Actor):
                 'OL9 only supports UEKR7 kernel and RDMA, UEK and RDMA will be upgraded to UEKR7.'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.KERNEL,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.KERNEL,
+                    reporting.Groups.TOOLS
             ])
         ])
 

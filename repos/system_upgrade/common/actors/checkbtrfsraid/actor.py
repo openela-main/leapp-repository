@@ -63,12 +63,12 @@ class CheckBtrfsRAID(Actor):
                 'you can unload the btrfs kernel module by running `modprobe -r btrfs` '
                 'and run the leapp upgrade again'),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.FILESYSTEM,
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.FILESYSTEM,
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.RelatedResource('kernel-driver', 'btrfs')
         ])
 

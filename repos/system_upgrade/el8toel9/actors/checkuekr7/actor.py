@@ -82,7 +82,7 @@ class CheckUEKR7(Actor):
                 url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/install/'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([reporting.Tags.FILESYSTEM]),
+            reporting.Groups([reporting.Groups.FILESYSTEM]),
             reporting.RelatedResource('kernel-driver', 'btrfs')
         ])
 
@@ -94,12 +94,12 @@ class CheckUEKR7(Actor):
                 'and UEKR6 has been found.'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.FILESYSTEM,
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.FILESYSTEM,
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint='Check the Oracle Linux documentation for OL9'),
             reporting.RelatedResource('kernel-driver', 'btrfs')
         ])
@@ -111,12 +111,12 @@ class CheckUEKR7(Actor):
                 'OL9 UEKR7 pagesize has changed from 64 to 4k. Require confirmation of upgrade.'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.FILESYSTEM,
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.FILESYSTEM,
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint='Check the Oracle Linux documentation for OL9'),
             reporting.RelatedResource('kernel-driver', 'btrfs')
         ])

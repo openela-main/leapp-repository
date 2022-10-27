@@ -78,9 +78,9 @@ class CheckOSWatcher(Actor):
                 title='Working With Performance Co-Pilot',
                 url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/monitoring/monitoring-WorkingWithPerformanceCoPilot.html#pcp%22'
             ),
-            reporting.Tags([
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
             reporting.Severity(reporting.Severity.HIGH)
         ])
@@ -95,11 +95,11 @@ class CheckOSWatcher(Actor):
                 title='Working With Performance Co-Pilot',
                 url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/monitoring/monitoring-WorkingWithPerformanceCoPilot.html#pcp%22'
             ),
-            reporting.Tags([
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Flags([reporting.Flags.INHIBITOR])
+            reporting.Groups([reporting.Groups.INHIBITOR])
         ])
 
