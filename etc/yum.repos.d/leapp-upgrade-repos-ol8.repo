@@ -63,21 +63,21 @@ enabled=0
 
 [ol8_oraclelinuxmanager210_client]
 name=Oracle Linux Manager Client 2.10 for Oracle Linux 8 ($basearch)
-baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL8/oraclelinuxmanager210/client/$basearch/
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/oraclelinuxmanager210/client/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
 
 [ol8_kvm_appstream]
 name=KVM Appstream for Oracle Linux 8 ($basearch)
-baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL8/kvm/appstream/$basearch/
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/kvm/appstream/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
 
 [ol8_gluster_appstream]
 name=Oracle Linux $releasever Gluster Appstream ($basearch)
-baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL8/gluster/appstream/$basearch/
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/gluster/appstream/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
