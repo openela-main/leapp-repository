@@ -44,7 +44,7 @@ def modify_kernel_args_in_boot_cfg(configs_to_modify_explicitly=None):
     if not kernelargs_msgs_to_add and not kernelargs_msgs_to_remove:
         return  # There is no work to do
 
-    kernels = glob.glob("/boot/vmlinuz*el9*")
+    kernels = glob.glob("/boot/vmlinuz*el8*")
     for kernel_version in kernels:
         grubby_modify_kernelargs_cmd = ['grubby', '--update-kernel={}'.format(kernel_version)]
 
