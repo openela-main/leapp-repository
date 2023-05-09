@@ -64,7 +64,7 @@ enabled=0
 
 [ol9_oraclelinuxmanager210_client]
 name=Oracle Linux Manager Client 2.10 for Oracle Linux 9 ($basearch)
-baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL9/oraclelinuxmanager210/client/$basearch/
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL9/oraclelinuxmanager210/client/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
