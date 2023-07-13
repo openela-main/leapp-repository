@@ -82,6 +82,13 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
 
+[ol8_olcne16]
+name=Oracle Cloud Native Environment version 1.6 ($basearch)
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/olcne16/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=1
+enabled=0
+
 [ol8_olcne15]
 name=Oracle Linux Cloud Native Environment version 1.5 ($basearch)
 baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/olcne15/$basearch/

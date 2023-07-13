@@ -183,6 +183,18 @@
                 }
             ]
         },
+                {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-olcne16",
+                    "target": [
+                        "ol8-olcne16"
+                    ]
+                }
+            ]
+        },
 		{
             "source_major_version": "7",
             "target_major_version": "8",
@@ -851,6 +863,31 @@
                 {
                     "major_version": "8",
                     "repoid": "ol8_gluster_appstream",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol7-olcne16",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_olcne16",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+
+                {
+            "pesid": "ol8-olcne16",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_olcne16",
                     "arch": "x86_64",
                     "repo_type": "rpm",
                     "channel": "ga"
