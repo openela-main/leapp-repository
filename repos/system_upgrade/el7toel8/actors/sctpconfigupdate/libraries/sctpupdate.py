@@ -13,10 +13,12 @@ def enable_sctp(_modprobe_d_path="/etc/modprobe.d"):
     """
 
     api.current_logger().info('Enabling SCTP.')
-    run(['/usr/bin/sed', '-i', r's/^\s*blacklist.*sctp/#&/',
-         os.path.join(_modprobe_d_path, 'sctp_diag-blacklist.conf'),
-         os.path.join(_modprobe_d_path, 'sctp-blacklist.conf')])
-    api.current_logger().info('Enabled SCTP.')
+    if (os.path.exists(os.path.join(_modprobe_d_path, 'sctp_diag-blacklist.conf')) and
+        os.path.exists(os.path.join(_modprobe_d_path, 'sctp-blacklist.conf'))):
+        run(['/usr/bin/sed', '-i', r's/^\s*blacklist.*sctp/#&/',
+             os.path.join(_modprobe_d_path, 'sctp_diag-blacklist.conf'),
+             os.path.join(_modprobe_d_path, 'sctp-blacklist.conf')])
+        api.current_logger().info('Enabled SCTP.')
 
 
 def perform_update():
