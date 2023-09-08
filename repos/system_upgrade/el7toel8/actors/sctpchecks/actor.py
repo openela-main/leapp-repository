@@ -1,6 +1,7 @@
 from leapp.actors import Actor
 from leapp.models import RpmTransactionTasks, SCTPConfig
 from leapp.tags import ChecksPhaseTag, IPUWorkflowTag
+from leapp.libraries.common.config import architecture
 
 
 class SCTPChecks(Actor):
@@ -18,6 +19,9 @@ class SCTPChecks(Actor):
     tags = (ChecksPhaseTag, IPUWorkflowTag)
 
     def process(self):
+        if architecture.matches_architecture(architecture.ARCH_ARM64):
+            return
+
         for sctpconfig in self.consume(SCTPConfig):
             if sctpconfig.wanted:
                 self.produce(RpmTransactionTasks(to_install=['kernel-modules-extra']))
