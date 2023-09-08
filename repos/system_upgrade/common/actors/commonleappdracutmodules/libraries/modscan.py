@@ -16,6 +16,7 @@ from leapp.models import (  # isort:skip
 
 _REQUIRED_PACKAGES = [
     'binutils',
+    'btrfs-progs',
     'cifs-utils',
     'device-mapper-multipath',
     'dracut',
