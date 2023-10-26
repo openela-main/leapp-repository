@@ -19,7 +19,7 @@ class i686Inhibit(Actor):
         output = rpms.get_installed_rpms()
 
         result = InstalledRPM()
-        issuePackages = ["ibacm","usbguard","gobject-introspection-devel"]
+        issuePackages = ["ibacm","usbguard","gobject-introspection-devel","fltk-devel","twolame-devel","opus-devel","mpdecimal-devel"]
         issueList = []
         for entry in output:
             entry = entry.strip()
