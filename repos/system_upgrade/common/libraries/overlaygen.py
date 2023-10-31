@@ -622,10 +622,10 @@ def _overlay_disk_size_old():
     Convenient function to retrieve the overlay disk size
     """
     try:
-        env_size = get_env('LEAPP_OVL_SIZE', '2048')
+        env_size = get_env('LEAPP_OVL_SIZE', '4096')
         disk_size = int(env_size)
     except ValueError:
-        disk_size = 2048
+        disk_size = 4096
         api.current_logger().warning(
             'Invalid "LEAPP_OVL_SIZE" environment variable "%s". Setting default "%d" value', env_size, disk_size
         )
@@ -684,10 +684,7 @@ def _prepare_required_mounts_old(scratch_dir, mounts_dir, mount_points, xfs_info
             _mount_dir(mounts_dir, mount_point.fs_file)) for mount_point in mount_points
     }
 
-    if not xfs_info.mountpoints_without_ftype:
-        return result
-
-    space_needed = _overlay_disk_size_old() * len(xfs_info.mountpoints_without_ftype)
+    space_needed = _overlay_disk_size() * len(mount_points)
     disk_images_directory = os.path.join(scratch_dir, 'diskimages')
 
     # Ensure we cleanup old disk images before we check for space constraints.
@@ -697,17 +694,7 @@ def _prepare_required_mounts_old(scratch_dir, mounts_dir, mount_points, xfs_info
 
     mount_names = [mount_point.fs_file for mount_point in mount_points]
 
-    # TODO(pstodulk): this (adding rootfs into the set always) is hotfix for
-    # bz #1911802 (not ideal one..). The problem occurs one rootfs is ext4 fs,
-    # but /var/lib/leapp/... is under XFS without ftype; In such a case we can
-    # see still the very same problems as before. But letting you know that
-    # probably this is not the final solution, as we could possibly see the
-    # same problems on another partitions too (needs to be tested...). However,
-    # it could fit for now until we provide the complete solution around XFS
-    # workarounds (including management of required spaces for virtual FSs per
-    # mountpoints - without that, we cannot fix this properly)
-    for mountpoint in set(xfs_info.mountpoints_without_ftype + ['/']):
-        if mountpoint in mount_names:
-            image = _create_mount_disk_image_old(disk_images_directory, mountpoint)
-            result[mountpoint] = mounting.LoopMount(source=image, target=_mount_dir(mounts_dir, mountpoint))
+    for mountpoint in mount_names:
+        image = _create_mount_disk_image(disk_images_directory, mountpoint)
+        result[mountpoint] = mounting.LoopMount(source=image, target=_mount_dir(mounts_dir, mountpoint))
     return result
