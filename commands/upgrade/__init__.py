@@ -24,7 +24,6 @@ from leapp.utils.output import beautify_actor_exception, report_errors, report_i
 @command_opt('verbose', is_flag=True, help='Enable verbose logging', inherit=False)
 @command_opt('oci', is_flag=True, help='Enable OCI repositories', inherit=False)
 @command_opt('oraclelinux', is_flag=True, help='Enable Oracle Linux repositories', inherit=False)
-@command_opt('no-insights-register', is_flag=True, help='Do not register into Red Hat Insights')
 @command_opt('enablerepo', action='append', metavar='<repoid>',
              help='Enable specified repository. Can be used multiple times.')
 @command_opt('iso', help='Use provided target RHEL installation image to perform the in-place upgrade.')
