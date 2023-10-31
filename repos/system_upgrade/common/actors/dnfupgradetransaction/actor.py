@@ -22,7 +22,7 @@ class DnfUpgradeTransaction(Actor):
     Setup and call DNF upgrade command
 
     Based on previously calculated RPM transaction data, this actor will setup and call
-    rhel-upgrade DNF plugin with necessary parameters
+    oracle-upgrade DNF plugin with necessary parameters
     """
 
     name = 'dnf_upgrade_transaction'
