@@ -191,9 +191,6 @@ def prepare_configuration(args):
         os.environ['LEAPP_EXPERIMENTAL'] = '0'
     os.environ['LEAPP_UNSUPPORTED'] = '0' if os.getenv('LEAPP_UNSUPPORTED', '0') == '0' else '1'
 
-    if args.no_insights_register:
-        os.environ['LEAPP_NO_INSIGHTS_REGISTER'] = '1'
-
     if args.enablerepo:
         os.environ['LEAPP_ENABLE_REPOS'] = ','.join(args.enablerepo)
     if args.oci and args.oraclelinux:
