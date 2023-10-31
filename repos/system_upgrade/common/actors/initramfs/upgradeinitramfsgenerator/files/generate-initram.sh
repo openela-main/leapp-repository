@@ -104,6 +104,7 @@ build() {
         $KERNEL_MODULES_ADD \
         "$DRACUT_MDADMCONF_ARG" \
         "$DRACUT_LVMCONF_ARG" \
+        --omit virtfs \
         --no-hostonly \
         --kver "$KERNEL_VERSION" \
         --kernel-image "vmlinuz-upgrade.$KERNEL_ARCH" \
