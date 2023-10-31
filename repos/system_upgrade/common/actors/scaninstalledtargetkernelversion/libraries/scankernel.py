@@ -5,7 +5,7 @@ from leapp.exceptions import StopActorExecutionError
 from leapp.libraries.common import kernel as kernel_lib
 from leapp.libraries.common.config.version import get_target_major_version
 from leapp.libraries.stdlib import api, CalledProcessError, run
-from leapp.models import InstalledTargetKernelInfo, InstalledTargetKernelVersion, KernelInfo
+from leapp.models import InstalledTargetKernelInfo, InstalledTargetKernelVersion, KernelInfo, DefaultBootKernelInfo
 from leapp.utils.deprecation import suppress_deprecation
 
 KernelBootFiles = namedtuple('KernelBootFiles', ('vmlinuz_path', 'initramfs_path'))
@@ -15,19 +15,19 @@ def get_kernel_pkg_name(rhel_major_version, kernel_type):
     """
     Get the name of the package providing kernel binaries.
 
-    :param str rhel_major_version: RHEL major version
+    :param str rhel_major_version: OL major version
     :param KernelType kernel_type: Type of the kernel
     :returns: Kernel package name
     :rtype: str
     """
     if rhel_major_version == '7':
         kernel_pkg_name_table = {
-            kernel_lib.KernelType.ORDINARY: 'kernel',
+            kernel_lib.KernelType.ORDINARY: 'kernel-uek',
             kernel_lib.KernelType.REALTIME: 'kernel-rt'
         }
     else:
         kernel_pkg_name_table = {
-            kernel_lib.KernelType.ORDINARY: 'kernel-core',
+            kernel_lib.KernelType.ORDINARY: 'kernel-uek',
             kernel_lib.KernelType.REALTIME: 'kernel-rt-core'
         }
     return kernel_pkg_name_table[kernel_type]
@@ -68,6 +68,14 @@ def get_boot_files_provided_by_kernel_pkg(kernel_nevra):
     return KernelBootFiles(vmlinuz_path=vmlinuz_path, initramfs_path=initramfs_path)
 
 
+def _is_kernel_uek():
+    boot_kernel = next(api.consume(DefaultBootKernelInfo), None)
+    if boot_kernel.kernel_type == 'kernel':
+        return False
+    else:
+        return True
+
+
 @suppress_deprecation(InstalledTargetKernelVersion)
 def process():
     # pylint: disable=no-else-return  - false positive
@@ -84,7 +92,7 @@ def process():
     target_kernel_nevra = get_target_kernel_package_nevra(target_kernel_pkg_name)
 
     if src_kernel_info.type != kernel_lib.KernelType.ORDINARY and not target_kernel_nevra:
-        api.current_logger().warning('The kernel-rt-core rpm from the target RHEL has not been detected. Switching '
+        api.current_logger().warning('The kernel-rt-core rpm from the target OL has not been detected. Switching '
                                      'to non-preemptive kernel.')
         target_kernel_pkg_name = get_kernel_pkg_name(target_ver, kernel_lib.KernelType.ORDINARY)
         target_kernel_nevra = get_target_kernel_package_nevra(target_kernel_pkg_name)

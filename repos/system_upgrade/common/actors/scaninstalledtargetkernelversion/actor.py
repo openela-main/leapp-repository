@@ -1,6 +1,6 @@
 from leapp.actors import Actor
 from leapp.libraries.actor import scankernel
-from leapp.models import InstalledTargetKernelInfo, InstalledTargetKernelVersion, KernelInfo, TransactionCompleted
+from leapp.models import InstalledTargetKernelInfo, InstalledTargetKernelVersion, KernelInfo, TransactionCompleted, DefaultBootKernelInfo
 from leapp.tags import IPUWorkflowTag, RPMUpgradePhaseTag
 
 
@@ -15,7 +15,7 @@ class ScanInstalledTargetKernelVersion(Actor):
     """
 
     name = 'scan_installed_target_kernel_version'
-    consumes = (TransactionCompleted, KernelInfo)
+    consumes = (TransactionCompleted, KernelInfo, DefaultBootKernelInfo)
     produces = (InstalledTargetKernelInfo, InstalledTargetKernelVersion)
     tags = (RPMUpgradePhaseTag, IPUWorkflowTag)
 
