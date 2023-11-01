@@ -1,0 +1,558 @@
+From 0c03180b274e9245611a7379a997ac81c726a9e9 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michal=20He=C4=8Dko?= <michal.sk.com@gmail.com>
+Date: Wed, 10 May 2023 16:51:49 +0200
+Subject: [PATCH 3/5] Enable 8>9 upgrades with FIPS enabled (#1053)
+
+Short story long:
+==============
+
+FIPS refers to a set of security standards governing many aspects of how information should be handled by computers and by people. FIPS in context of RHEL typically means FIPS 140, a single document defining rules for the use of encryption and cryptographic services. In essence, it defines requirements for cryptographic modules (e.g. what algorithms can be used, thus preventing the use of insecure ones) manipulating sensitive information.
+
+From the point of view of upgrades there are 5 components that are certified under FIPS: kernel, OpenSSL, GnuTLS, NSS, and libgcrypt. As for the kernel, fips=1 needs to be present on the cmdline in order to enable FIPS in the kernel. Kernel offers a /proc/sys/crypto/fips_enabled virtual file containing the information about whether the kernel has booted with FIPS enabled.
+
+According to FIPS, the userspace components need to verify that they were not tampered with, and thus they have to have some sort of checksum either in a special section of a binary, or in a separate file. The components read /proc/sys/crypto/fips_enabled to know when to switch into the FIPS enabled mode. OpenSSL does things a bit differently, by not including support for FIPS directly but via a special fips.so module. Furthermore, for OpenSSL to check whether FIPS is enabled a configuration file must be present at /etc/pki/tls/openssl.cnf, because the code checking for FIPS is a part of configuration parsing.
+
+As every userspace component has different implementation of FIPS-mode, and a different way for the user to check whether the component believes that the system it is running on has FIPS enabled, there is no straightforward way for us to make really sure that all of the components run in FIPS enabled inside the target userspace container.
+
+Brief summary of changes in the code:
+* scanfips: split scanning for fips into a separate actor
+* checkfips: inhibit the IPU only on 7>8
+* in case of FIPS for IPU 8 -> 9, copy related files into the target container to be able to generate FIPS compliant initramfs
+* checkfipsenabled: check for fips in upgrade initramfs (LastTestsPhase); interrupt the upgrade if FIPS is not enabled in the upgrade environment
+* upgradeinitramfsgenerator: refactor library and tests due to FIPS
+* create upgrade kernel hmac unconditionallly
+---------
+
+Co-authored-by: Michal Hecko <mhecko@redhat.com>
+---
+ .../libraries/addupgradebootentry.py          |  1 +
+ .../tests/unit_test_addupgradebootentry.py    |  2 +-
+ .../common/actors/checkfips/actor.py          | 50 +++++++++++++------
+ .../actors/checkfips/tests/test_checkfips.py  | 23 +++++++++
+ .../initramfs/checkfipsenabled/actor.py       | 21 ++++++++
+ .../checkfipsenabled/libraries/check_fips.py  | 23 +++++++++
+ .../tests/test_checkfipsenabled.py            | 31 ++++++++++++
+ .../upgradeinitramfsgenerator/actor.py        |  2 +
+ .../files/generate-initram.sh                 |  3 ++
+ .../libraries/upgradeinitramfsgenerator.py    | 28 ++++++++++-
+ .../unit_test_upgradeinitramfsgenerator.py    | 16 +++++-
+ .../libraries/removebootfiles.py              |  2 +-
+ .../tests/unit_test_removebootfiles.py        |  4 +-
+ .../tests/unit_test_removeupgradebootentry.py |  2 +-
+ .../common/actors/scanfips/actor.py           | 28 +++++++++++
+ .../tests/test_scanfips.py}                   | 13 +++--
+ .../common/models/bootcontent.py              |  1 +
+ repos/system_upgrade/common/models/fips.py    | 12 +++++
+ 18 files changed, 233 insertions(+), 29 deletions(-)
+ create mode 100644 repos/system_upgrade/common/actors/checkfips/tests/test_checkfips.py
+ create mode 100644 repos/system_upgrade/common/actors/initramfs/checkfipsenabled/actor.py
+ create mode 100644 repos/system_upgrade/common/actors/initramfs/checkfipsenabled/libraries/check_fips.py
+ create mode 100644 repos/system_upgrade/common/actors/initramfs/checkfipsenabled/tests/test_checkfipsenabled.py
+ create mode 100644 repos/system_upgrade/common/actors/scanfips/actor.py
+ rename repos/system_upgrade/common/actors/{checkfips/tests/unit_test_checkfips.py => scanfips/tests/test_scanfips.py} (74%)
+ create mode 100644 repos/system_upgrade/common/models/fips.py
+
+diff --git a/repos/system_upgrade/common/actors/addupgradebootentry/libraries/addupgradebootentry.py b/repos/system_upgrade/common/actors/addupgradebootentry/libraries/addupgradebootentry.py
+index beddafec..4e1c4204 100644
+--- a/repos/system_upgrade/common/actors/addupgradebootentry/libraries/addupgradebootentry.py
++++ b/repos/system_upgrade/common/actors/addupgradebootentry/libraries/addupgradebootentry.py
+@@ -88,6 +88,7 @@ def get_boot_file_paths():
+         raise StopActorExecutionError('Could not create a GRUB boot entry for the upgrade initramfs',
+                                       details={'details': 'Did not receive a message about the leapp-provided'
+                                                           'kernel and initramfs'})
++    # Returning information about kernel hmac file path is needless as it is not used when adding boot entry
+     return boot_content.kernel_path, boot_content.initram_path
+ 
+ 
+diff --git a/repos/system_upgrade/common/actors/addupgradebootentry/tests/unit_test_addupgradebootentry.py b/repos/system_upgrade/common/actors/addupgradebootentry/tests/unit_test_addupgradebootentry.py
+index cc442f8d..ddc37e52 100644
+--- a/repos/system_upgrade/common/actors/addupgradebootentry/tests/unit_test_addupgradebootentry.py
++++ b/repos/system_upgrade/common/actors/addupgradebootentry/tests/unit_test_addupgradebootentry.py
+@@ -135,7 +135,7 @@ def test_add_boot_entry_configs(monkeypatch):
+ def test_get_boot_file_paths(monkeypatch):
+     # BootContent message available
+     def consume_message_mocked(*models):
+-        yield BootContent(kernel_path='/ghi', initram_path='/jkl')
++        yield BootContent(kernel_path='/ghi', initram_path='/jkl', kernel_hmac_path='/path')
+ 
+     monkeypatch.setattr('leapp.libraries.stdlib.api.consume', consume_message_mocked)
+ 
+diff --git a/repos/system_upgrade/common/actors/checkfips/actor.py b/repos/system_upgrade/common/actors/checkfips/actor.py
+index e76af950..bd09b1b9 100644
+--- a/repos/system_upgrade/common/actors/checkfips/actor.py
++++ b/repos/system_upgrade/common/actors/checkfips/actor.py
+@@ -1,7 +1,8 @@
+ from leapp import reporting
+ from leapp.actors import Actor
+ from leapp.exceptions import StopActorExecutionError
+-from leapp.models import KernelCmdline, Report
++from leapp.libraries.common.config import version
++from leapp.models import DracutModule, FIPSInfo, Report, UpgradeInitramfsTasks
+ from leapp.tags import ChecksPhaseTag, IPUWorkflowTag
+ 
+ 
+@@ -11,25 +12,44 @@ class CheckFips(Actor):
+     """
+ 
+     name = 'check_fips'
+-    consumes = (KernelCmdline,)
+-    produces = (Report,)
++    consumes = (FIPSInfo,)
++    produces = (Report, UpgradeInitramfsTasks)
+     tags = (IPUWorkflowTag, ChecksPhaseTag)
+ 
+     def process(self):
+-        cmdline = next(self.consume(KernelCmdline), None)
+-        if not cmdline:
+-            raise StopActorExecutionError('Cannot check FIPS state due to missing command line parameters',
+-                                          details={'Problem': 'Did not receive a message with kernel command '
+-                                                              'line parameters (KernelCmdline)'})
+-        for parameter in cmdline.parameters:
+-            if parameter.key == 'fips' and parameter.value == '1':
+-                title = 'Cannot upgrade a system with FIPS mode enabled'
+-                summary = 'Leapp has detected that FIPS is enabled on this system. ' \
+-                          'In-place upgrade of systems in FIPS mode is currently unsupported.'
++        fips_info = next(self.consume(FIPSInfo), None)
++
++        if not fips_info:
++            raise StopActorExecutionError('Cannot check FIPS state due to not receiving necessary FIPSInfo message',
++                                          details={'Problem': 'Did not receive a message with information about FIPS '
++                                                              'usage'})
++
++        if version.get_target_major_version() == '8':
++            if fips_info.is_enabled:
++                title = 'Automated upgrades from RHEL 7 to RHEL 8 in FIPS mode are not supported'
++                summary = ('Leapp has detected that FIPS is enabled on this system. '
++                           'Automated in-place upgrade of RHEL 7 systems in FIPS mode is currently unsupported '
++                           'and manual intervention is required.')
++
++                fips_7to8_steps_docs_url = 'https://red.ht/planning-upgrade-to-rhel8'
++
+                 reporting.create_report([
+                     reporting.Title(title),
+                     reporting.Summary(summary),
+                     reporting.Severity(reporting.Severity.HIGH),
+-                    reporting.Groups([reporting.Groups.SECURITY]),
+-                    reporting.Groups([reporting.Groups.INHIBITOR])
++                    reporting.Groups([reporting.Groups.SECURITY, reporting.Groups.INHIBITOR]),
++                    reporting.ExternalLink(url=fips_7to8_steps_docs_url,
++                                           title='Planning an upgrade from RHEL 7 to RHEL 8')
+                 ])
++        else:
++            # FIXME(mhecko): We include these files manually as they are not included automatically when the fips
++            # module is used due to a bug in dracut. This code should be removed, once the dracut bug is resolved.
++            # See https://bugzilla.redhat.com/show_bug.cgi?id=2176560
++            if fips_info.is_enabled:
++                fips_required_initramfs_files = [
++                    '/etc/crypto-policies/back-ends/opensslcnf.config',
++                    '/etc/pki/tls/openssl.cnf',
++                    '/usr/lib64/ossl-modules/fips.so',
++                ]
++                self.produce(UpgradeInitramfsTasks(include_files=fips_required_initramfs_files,
++                                                   include_dracut_modules=[DracutModule(name='fips')]))
+diff --git a/repos/system_upgrade/common/actors/checkfips/tests/test_checkfips.py b/repos/system_upgrade/common/actors/checkfips/tests/test_checkfips.py
+new file mode 100644
+index 00000000..5498bf23
+--- /dev/null
++++ b/repos/system_upgrade/common/actors/checkfips/tests/test_checkfips.py
+@@ -0,0 +1,23 @@
++import pytest
++
++from leapp.libraries.common.config import version
++from leapp.models import FIPSInfo, Report
++from leapp.utils.report import is_inhibitor
++
++
++@pytest.mark.parametrize(('fips_info', 'target_major_version', 'should_inhibit'), [
++    (FIPSInfo(is_enabled=True), '8', True),
++    (FIPSInfo(is_enabled=True), '9', False),
++    (FIPSInfo(is_enabled=False), '8', False),
++    (FIPSInfo(is_enabled=False), '9', False),
++])
++def test_check_fips(monkeypatch, current_actor_context, fips_info, target_major_version, should_inhibit):
++    monkeypatch.setattr(version, 'get_target_major_version', lambda: target_major_version)
++    current_actor_context.feed(fips_info)
++    current_actor_context.run()
++    if should_inhibit:
++        output = current_actor_context.consume(Report)
++        assert len(output) == 1
++        assert is_inhibitor(output[0].report)
++    else:
++        assert not any(is_inhibitor(msg.report) for msg in current_actor_context.consume(Report))
+diff --git a/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/actor.py b/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/actor.py
+new file mode 100644
+index 00000000..ef1930da
+--- /dev/null
++++ b/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/actor.py
+@@ -0,0 +1,21 @@
++from leapp.actors import Actor
++from leapp.libraries.actor import check_fips as check_fips_lib
++from leapp.models import FIPSInfo
++from leapp.tags import IPUWorkflowTag, LateTestsPhaseTag
++
++
++class CheckFIPSCorrectlyEnabled(Actor):
++    """
++    Sanity check to stop the IPU if the system did not boot into the upgrade initramfs with FIPS settings preserved.
++
++    The performed check should be unlikely to fail, as it would mean that the upgrade boot entry was created without
++    fips=1 on the kernel cmdline.
++    """
++
++    name = 'check_fips_correctly_enabled'
++    consumes = (FIPSInfo,)
++    produces = ()
++    tags = (LateTestsPhaseTag, IPUWorkflowTag)
++
++    def process(self):
++        check_fips_lib.check_fips_state_perserved()
+diff --git a/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/libraries/check_fips.py b/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/libraries/check_fips.py
+new file mode 100644
+index 00000000..ba236619
+--- /dev/null
++++ b/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/libraries/check_fips.py
+@@ -0,0 +1,23 @@
++from leapp.exceptions import StopActorExecutionError
++from leapp.libraries.stdlib import api
++from leapp.models import FIPSInfo
++
++
++def read_sys_fips_state():
++    with open('/proc/sys/crypto/fips_enabled') as fips_status_handle:
++        return fips_status_handle.read().strip()
++
++
++def check_fips_state_perserved():
++    fips_info = next(api.consume(FIPSInfo), None)
++    if not fips_info:
++        # Unexpected, FIPSInfo is produced unconditionally
++        raise StopActorExecutionError('Cannot check for the correct FIPS state in the upgrade initramfs',
++                                      details={'Problem': 'Did not receive any FIPSInfo message'})
++
++    if fips_info.is_enabled:
++        fips_status = read_sys_fips_state()
++        if fips_status != '1':
++            details = {'details': ('The system is reporting FIPS as disabled, although it should be enabled'
++                                   ' since it was enabled on the source system.')}
++            raise StopActorExecutionError('Failed to enable FIPS in the upgrade initramfs', details=details)
+diff --git a/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/tests/test_checkfipsenabled.py b/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/tests/test_checkfipsenabled.py
+new file mode 100644
+index 00000000..9a396e8a
+--- /dev/null
++++ b/repos/system_upgrade/common/actors/initramfs/checkfipsenabled/tests/test_checkfipsenabled.py
+@@ -0,0 +1,31 @@
++import pytest
++
++from leapp.exceptions import StopActorExecutionError
++from leapp.libraries.actor import check_fips
++from leapp.libraries.common.testutils import CurrentActorMocked
++from leapp.libraries.stdlib import api
++from leapp.models import FIPSInfo
++
++
++@pytest.mark.parametrize(
++    ('fips_info', 'sys_fips_enabled_contents', 'should_prevent_ipu'),
++    (
++        (FIPSInfo(is_enabled=False), '0', False),
++        (FIPSInfo(is_enabled=True), '0', True),
++        (FIPSInfo(is_enabled=True), '1', False),
++    )
++)
++def test_ipu_prevention_if_fips_not_perserved(monkeypatch,
++                                              fips_info,
++                                              sys_fips_enabled_contents,
++                                              should_prevent_ipu):
++
++    mocked_actor = CurrentActorMocked(msgs=[fips_info])
++    monkeypatch.setattr(check_fips, 'read_sys_fips_state', lambda: sys_fips_enabled_contents)
++    monkeypatch.setattr(api, 'current_actor', mocked_actor)
++
++    if should_prevent_ipu:
++        with pytest.raises(StopActorExecutionError):
++            check_fips.check_fips_state_perserved()
++    else:
++        check_fips.check_fips_state_perserved()  # unhandled exception with crash the test
+diff --git a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/actor.py b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/actor.py
+index dc97172a..2c52e817 100644
+--- a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/actor.py
++++ b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/actor.py
+@@ -4,6 +4,7 @@ from leapp.models import RequiredUpgradeInitramPackages  # deprecated
+ from leapp.models import UpgradeDracutModule  # deprecated
+ from leapp.models import (
+     BootContent,
++    FIPSInfo,
+     TargetOSInstallationImage,
+     TargetUserSpaceInfo,
+     TargetUserSpaceUpgradeTasks,
+@@ -27,6 +28,7 @@ class UpgradeInitramfsGenerator(Actor):
+ 
+     name = 'upgrade_initramfs_generator'
+     consumes = (
++        FIPSInfo,
+         RequiredUpgradeInitramPackages,  # deprecated
+         TargetOSInstallationImage,
+         TargetUserSpaceInfo,
+diff --git a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/files/generate-initram.sh b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/files/generate-initram.sh
+index 104af586..d6934147 100755
+--- a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/files/generate-initram.sh
++++ b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/files/generate-initram.sh
+@@ -78,6 +78,9 @@ build() {
+     }
+     \cp "/lib/modules/${KERNEL_VERSION}/vmlinuz" "vmlinuz-upgrade.$KERNEL_ARCH"
+ 
++    # Copy out kernel HMAC so that integrity checks can be performed (performed only in FIPS mode)
++    \cp "/lib/modules/${KERNEL_VERSION}/.vmlinuz.hmac" ".vmlinuz-upgrade.$KERNEL_ARCH.hmac"
++
+     stage "Building initram disk for kernel: $KERNEL_VERSION"
+     \dracut \
+         -vvvv \
+diff --git a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/libraries/upgradeinitramfsgenerator.py b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/libraries/upgradeinitramfsgenerator.py
+index f6539b25..2f145217 100644
+--- a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/libraries/upgradeinitramfsgenerator.py
++++ b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/libraries/upgradeinitramfsgenerator.py
+@@ -180,6 +180,24 @@ def generate_initram_disk(context):
+     copy_boot_files(context)
+ 
+ 
++def create_upgrade_hmac_from_target_hmac(original_hmac_path, upgrade_hmac_path, upgrade_kernel):
++    # Rename the kernel name stored in the HMAC file as the upgrade kernel is named differently and the HMAC file
++    # refers to the real target kernel
++    with open(original_hmac_path) as original_hmac_file:
++        hmac_file_lines = [line for line in original_hmac_file.read().split('\n') if line]
++        if len(hmac_file_lines) > 1:
++            details = ('Expected the target kernel HMAC file to containing only one HMAC line, '
++                       'found {0}'.format(len(hmac_file_lines)))
++            raise StopActorExecutionError('Failed to prepare HMAC file for upgrade kernel.',
++                                          details={'details': details})
++
++        # Keep only non-empty strings after splitting on space
++        hmac, dummy_target_kernel_name = [fragment for fragment in hmac_file_lines[0].split(' ') if fragment]
++
++    with open(upgrade_hmac_path, 'w') as upgrade_kernel_hmac_file:
++        upgrade_kernel_hmac_file.write('{hmac}  {kernel}\n'.format(hmac=hmac, kernel=upgrade_kernel))
++
++
+ def copy_boot_files(context):
+     """
+     Function to copy the generated initram and corresponding kernel to /boot - Additionally produces a BootContent
+@@ -188,14 +206,22 @@ def copy_boot_files(context):
+     curr_arch = api.current_actor().configuration.architecture
+     kernel = 'vmlinuz-upgrade.{}'.format(curr_arch)
+     initram = 'initramfs-upgrade.{}.img'.format(curr_arch)
++
++    kernel_hmac = '.{0}.hmac'.format(kernel)
++    kernel_hmac_path = os.path.join('/boot', kernel_hmac)
++
+     content = BootContent(
+         kernel_path=os.path.join('/boot', kernel),
+-        initram_path=os.path.join('/boot', initram)
++        initram_path=os.path.join('/boot', initram),
++        kernel_hmac_path=kernel_hmac_path
+     )
+ 
+     context.copy_from(os.path.join('/artifacts', kernel), content.kernel_path)
+     context.copy_from(os.path.join('/artifacts', initram), content.initram_path)
+ 
++    kernel_hmac_path = context.full_path(os.path.join('/artifacts', kernel_hmac))
++    create_upgrade_hmac_from_target_hmac(kernel_hmac_path, content.kernel_hmac_path, kernel)
++
+     api.produce(content)
+ 
+ 
+diff --git a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/tests/unit_test_upgradeinitramfsgenerator.py b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/tests/unit_test_upgradeinitramfsgenerator.py
+index 13939df1..cd9d0546 100644
+--- a/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/tests/unit_test_upgradeinitramfsgenerator.py
++++ b/repos/system_upgrade/common/actors/initramfs/upgradeinitramfsgenerator/tests/unit_test_upgradeinitramfsgenerator.py
+@@ -10,6 +10,7 @@ from leapp.libraries.common.testutils import CurrentActorMocked, logger_mocked,
+ from leapp.utils.deprecation import suppress_deprecation
+ 
+ from leapp.models import (  # isort:skip
++    FIPSInfo,
+     RequiredUpgradeInitramPackages,  # deprecated
+     UpgradeDracutModule,  # deprecated
+     BootContent,
+@@ -133,19 +134,32 @@ class MockedLogger(logger_mocked):
+ @pytest.mark.parametrize('arch', architecture.ARCH_SUPPORTED)
+ def test_copy_boot_files(monkeypatch, arch):
+     kernel = 'vmlinuz-upgrade.{}'.format(arch)
++    kernel_hmac = '.vmlinuz-upgrade.{}.hmac'.format(arch)
+     initram = 'initramfs-upgrade.{}.img'.format(arch)
+     bootc = BootContent(
+         kernel_path=os.path.join('/boot', kernel),
++        kernel_hmac_path=os.path.join('/boot', kernel_hmac),
+         initram_path=os.path.join('/boot', initram)
+     )
+ 
++    context = MockedContext()
+     monkeypatch.setattr(upgradeinitramfsgenerator.api, 'current_actor', CurrentActorMocked(arch=arch))
+     monkeypatch.setattr(upgradeinitramfsgenerator.api, 'produce', produce_mocked())
+-    context = MockedContext()
++
++    def create_upgrade_hmac_from_target_hmac_mock(original_hmac_path, upgrade_hmac_path, upgrade_kernel):
++        hmac_file = '.{}.hmac'.format(upgrade_kernel)
++        assert original_hmac_path == os.path.join(context.full_path('/artifacts'), hmac_file)
++        assert upgrade_hmac_path == bootc.kernel_hmac_path
++
++    monkeypatch.setattr(upgradeinitramfsgenerator,
++                        'create_upgrade_hmac_from_target_hmac',
++                        create_upgrade_hmac_from_target_hmac_mock)
++
+     upgradeinitramfsgenerator.copy_boot_files(context)
+     assert len(context.called_copy_from) == 2
+     assert (os.path.join('/artifacts', kernel), bootc.kernel_path) in context.called_copy_from
+     assert (os.path.join('/artifacts', initram), bootc.initram_path) in context.called_copy_from
++
+     assert upgradeinitramfsgenerator.api.produce.called == 1
+     assert upgradeinitramfsgenerator.api.produce.model_instances[0] == bootc
+ 
+diff --git a/repos/system_upgrade/common/actors/removebootfiles/libraries/removebootfiles.py b/repos/system_upgrade/common/actors/removebootfiles/libraries/removebootfiles.py
+index a0eccbb8..d31af906 100644
+--- a/repos/system_upgrade/common/actors/removebootfiles/libraries/removebootfiles.py
++++ b/repos/system_upgrade/common/actors/removebootfiles/libraries/removebootfiles.py
+@@ -14,7 +14,7 @@ def remove_boot_files():
+         api.current_logger().warning('Did not receive a message about the leapp-provided kernel and initramfs ->'
+                                      ' Skipping removal of these files.')
+         raise StopActorExecution
+-    for filepath in boot_content.kernel_path, boot_content.initram_path:
++    for filepath in boot_content.kernel_path, boot_content.initram_path, boot_content.kernel_hmac_path:
+         remove_file(filepath)
+ 
+ 
+diff --git a/repos/system_upgrade/common/actors/removebootfiles/tests/unit_test_removebootfiles.py b/repos/system_upgrade/common/actors/removebootfiles/tests/unit_test_removebootfiles.py
+index dab94e89..7e5fbbf0 100644
+--- a/repos/system_upgrade/common/actors/removebootfiles/tests/unit_test_removebootfiles.py
++++ b/repos/system_upgrade/common/actors/removebootfiles/tests/unit_test_removebootfiles.py
+@@ -20,14 +20,14 @@ class remove_file_mocked(object):
+ def test_remove_boot_files(monkeypatch):
+     # BootContent message available
+     def consume_message_mocked(*models):
+-        yield BootContent(kernel_path='/abc', initram_path='/def')
++        yield BootContent(kernel_path='/abc', initram_path='/def', kernel_hmac_path='/ghi')
+ 
+     monkeypatch.setattr('leapp.libraries.stdlib.api.consume', consume_message_mocked)
+     monkeypatch.setattr(removebootfiles, 'remove_file', remove_file_mocked())
+ 
+     removebootfiles.remove_boot_files()
+ 
+-    assert removebootfiles.remove_file.files_to_remove == ['/abc', '/def']
++    assert removebootfiles.remove_file.files_to_remove == ['/abc', '/def', '/ghi']
+ 
+     # No BootContent message available
+     def consume_no_message_mocked(*models):
+diff --git a/repos/system_upgrade/common/actors/removeupgradebootentry/tests/unit_test_removeupgradebootentry.py b/repos/system_upgrade/common/actors/removeupgradebootentry/tests/unit_test_removeupgradebootentry.py
+index 1bf48c15..54eec552 100644
+--- a/repos/system_upgrade/common/actors/removeupgradebootentry/tests/unit_test_removeupgradebootentry.py
++++ b/repos/system_upgrade/common/actors/removeupgradebootentry/tests/unit_test_removeupgradebootentry.py
+@@ -50,7 +50,7 @@ def test_remove_boot_entry(firmware, arch, monkeypatch):
+ def test_get_upgrade_kernel_filepath(monkeypatch):
+     # BootContent message available
+     def consume_message_mocked(*models):
+-        yield BootContent(kernel_path='/abc', initram_path='/def')
++        yield BootContent(kernel_path='/abc', initram_path='/def', kernel_hmac_path='/ghi')
+ 
+     monkeypatch.setattr(api, 'consume', consume_message_mocked)
+ 
+diff --git a/repos/system_upgrade/common/actors/scanfips/actor.py b/repos/system_upgrade/common/actors/scanfips/actor.py
+new file mode 100644
+index 00000000..f369b796
+--- /dev/null
++++ b/repos/system_upgrade/common/actors/scanfips/actor.py
+@@ -0,0 +1,28 @@
++from leapp.actors import Actor
++from leapp.exceptions import StopActorExecutionError
++from leapp.models import FIPSInfo, KernelCmdline
++from leapp.tags import FactsPhaseTag, IPUWorkflowTag
++
++
++class ScanFIPS(Actor):
++    """
++    Determine whether the source system has FIPS enabled.
++    """
++
++    name = 'scan_fips'
++    consumes = (KernelCmdline,)
++    produces = (FIPSInfo,)
++    tags = (IPUWorkflowTag, FactsPhaseTag)
++
++    def process(self):
++        cmdline = next(self.consume(KernelCmdline), None)
++        if not cmdline:
++            raise StopActorExecutionError('Cannot check FIPS state due to missing command line parameters',
++                                          details={'Problem': 'Did not receive a message with kernel command '
++                                                              'line parameters (KernelCmdline)'})
++
++        for parameter in cmdline.parameters:
++            if parameter.key == 'fips' and parameter.value == '1':
++                self.produce(FIPSInfo(is_enabled=True))
++                return
++        self.produce(FIPSInfo(is_enabled=False))
+diff --git a/repos/system_upgrade/common/actors/checkfips/tests/unit_test_checkfips.py b/repos/system_upgrade/common/actors/scanfips/tests/test_scanfips.py
+similarity index 74%
+rename from repos/system_upgrade/common/actors/checkfips/tests/unit_test_checkfips.py
+rename to repos/system_upgrade/common/actors/scanfips/tests/test_scanfips.py
+index 7774352e..c5f6ac66 100644
+--- a/repos/system_upgrade/common/actors/checkfips/tests/unit_test_checkfips.py
++++ b/repos/system_upgrade/common/actors/scanfips/tests/test_scanfips.py
+@@ -1,6 +1,6 @@
+ import pytest
+ 
+-from leapp.models import KernelCmdline, KernelCmdlineArg, Report
++from leapp.models import FIPSInfo, KernelCmdline, KernelCmdlineArg
+ from leapp.snactor.fixture import current_actor_context
+ 
+ ballast1 = [KernelCmdlineArg(key=k, value=v) for k, v in [
+@@ -19,7 +19,7 @@ ballast2 = [KernelCmdlineArg(key=k, value=v) for k, v in [
+     ('LANG', 'en_US.UTF-8')]]
+ 
+ 
+-@pytest.mark.parametrize('parameters,expected_report', [
++@pytest.mark.parametrize(('parameters', 'should_detect_enabled_fips'), [
+     ([], False),
+     ([KernelCmdlineArg(key='fips', value='')], False),
+     ([KernelCmdlineArg(key='fips', value='0')], False),
+@@ -27,11 +27,10 @@ ballast2 = [KernelCmdlineArg(key=k, value=v) for k, v in [
+     ([KernelCmdlineArg(key='fips', value='11')], False),
+     ([KernelCmdlineArg(key='fips', value='yes')], False)
+ ])
+-def test_check_fips(current_actor_context, parameters, expected_report):
++def test_check_fips(current_actor_context, parameters, should_detect_enabled_fips):
+     cmdline = KernelCmdline(parameters=ballast1+parameters+ballast2)
+     current_actor_context.feed(cmdline)
+     current_actor_context.run()
+-    if expected_report:
+-        assert current_actor_context.consume(Report)
+-    else:
+-        assert not current_actor_context.consume(Report)
++    produced_msgs = current_actor_context.consume(FIPSInfo)
++
++    assert (FIPSInfo(is_enabled=should_detect_enabled_fips),) == produced_msgs
+diff --git a/repos/system_upgrade/common/models/bootcontent.py b/repos/system_upgrade/common/models/bootcontent.py
+index 03efa8f6..edada01e 100644
+--- a/repos/system_upgrade/common/models/bootcontent.py
++++ b/repos/system_upgrade/common/models/bootcontent.py
+@@ -11,3 +11,4 @@ class BootContent(Model):
+ 
+     kernel_path = fields.String(help='Filepath of the kernel copied to /boot/ by Leapp.')
+     initram_path = fields.String(help='Filepath of the initramfs copied to /boot/ by Leapp.')
++    kernel_hmac_path = fields.String(help='Filepath of the kernel hmac copied to /boot/ by Leapp.')
+diff --git a/repos/system_upgrade/common/models/fips.py b/repos/system_upgrade/common/models/fips.py
+new file mode 100644
+index 00000000..aa9930db
+--- /dev/null
++++ b/repos/system_upgrade/common/models/fips.py
+@@ -0,0 +1,12 @@
++from leapp.models import fields, Model
++from leapp.topics import SystemInfoTopic
++
++
++class FIPSInfo(Model):
++    """
++    Information about whether the source system has FIPS enabled.
++    """
++    topic = SystemInfoTopic
++
++    is_enabled = fields.Boolean(default=False)
++    """ Is fips enabled on the source system """
+-- 
+2.40.1
+

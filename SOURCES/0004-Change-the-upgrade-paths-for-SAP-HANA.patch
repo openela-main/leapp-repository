@@ -1,0 +1,259 @@
+From 24bfcccc59047c43237ce1b0202245314eca7158 Mon Sep 17 00:00:00 2001
+From: Irina Gulina <igulina@redhat.com>
+Date: Fri, 5 May 2023 08:43:19 +0200
+Subject: [PATCH 4/5] Change the upgrade paths for SAP HANA
+
+ - Drop 7.9 to 8.2
+ - Add 7.9 to 8.8, but keep 7.9 to 8.6 as default
+ - Add 8.8 to 9.2
+ - Drop SAP HANA version check for the target releases >=8.8 and >=9.2
+ - Correct actor.py docstring to support ppc64le for 8to9 upgrade (see PR1042)
+---
+ .../common/actors/checksaphana/actor.py       | 11 +++-
+ .../checksaphana/libraries/checksaphana.py    | 57 ++++++++++++-------
+ .../checksaphana/tests/test_checksaphana.py   | 31 +---------
+ .../common/files/upgrade_paths.json           |  7 ++-
+ .../common/libraries/config/version.py        |  2 +-
+ 5 files changed, 50 insertions(+), 58 deletions(-)
+
+diff --git a/repos/system_upgrade/common/actors/checksaphana/actor.py b/repos/system_upgrade/common/actors/checksaphana/actor.py
+index 70e78147..97d00455 100644
+--- a/repos/system_upgrade/common/actors/checksaphana/actor.py
++++ b/repos/system_upgrade/common/actors/checksaphana/actor.py
+@@ -12,10 +12,15 @@ class CheckSapHana(Actor):
+     If the upgrade flavour is 'default' no checks are being executed.
+ 
+     The following checks are executed:
+-    - If this system is _NOT_ running on x86_64, the upgrade is inhibited.
+-    - If SAP HANA 1 has been detected on the system the upgrade is inhibited since it is not supported on RHEL8.
++    - If the major target release is 8, and this system is _NOT_ running on x86_64, the upgrade is inhibited.
++    - If the major target release is 9, and this system is _NOT_ running on x86_64 or ppc64le,
++      the upgrade is inhibited.
++    - If SAP HANA 1 has been detected on the system the upgrade is inhibited since there is no supported upgrade path
++      with installed SAP HANA 1.
+     - If SAP HANA 2 has been detected, the upgrade will be inhibited if an unsupported version for the target release
+-      has been detected.
++      has been detected (<8.8, <9.2).
++    - If the target release >=8.8 or >=9.2, the upgrade will be inhibited unless a user confirms to proceed
++      for the currently installed SAP HANA 2.0 version and the chosen target release.
+     - If SAP HANA is running the upgrade is inhibited.
+     """
+ 
+diff --git a/repos/system_upgrade/common/actors/checksaphana/libraries/checksaphana.py b/repos/system_upgrade/common/actors/checksaphana/libraries/checksaphana.py
+index 92109997..1b08f3d2 100644
+--- a/repos/system_upgrade/common/actors/checksaphana/libraries/checksaphana.py
++++ b/repos/system_upgrade/common/actors/checksaphana/libraries/checksaphana.py
+@@ -10,20 +10,36 @@ SAP_HANA_SUPPORTER_ARCHS = {
+     '9': [architecture.ARCH_X86_64, architecture.ARCH_PPC64LE]
+ }
+ 
+-# SAP HANA 2.00 rev 54 is the minimal supported revision for both RHEL 7.9 and RHEL 8.2
+-
+ SAP_HANA_MINIMAL_MAJOR_VERSION = 2
+-# RHEL 8.2 target requirements
+-SAP_HANA_RHEL82_REQUIRED_PATCH_LEVELS = ((5, 54, 0),)
+-SAP_HANA_RHEL82_MINIMAL_VERSION_STRING = 'HANA 2.0 SPS05 rev 54 or later'
+ 
+ # RHEL 8.6 target requirements
+ SAP_HANA_RHEL86_REQUIRED_PATCH_LEVELS = ((5, 59, 2),)
+ SAP_HANA_RHEL86_MINIMAL_VERSION_STRING = 'HANA 2.0 SPS05 rev 59.02 or later'
+ 
+-# RHEL 9 target requirements
+-SAP_HANA_RHEL9_REQUIRED_PATCH_LEVELS = ((5, 59, 4), (6, 63, 0))
+-SAP_HANA_RHEL9_MINIMAL_VERSION_STRING = 'HANA 2.0 SPS05 rev 59.04 or later, or SPS06 rev 63 or later'
++# RHEL 9.0 target requirements
++SAP_HANA_RHEL90_REQUIRED_PATCH_LEVELS = ((5, 59, 4), (6, 63, 0))
++SAP_HANA_RHEL90_MINIMAL_VERSION_STRING = 'HANA 2.0 SPS05 rev 59.04 or later, or SPS06 rev 63 or later'
++
++
++def _report_skip_check():
++    summary = (
++        'For the target RHEL releases >=8.8 and >=9.2 '
++        'the leapp utility does not check RHEL and SAP HANA 2.0 '
++        'versions compatibility. Please ensure your SAP HANA 2.0 '
++        'is supported on the target RHEL release and '
++        'proceed on your discretion. '
++        'SAP HANA: Supported Operating Systems '
++        'https://launchpad.support.sap.com/#/notes/2235581')
++    remedy_hint = 'Ensure your SAP HANA 2.0 is supported on the target release.'
++    reporting.create_report([
++        reporting.Title('SAP HANA 2.0 version should be checked prior the upgrade'),
++        reporting.Summary(summary),
++        reporting.Severity(reporting.Severity.MEDIUM),
++        reporting.Groups([reporting.Groups.SANITY]),
++        reporting.Remediation(hint=remedy_hint),
++        reporting.ExternalLink(url='https://launchpad.support.sap.com/#/notes/2235581',
++                               title='SAP HANA: Supported Operating Systems'),
++        ])
+ 
+ 
+ def _manifest_get(manifest, key, default_value=None):
+@@ -45,7 +61,6 @@ def running_check(info):
+             reporting.Severity(reporting.Severity.HIGH),
+             reporting.Groups([reporting.Groups.SANITY]),
+             reporting.Groups([reporting.Groups.INHIBITOR]),
+-            reporting.Audience('sysadmin')
+         ])
+ 
+ 
+@@ -72,12 +87,10 @@ def _create_detected_instances_list(details):
+ 
+ 
+ def _min_ver_string():
+-    if version.get_target_major_version() == '8':
++    if version.matches_target_version('8.6'):
+         ver_str = SAP_HANA_RHEL86_MINIMAL_VERSION_STRING
+-        if version.matches_target_version('8.2'):
+-            ver_str = SAP_HANA_RHEL82_MINIMAL_VERSION_STRING
+     else:
+-        ver_str = SAP_HANA_RHEL9_MINIMAL_VERSION_STRING
++        ver_str = SAP_HANA_RHEL90_MINIMAL_VERSION_STRING
+     return ver_str
+ 
+ 
+@@ -89,10 +102,9 @@ def version1_check(info):
+             _add_hana_details(found, instance)
+ 
+     if found:
+-        min_ver_string = _min_ver_string()
+         detected = _create_detected_instances_list(found)
+         reporting.create_report([
+-            reporting.Title('Found SAP HANA 1 which is not supported with the target version of RHEL'),
++            reporting.Title('Found SAP HANA 1.0 which is not supported with the target version of RHEL'),
+             reporting.Summary(
+                 ('SAP HANA 1.00 is not supported with the version of RHEL you are upgrading to.\n\n'
+                  'The following instances have been detected to be version 1.00:\n'
+@@ -101,12 +113,11 @@ def version1_check(info):
+             reporting.Severity(reporting.Severity.HIGH),
+             reporting.RemediationHint((
+                 'In order to upgrade RHEL, you will have to upgrade your SAP HANA 1.0 software to '
+-                '{supported}.'.format(supported=min_ver_string))),
++                'SAP HANA 2.0 supported on the target RHEL release first.')),
+             reporting.ExternalLink(url='https://launchpad.support.sap.com/#/notes/2235581',
+                                    title='SAP HANA: Supported Operating Systems'),
+             reporting.Groups([reporting.Groups.SANITY]),
+             reporting.Groups([reporting.Groups.INHIBITOR]),
+-            reporting.Audience('sysadmin')
+         ])
+ 
+ 
+@@ -160,12 +171,10 @@ def _sp_rev_patchlevel_check(instance, patchlevels):
+ 
+ def _fullfills_hana_min_version(instance):
+     """ Performs a check whether the version of SAP HANA fulfills the minimal requirements for the target RHEL """
+-    if version.get_target_major_version() == '8':
++    if version.matches_target_version('8.6'):
+         patchlevels = SAP_HANA_RHEL86_REQUIRED_PATCH_LEVELS
+-        if version.matches_target_version('8.2'):
+-            patchlevels = SAP_HANA_RHEL82_REQUIRED_PATCH_LEVELS
+     else:
+-        patchlevels = SAP_HANA_RHEL9_REQUIRED_PATCH_LEVELS
++        patchlevels = SAP_HANA_RHEL90_REQUIRED_PATCH_LEVELS
+     return _major_version_check(instance) and _sp_rev_patchlevel_check(instance, patchlevels)
+ 
+ 
+@@ -175,6 +184,11 @@ def version2_check(info):
+     for instance in info.instances:
+         if _manifest_get(instance.manifest, 'release', None) == '1.00':
+             continue
++        if version.matches_target_version('> 8.6', '< 9.0') or version.matches_target_version('> 9.0'):
++            # if a target release is >=8.8 or >=9.2, the SAP HANA and RHEL versions compatibility is not checked
++            _report_skip_check()
++            return
++        # if a starget release is 8.6 or 9.0 we still check SAP HANA and RHEL versions compatibility
+         if not _fullfills_hana_min_version(instance):
+             _add_hana_details(found, instance)
+ 
+@@ -196,7 +210,6 @@ def version2_check(info):
+             reporting.Severity(reporting.Severity.HIGH),
+             reporting.Groups([reporting.Groups.SANITY]),
+             reporting.Groups([reporting.Groups.INHIBITOR]),
+-            reporting.Audience('sysadmin')
+         ])
+ 
+ 
+diff --git a/repos/system_upgrade/common/actors/checksaphana/tests/test_checksaphana.py b/repos/system_upgrade/common/actors/checksaphana/tests/test_checksaphana.py
+index 3dc2c192..1417b00a 100644
+--- a/repos/system_upgrade/common/actors/checksaphana/tests/test_checksaphana.py
++++ b/repos/system_upgrade/common/actors/checksaphana/tests/test_checksaphana.py
+@@ -166,33 +166,6 @@ class MockSAPHanaVersionInstance(object):
+         ]
+ 
+ 
+-@pytest.mark.parametrize(
+-    'major,rev,patchlevel,result', (
+-        (2, 52, 0, True),
+-        (2, 52, 1, True),
+-        (2, 52, 2, True),
+-        (2, 53, 0, True),
+-        (2, 60, 0, True),
+-        (2, 48, 2, True),
+-        (2, 48, 1, False),
+-        (2, 48, 0, False),
+-        (2, 38, 2, False),
+-        (2, 49, 0, True),
+-    )
+-)
+-def test_checksaphana__fullfills_rhel82_hana_min_version(monkeypatch, major, rev, patchlevel, result):
+-    monkeypatch.setattr(version, 'get_target_major_version', lambda: '8')
+-    monkeypatch.setattr(version, 'get_target_version', lambda: '8.2')
+-    monkeypatch.setattr(checksaphana, 'SAP_HANA_RHEL82_REQUIRED_PATCH_LEVELS', ((4, 48, 2), (5, 52, 0)))
+-    assert checksaphana._fullfills_hana_min_version(
+-        MockSAPHanaVersionInstance(
+-            major=major,
+-            rev=rev,
+-            patchlevel=patchlevel,
+-        )
+-    ) == result
+-
+-
+ @pytest.mark.parametrize(
+     'major,rev,patchlevel,result', (
+         (2, 52, 0, True),
+@@ -239,10 +212,10 @@ def test_checksaphana__fullfills_rhel86_hana_min_version(monkeypatch, major, rev
+         (2, 64, 0, True),
+     )
+ )
+-def test_checksaphana__fullfills_hana_rhel9_min_version(monkeypatch, major, rev, patchlevel, result):
++def test_checksaphana__fullfills_hana_rhel90_min_version(monkeypatch, major, rev, patchlevel, result):
+     monkeypatch.setattr(version, 'get_target_major_version', lambda: '9')
+     monkeypatch.setattr(version, 'get_target_version', lambda: '9.0')
+-    monkeypatch.setattr(checksaphana, 'SAP_HANA_RHEL9_REQUIRED_PATCH_LEVELS', ((5, 59, 4), (6, 63, 0)))
++    monkeypatch.setattr(checksaphana, 'SAP_HANA_RHEL90_REQUIRED_PATCH_LEVELS', ((5, 59, 4), (6, 63, 0)))
+     assert checksaphana._fullfills_hana_min_version(
+         MockSAPHanaVersionInstance(
+             major=major,
+diff --git a/repos/system_upgrade/common/files/upgrade_paths.json b/repos/system_upgrade/common/files/upgrade_paths.json
+index 5e3c5d32..5d8b44e9 100644
+--- a/repos/system_upgrade/common/files/upgrade_paths.json
++++ b/repos/system_upgrade/common/files/upgrade_paths.json
+@@ -7,9 +7,10 @@
+         "8": ["9.2"]
+     },
+     "saphana": {
+-        "7.9": ["8.2", "8.6"],
+-        "7": ["8.2", "8.6"],
++        "7.9": ["8.8", "8.6"],
++        "7": ["8.8", "8.6"],
+         "8.6": ["9.0"],
+-        "8": ["9.0"]
++        "8.8": ["9.2"],
++        "8": ["9.2", "9.0"]
+     }
+ }
+diff --git a/repos/system_upgrade/common/libraries/config/version.py b/repos/system_upgrade/common/libraries/config/version.py
+index cc5bfca5..6bf6b4da 100644
+--- a/repos/system_upgrade/common/libraries/config/version.py
++++ b/repos/system_upgrade/common/libraries/config/version.py
+@@ -14,7 +14,7 @@ OP_MAP = {
+ _SUPPORTED_VERSIONS = {
+     # Note: 'rhel-alt' is detected when on 'rhel' with kernel 4.x
+     '7': {'rhel': ['7.9'], 'rhel-alt': [], 'rhel-saphana': ['7.9']},
+-    '8': {'rhel': ['8.6', '8.8'], 'rhel-saphana': ['8.6']},
++    '8': {'rhel': ['8.6', '8.8'], 'rhel-saphana': ['8.6', '8.8']},
+ }
+ 
+ 
+-- 
+2.40.1
+

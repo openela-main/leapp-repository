@@ -1,0 +1,98 @@
+From 619982896c07aa453a1b48b2bf399e4fe4f723b2 Mon Sep 17 00:00:00 2001
+From: Jarek Prokop <jprokop@redhat.com>
+Date: Fri, 21 Apr 2023 17:25:15 +0200
+Subject: [PATCH 2/5] Add el8toel9 actor to handle directory -> symlink with
+ ruby IRB.
+
+The `/usr/share/ruby/irb/` directory is a symlink in RHEL 9.
+
+Simply remove the directory to then let the RPM mechanism create the
+correct symlink on update.
+
+Users should not expect to ever retain anything in this directory.
+---
+ .../actors/registerrubyirbadjustment/actor.py | 22 ++++++++++++++++++
+ .../test_register_ruby_irb_adjustments.py     | 11 +++++++++
+ .../el8toel9/tools/handlerubyirbsymlink       | 23 +++++++++++++++++++
+ 3 files changed, 56 insertions(+)
+ create mode 100644 repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/actor.py
+ create mode 100644 repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/tests/test_register_ruby_irb_adjustments.py
+ create mode 100755 repos/system_upgrade/el8toel9/tools/handlerubyirbsymlink
+
+diff --git a/repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/actor.py b/repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/actor.py
+new file mode 100644
+index 00000000..ac4d1e6f
+--- /dev/null
++++ b/repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/actor.py
+@@ -0,0 +1,22 @@
++from leapp.actors import Actor
++from leapp.models import DNFWorkaround
++from leapp.tags import FactsPhaseTag, IPUWorkflowTag
++
++
++class RegisterRubyIRBAdjustment(Actor):
++    """
++    Registers a workaround which will adjust the Ruby IRB directories during the upgrade.
++    """
++
++    name = 'register_ruby_irb_adjustment'
++    consumes = ()
++    produces = (DNFWorkaround,)
++    tags = (IPUWorkflowTag, FactsPhaseTag)
++
++    def process(self):
++        self.produce(
++            DNFWorkaround(
++                display_name='IRB directory fix',
++                script_path=self.get_tool_path('handlerubyirbsymlink'),
++            )
++        )
+diff --git a/repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/tests/test_register_ruby_irb_adjustments.py b/repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/tests/test_register_ruby_irb_adjustments.py
+new file mode 100644
+index 00000000..fc341646
+--- /dev/null
++++ b/repos/system_upgrade/el8toel9/actors/registerrubyirbadjustment/tests/test_register_ruby_irb_adjustments.py
+@@ -0,0 +1,11 @@
++import os.path
++
++from leapp.models import DNFWorkaround
++
++
++def test_register_ruby_irb_adjustments(current_actor_context):
++    current_actor_context.run()
++    assert len(current_actor_context.consume(DNFWorkaround)) == 1
++    assert current_actor_context.consume(DNFWorkaround)[0].display_name == 'IRB directory fix'
++    assert os.path.basename(current_actor_context.consume(DNFWorkaround)[0].script_path) == 'handlerubyirbsymlink'
++    assert os.path.exists(current_actor_context.consume(DNFWorkaround)[0].script_path)
+diff --git a/repos/system_upgrade/el8toel9/tools/handlerubyirbsymlink b/repos/system_upgrade/el8toel9/tools/handlerubyirbsymlink
+new file mode 100755
+index 00000000..9558dd48
+--- /dev/null
++++ b/repos/system_upgrade/el8toel9/tools/handlerubyirbsymlink
+@@ -0,0 +1,23 @@
++#!/usr/bin/bash -e
++
++# just in case of hidden files.. not sure why would someone do that, it's more
++# like forgotten cache file possibility, but rather do that..
++shopt -s dotglob
++
++handle_dir() {
++    # Check that $1 is not already a symlink
++    # then remove the directory so that RPM can freely create the
++    # symlink.
++    if [ "$(readlink "$1")" == "/usr/share/gems/gems/irb-1.3.5" ]; then
++        return
++    fi
++
++    # There is no configuration or anything that the user should ever customize
++    # and expect to retain.
++    rm -rf "$1"
++
++    return 0
++}
++
++
++handle_dir /usr/share/ruby/irb
+-- 
+2.40.1
+

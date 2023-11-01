@@ -1,0 +1,118 @@
+From 1240116a7989f24f00a06273104f059449516365 Mon Sep 17 00:00:00 2001
+From: Petr Stodulka <pstodulk@redhat.com>
+Date: Mon, 5 Jun 2023 16:24:03 +0200
+Subject: [PATCH] Update the repomap.json file for RHUI Azure
+
+python repomap_diff.py old_repomap.json new_repomap.json
+Upg paths are unchanged.
+Mappings are unchanged.
+The following repos have been removed:
+ - Repo(pesid='rhel8-AppStream', major_version='8', repoid='rhui-rhel-8-for-x86_64-appstream-rhui-rpms', repo_type='rpm', channel='ga', arch='x86_64', rhui='azure')
+ - Repo(pesid='rhel8-BaseOS', major_version='8', repoid='rhui-rhel-8-for-x86_64-baseos-rhui-rpms', repo_type='rpm', channel='ga', arch='x86_64', rhui='azure')
+ - Repo(pesid='rhel8-CRB', major_version='8', repoid='rhui-codeready-builder-for-rhel-8-x86_64-rhui-rpms', repo_type='rpm', channel='ga', arch='x86_64', rhui='azure')
+The following repos have been added:
+ - Repo(pesid='rhel8-CRB', major_version='8', repoid='codeready-builder-for-rhel-8-x86_64-rhui-rpms', repo_type='rpm', channel='ga', arch='x86_64', rhui='azure')
+ - Repo(pesid='rhel8-BaseOS', major_version='8', repoid='rhel-8-for-x86_64-baseos-rhui-rpms', repo_type='rpm', channel='ga', arch='x86_64', rhui='azure')
+ - Repo(pesid='rhel8-AppStream', major_version='8', repoid='rhel-8-for-x86_64-appstream-rhui-rpms', repo_type='rpm', channel='ga', arch='x86_64', rhui='azure')
+---
+ etc/leapp/files/repomap.json | 44 ++++++++++++++++++------------------
+ 1 file changed, 22 insertions(+), 22 deletions(-)
+
+diff --git a/etc/leapp/files/repomap.json b/etc/leapp/files/repomap.json
+index 88116e2..14b6f0d 100644
+--- a/etc/leapp/files/repomap.json
++++ b/etc/leapp/files/repomap.json
+@@ -1,5 +1,5 @@
+ {
+-    "datetime": "202303072246Z",
++    "datetime": "202306051542Z",
+     "version_format": "1.0.0",
+     "mapping": [
+         {
+@@ -1409,6 +1409,14 @@
+                     "channel": "eus",
+                     "repo_type": "rpm"
+                 },
++                {
++                    "major_version": "8",
++                    "repoid": "rhel-8-for-x86_64-baseos-rhui-rpms",
++                    "arch": "x86_64",
++                    "channel": "ga",
++                    "repo_type": "rpm",
++                    "rhui": "azure"
++                },
+                 {
+                     "major_version": "8",
+                     "repoid": "rhel-8-for-x86_64-baseos-rpms",
+@@ -1432,14 +1440,6 @@
+                     "repo_type": "rpm",
+                     "rhui": "aws"
+                 },
+-                {
+-                    "major_version": "8",
+-                    "repoid": "rhui-rhel-8-for-x86_64-baseos-rhui-rpms",
+-                    "arch": "x86_64",
+-                    "channel": "ga",
+-                    "repo_type": "rpm",
+-                    "rhui": "azure"
+-                },
+                 {
+                     "major_version": "8",
+                     "repoid": "rhui-rhel-8-for-x86_64-baseos-rhui-rpms",
+@@ -1615,6 +1615,14 @@
+                     "channel": "eus",
+                     "repo_type": "rpm"
+                 },
++                {
++                    "major_version": "8",
++                    "repoid": "rhel-8-for-x86_64-appstream-rhui-rpms",
++                    "arch": "x86_64",
++                    "channel": "ga",
++                    "repo_type": "rpm",
++                    "rhui": "azure"
++                },
+                 {
+                     "major_version": "8",
+                     "repoid": "rhel-8-for-x86_64-appstream-rpms",
+@@ -1638,14 +1646,6 @@
+                     "repo_type": "rpm",
+                     "rhui": "aws"
+                 },
+-                {
+-                    "major_version": "8",
+-                    "repoid": "rhui-rhel-8-for-x86_64-appstream-rhui-rpms",
+-                    "arch": "x86_64",
+-                    "channel": "ga",
+-                    "repo_type": "rpm",
+-                    "rhui": "azure"
+-                },
+                 {
+                     "major_version": "8",
+                     "repoid": "rhui-rhel-8-for-x86_64-appstream-rhui-rpms",
+@@ -1762,18 +1762,18 @@
+                 },
+                 {
+                     "major_version": "8",
+-                    "repoid": "codeready-builder-for-rhel-8-x86_64-rpms",
++                    "repoid": "codeready-builder-for-rhel-8-x86_64-rhui-rpms",
+                     "arch": "x86_64",
+                     "channel": "ga",
+-                    "repo_type": "rpm"
++                    "repo_type": "rpm",
++                    "rhui": "azure"
+                 },
+                 {
+                     "major_version": "8",
+-                    "repoid": "rhui-codeready-builder-for-rhel-8-x86_64-rhui-rpms",
++                    "repoid": "codeready-builder-for-rhel-8-x86_64-rpms",
+                     "arch": "x86_64",
+                     "channel": "ga",
+-                    "repo_type": "rpm",
+-                    "rhui": "azure"
++                    "repo_type": "rpm"
+                 },
+                 {
+                     "major_version": "8",
+-- 
+2.40.1
+
