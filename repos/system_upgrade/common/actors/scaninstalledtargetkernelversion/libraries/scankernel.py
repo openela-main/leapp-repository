@@ -27,7 +27,8 @@ def get_kernel_pkg_name(rhel_major_version, kernel_type):
         }
     else:
         kernel_pkg_name_table = {
-            kernel_lib.KernelType.ORDINARY: 'kernel-uek',
+            kernel_lib.KernelType.ORDINARY: 'kernel-uek-core',
+            kernel_lib.KernelType.ORDINARY_RHCK: 'kernel-core',
             kernel_lib.KernelType.REALTIME: 'kernel-rt-core'
         }
     return kernel_pkg_name_table[kernel_type]
@@ -91,10 +92,12 @@ def process():
     target_kernel_pkg_name = get_kernel_pkg_name(target_ver, src_kernel_info.type)
     target_kernel_nevra = get_target_kernel_package_nevra(target_kernel_pkg_name)
 
-    if src_kernel_info.type != kernel_lib.KernelType.ORDINARY and not target_kernel_nevra:
+    if src_kernel_info.type != kernel_lib.KernelType.ORDINARY and src_kernel_info.type != kernel_lib.KernelType.ORDINARY_RHCK and not target_kernel_nevra:
         api.current_logger().warning('The kernel-rt-core rpm from the target OL has not been detected. Switching '
                                      'to non-preemptive kernel.')
         target_kernel_pkg_name = get_kernel_pkg_name(target_ver, kernel_lib.KernelType.ORDINARY)
+        if not target_kernel_pkg_name:
+            target_kernel_pkg_name = get_kernel_pkg_name(target_ver, kernel_lib.KernelType.ORDINARY_RHCK)
         target_kernel_nevra = get_target_kernel_package_nevra(target_kernel_pkg_name)
 
     if target_kernel_nevra:

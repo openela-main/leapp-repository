@@ -26,7 +26,7 @@ class KernelInfo(Model):
     uname_r = fields.String()
     """``uname -r`` of the booted kernel."""
 
-    type = fields.StringEnum(['ordinary', 'realtime'], default='ordinary')
+    type = fields.StringEnum(['ordinary', 'realtime', 'ordinary_rhck'], default='ordinary')
     # @FixMe(mhecko): I want to use kernel_lib.KernelType here, but I cannot import any library code (yet).
     # #               Figure out how to do it.
 
