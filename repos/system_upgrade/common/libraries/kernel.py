@@ -6,12 +6,13 @@ from leapp.libraries.stdlib import api, CalledProcessError, run
 KernelPkgInfo = namedtuple('KernelPkgInfo', ('name', 'version', 'release', 'arch', 'nevra'))
 
 
-KERNEL_UNAME_R_PROVIDES = ['kernel-uname-r', 'kernel-rt-uname-r']
+KERNEL_UNAME_R_PROVIDES = ['kernel-uek-uname-r', 'kernel-uek-rt-uname-r', 'kernel-uname-r']
 
 
 class KernelType(object):
     ORDINARY = 'ordinary'
     REALTIME = 'realtime'
+    ORDINARY_RHCK = 'ordinary_rhck'
 
 
 def determine_kernel_type_from_uname(rhel_version, kernel_uname_r):
@@ -44,7 +45,15 @@ def determine_kernel_type_from_uname(rhel_version, kernel_uname_r):
             if kernel_uname_r.endswith(suffix):
                 return kernel_type
 
-    return KernelType.ORDINARY
+    uname_r_suffixes = {
+        'uek': KernelType.ORDINARY
+    }
+
+    for suffix, kernel_type in uname_r_suffixes.items():
+        if suffix in kernel_uname_r:
+            return kernel_type
+
+    return KernelType.ORDINARY_RHCK
 
 
 def get_uname_r_provided_by_kernel_pkg(kernel_pkg_nevra):

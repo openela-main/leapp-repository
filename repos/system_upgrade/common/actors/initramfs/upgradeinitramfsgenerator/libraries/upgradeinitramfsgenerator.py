@@ -29,9 +29,13 @@ def _get_target_kernel_version(context):
 
     kernel_version = None
     try:
-        results = context.call(['rpm', '-qa', 'kernel-core'], split=True)
-
-        versions = [ver.replace('kernel-core-', '') for ver in results['stdout']]
+        results_uek = context.call(['rpm', '-qa', 'kernel-uek'], split=True)
+        if not results_uek:
+            results_rhck = context.call(['rpm', '-qa', 'kernel'], split=True)
+        if results_uek:
+            versions = [ver.replace('kernel-uek-', '') for ver in results_uek['stdout']]
+        else:
+            versions = [ver.replace('kernel-', '') for ver in results_rhck['stdout']]
         api.current_logger().debug(
             'Versions detected {versions}.'
             .format(versions=versions))
