@@ -41,8 +41,8 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.18.0
-Release:        1%{?dist}.2
+Version:        0.19.0
+Release:        1%{?dist}
 Summary:        Repositories for leapp
 
 License:        ASL 2.0
@@ -55,13 +55,6 @@ BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
-Patch0001:      0001-Introduce-leapp-data-in-the-RPM-repository.patch
-Patch0002:      0002-Add-el8toel9-actor-to-handle-directory-symlink.patch
-Patch0003:      0003-Enable-8-9-upgrades-with-FIPS-enabled-1053.patch
-Patch0004:      0004-Change-the-upgrade-paths-for-SAP-HANA.patch
-Patch0005:      0005-Update-the-repomap.json-file-for-RHUI-Azure.patch
-
-
 
 
 %description
@@ -107,7 +100,7 @@ Requires:       leapp-repository-dependencies = %{leapp_repo_deps}
 
 # IMPORTANT: this is capability provided by the leapp framework rpm.
 # Check that 'version' instead of the real framework rpm version.
-Requires:       leapp-framework >= 3.1
+Requires:       leapp-framework >= 5.0
 
 # Since we provide sub-commands for the leapp utility, we expect the leapp
 # tool to be installed as well.
@@ -204,11 +197,6 @@ Requires:   python3-gobject-base
 
 # APPLY PATCHES HERE
 # %%patch0001 -p1
-%patch0001 -p1
-%patch0002 -p1
-%patch0003 -p1
-%patch0004 -p1
-%patch0005 -p1
 
 
 %build
@@ -286,16 +274,50 @@ done;
 # no files here
 
 %changelog
-* Mon Jun 05 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-1.2
-- Update the repomap.json file to address planned changes on RHUI Azure
-- Resolves: rhbz#2203804
+* Wed Aug 23 2023 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-1
+- Rebase to v0.19.0
+- Requires leapp-framework 5.0
+- Handle correctly the installed certificates to allow upgrades with custom repositories using HTTPs with enabled SSL verification
+- Fix failing upgrades with devtmpfs file systems specified in FSTAB
+- Do not try to update GRUB core on IBM Z systems
+- Minor improvements and fixes of various reports and error messages
+- Redesign handling of information about kernel (booted and target) to reflect changes in RHEL 9.3
+- Use new leapp CLI API which provides better report summary output
+- Resolves: rhbz#2215997, rhbz#2222861, rhbz#2232618
 
-* Fri May 19 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-1.1
+* Mon Jul 18 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-5
+- Fix the calculation of the required free space on each partitions/volume for the upgrade transactions
+- Create source overlay images with dynamic sizes to optimize disk space consumption
+- Update GRUB2 when /boot resides on multiple devices aggregated in RAID
+- Use new leapp CLI API which provides better report summary output
+- Introduce possibility to add (custom) kernel drivers to initramfs
+- Detect and report use of deprecated Xorg drivers
+- Fix the generation of the report about hybrid images
+- Inhibit the upgrade when unsupported x86-64 microarchitecture is detected
+- Minor improvements and fixes of various reports
+- Requires leapp-framework 4.0
+- Update leapp data files
+- Resolves: rhbz#2140011, rhbz#2144304, rhbz#2174095, rhbz#2215997
+
+* Mon Jun 19 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-4
+- Introduce new upgrade path RHEL 8.9 -> 9.3
+- Update leapp data files to reflect new changes between systems
+- Detect and report use of deprecated Xorg drivers
+- Minor improvements of generated reports
+- Fix false positive report about invalid symlinks
+- Inhibit the upgrade when unsupported x86-64 microarchitecture is detected
+- Resolves: rhbz#2215997
+
+* Mon Jun 05 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-3
+- Update the repomap.json file to address planned changes on RHUI Azure
+- Resolves: rhbz#2203800
+
+* Fri May 19 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-2
 - Include leap data files in the package
 - Introduce in-place upgrades for systems with enabled FIPS mode
 - Enable the upgrade path 8.8 -> 9.2 for RHEL with SAP HANA
 - Fix the upgrade of ruby-irb package
-- Resolves: rhbz#2193071, rhbz#2203804, rhbz#2203807, rhbz#2208292
+- Resolves: rhbz#2030627, rhbz#2097003, rhbz#2203800, rhbz#2203803
 
 * Tue Feb 21 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-1
 - Rebase to v0.18.0
