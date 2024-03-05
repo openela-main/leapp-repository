@@ -42,7 +42,7 @@ py2_byte_compile "%1" "%2"}
 
 Name:           leapp-repository
 Version:        0.19.0
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        Repositories for leapp
 
 License:        ASL 2.0
@@ -55,6 +55,8 @@ BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
+Patch0001:      0001-RHSM-Adjust-the-switch-to-container-mode-for-new-RHS.patch
+Patch0002:      0002-Do-not-create-dangling-symlinks-for-containerized-RH.patch
 
 
 %description
@@ -197,6 +199,8 @@ Requires:   python3-gobject-base
 
 # APPLY PATCHES HERE
 # %%patch0001 -p1
+%patch0001 -p1
+%patch0002 -p1
 
 
 %build
@@ -274,6 +278,14 @@ done;
 # no files here
 
 %changelog
+* Thu Nov 02 2023 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-4
+- Fix the upgrade for systems without subscription-manager package
+- Resolves: RHEL-14901
+
+* Tue Oct 31 2023 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-3
+- Fix the upgrade when the release is locked by new subscription-manager
+- Resolves: RHEL-14901
+
 * Wed Aug 23 2023 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-1
 - Rebase to v0.19.0
 - Requires leapp-framework 5.0
@@ -285,7 +297,7 @@ done;
 - Use new leapp CLI API which provides better report summary output
 - Resolves: rhbz#2215997, rhbz#2222861, rhbz#2232618
 
-* Mon Jul 18 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-5
+* Tue Jul 18 2023 Petr Stodulka <pstodulk@redhat.com> - 0.18.0-5
 - Fix the calculation of the required free space on each partitions/volume for the upgrade transactions
 - Create source overlay images with dynamic sizes to optimize disk space consumption
 - Update GRUB2 when /boot resides on multiple devices aggregated in RAID

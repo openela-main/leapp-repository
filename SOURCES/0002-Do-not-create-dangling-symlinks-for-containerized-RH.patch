@@ -1,0 +1,62 @@
+From d1f28cbd143f2dce85f7f175308437954847aba8 Mon Sep 17 00:00:00 2001
+From: Petr Stodulka <pstodulk@redhat.com>
+Date: Thu, 2 Nov 2023 14:20:11 +0100
+Subject: [PATCH] Do not create dangling symlinks for containerized RHSM
+
+When setting RHSM into the container mode, we are creating symlinks
+to /etc/rhsm and /etc/pki/entitlement directories. However, this
+creates dangling symlinks if RHSM is not installed or user manually
+removes one of these dirs.
+
+If any of these directories is missing, skip other actions and
+log the warning. Usually it means that RHSM is not actually used
+or installed at all, so in these cases we can do the skip. The
+only corner case when system could use RHSM without
+/etc/pki/entitlement is when RHSM is configured to put these
+certificate on a different path, and we do not support nor cover
+such a scenario as we are not scanning the RHSM configuration at
+all.
+
+This also solves the problems on systems that does not have RHSM
+available at all.
+---
+ repos/system_upgrade/common/libraries/rhsm.py | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/repos/system_upgrade/common/libraries/rhsm.py b/repos/system_upgrade/common/libraries/rhsm.py
+index 18842021..eb388829 100644
+--- a/repos/system_upgrade/common/libraries/rhsm.py
++++ b/repos/system_upgrade/common/libraries/rhsm.py
+@@ -325,6 +325,11 @@ def set_container_mode(context):
+     could be affected and the generated repo file in the container could be
+     affected as well (e.g. when the release is set, using rhsm, on the host).
+ 
++    We want to put RHSM into the container mode always when /etc/rhsm and
++    /etc/pki/entitlement directories exists, even when leapp is executed with
++    --no-rhsm option. If any of these directories are missing, skip other
++    actions - most likely RHSM is not installed in such a case.
++
+     :param context: An instance of a mounting.IsolatedActions class
+     :type context: mounting.IsolatedActions class
+     """
+@@ -332,6 +337,17 @@ def set_container_mode(context):
+         api.current_logger().error('Trying to set RHSM into the container mode'
+                                    'on host. Skipping the action.')
+         return
++    # TODO(pstodulk): check "rhsm identity" whether system is registered
++    # and the container mode should be required
++    if (not os.path.exists(context.full_path('/etc/rhsm'))
++            or not os.path.exists(context.full_path('/etc/pki/entitlement'))):
++        api.current_logger().warning(
++            'Cannot set the container mode for the subscription-manager as'
++            ' one of required directories is missing. Most likely RHSM is not'
++            ' installed. Skipping other actions.'
++        )
++        return
++
+     try:
+         context.call(['ln', '-s', '/etc/rhsm', '/etc/rhsm-host'])
+         context.call(['ln', '-s', '/etc/pki/entitlement', '/etc/pki/entitlement-host'])
+-- 
+2.41.0
+

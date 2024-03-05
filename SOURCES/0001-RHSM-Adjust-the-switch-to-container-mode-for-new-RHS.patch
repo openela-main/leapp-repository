@@ -1,0 +1,37 @@
+From b6e409e1055b5d8b7f27e5df9eae096eb592a9c7 Mon Sep 17 00:00:00 2001
+From: Petr Stodulka <pstodulk@redhat.com>
+Date: Fri, 27 Oct 2023 13:34:38 +0200
+Subject: [PATCH] RHSM: Adjust the switch to container mode for new RHSM
+
+RHSM in RHEL 8.9+ & RHEL 9.3+ requires newly for the switch to the
+container mode existence and content under /etc/pki/entitlement-host,
+which in our case should by symlink to /etc/pki/entitlement.
+
+So currently we need for the correct switch 2 symlinks:
+  * /etc/pki/rhsm-host        -> /etc/pki/rhsm
+  * /etc/pki/entitlement-host -> /etc/pki/entitlement
+
+Technically we need that only for RHEL 8.9+ but discussing it with
+RHSM SST, we can do this change unconditionally for any RHEL system
+as older versions of RHSM do not check /etc/pki/entitlement-host.
+
+jira: RHEL-14839
+---
+ repos/system_upgrade/common/libraries/rhsm.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/repos/system_upgrade/common/libraries/rhsm.py b/repos/system_upgrade/common/libraries/rhsm.py
+index 4a5b0eb0..18842021 100644
+--- a/repos/system_upgrade/common/libraries/rhsm.py
++++ b/repos/system_upgrade/common/libraries/rhsm.py
+@@ -334,6 +334,7 @@ def set_container_mode(context):
+         return
+     try:
+         context.call(['ln', '-s', '/etc/rhsm', '/etc/rhsm-host'])
++        context.call(['ln', '-s', '/etc/pki/entitlement', '/etc/pki/entitlement-host'])
+     except CalledProcessError:
+         raise StopActorExecutionError(
+                 message='Cannot set the container mode for the subscription-manager.')
+-- 
+2.41.0
+
