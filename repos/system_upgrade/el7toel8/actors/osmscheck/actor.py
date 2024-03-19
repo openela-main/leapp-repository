@@ -64,8 +64,10 @@ class OSMSCheck(Actor):
             confirmations = ["oracle_cloud_agent_check", "osms_post_check"]
             for confirmation in confirmations:
                 result = self.confirm(confirmation)
-                if result:
-                    self.produce_report()
+                if result and confirmation == "oracle_cloud_agent_check":
+                    self.produce_report_cloud_agent()
+                elif result and confirmation == "osms_post_check":
+                    self.produce_report_osms()
                 elif result is False:
                     # user specifically chose to disagree with auto disablement
                     self.produce_inhibitor(confirmation)
@@ -80,15 +82,31 @@ class OSMSCheck(Actor):
 
         return self.get_answers(questions[confirmations]).get('confirm')
 
-    def produce_report(self):
+    def produce_report_osms(self):
         create_report([
-            reporting.Title('Managed instance upgrade requires user to accept certain requirements.'),
+            reporting.Title('Managed instance upgrade requires user to accept certain requirements for used Software Source.'),
+            reporting.Summary(
+                'User needs to confirm that they will remove old Software Sources after the upgrade '
+                'and will enable OL8 BaseOS Latest software source and their own software sources'
+
+            ),
+            reporting.Severity(reporting.Severity.MEDIUM),
+            reporting.Groups([
+                    reporting.Groups.AUTHENTICATION,
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
+            ]),
+            reporting.Remediation(hint='Do not forget to ensure accepted requirements are met'),
+            reporting.RelatedResource('package', 'oracle-cloud-agent')
+        ])
+
+    def produce_report_cloud_agent(self):
+        create_report([
+            reporting.Title('Managed instance upgrade requires user to accept certain requirements for OS Management Service'),
             reporting.Summary(
                 'When managed instance is being upgraded, user needs to ensure that'
                 ' no packages will be installed/removed/updated via OS Management Service during the upgrade'
                 ' itself. '
-                'Also user confirms that they will remove old Software Sources after the upgrade '
-                'and will enable OL8 BaseOS Latest software source and their own software sources'
 
             ),
             reporting.Severity(reporting.Severity.MEDIUM),
