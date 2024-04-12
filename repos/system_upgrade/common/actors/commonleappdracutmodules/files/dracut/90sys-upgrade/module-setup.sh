@@ -26,7 +26,7 @@ depends() {
     #    mod=${mod_dir##*/[0-9][0-9]}
     #    strstr "$mod" "sys-upgrade-" && echo $mod
     #done
-    echo "sys-upgrade-redhat"
+    echo "sys-upgrade-oracle"
     return 0
 }
 

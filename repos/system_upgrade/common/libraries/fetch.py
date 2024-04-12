@@ -95,7 +95,8 @@ def read_or_fetch(filename,
     if not os.path.exists(local_path):
         if not allow_download:
             _raise_error(local_path, "File {lp} does not exist.".format(lp=local_path))
-        logger.warning("File {lp} does not exist, falling back to online service)".format(lp=local_path))
+        logger.warning("File {lp} does not exist.".format(lp=local_path))
+        _raise_error(local_path, "File {lp} does not exist".format(lp=local_path))
     else:
         try:
             with io.open(local_path, encoding=encoding) as f:
@@ -108,40 +109,6 @@ def read_or_fetch(filename,
             _raise_error(local_path, "File {lp} exists but couldn't be read".format(lp=local_path))
         except Exception as e:
             raise e
-
-    # if the data is not present locally, fetch it from the online service
-    service = service or get_env("LEAPP_SERVICE_HOST", default=SERVICE_HOST_DEFAULT)
-    if data_stream:
-        service_path = "{s}/api/pes/{stream}/{f}".format(s=service, stream=data_stream, f=filename)
-    else:
-        service_path = "{s}/api/pes/{f}".format(s=service, f=filename)
-
-    proxy = get_env("LEAPP_PROXY_HOST")
-    proxies = {"https": proxy} if proxy else None
-    cert = ("/etc/pki/consumer/cert.pem", "/etc/pki/consumer/key.pem")
-    response = None
-    try:
-        response = _request_data(service_path, cert=cert, proxies=proxies)
-    except requests.exceptions.RequestException as e:
-        logger.error(e)
-        _raise_error(local_path, "Could not fetch {f} from {sp} (unreachable address).".format(
-            f=filename, sp=service_path))
-    # almost certainly missing certs
-    except (OSError, IOError) as e:
-        logger.error(e)
-        _raise_error(local_path, ("Could not fetch {f} from {sp} (missing certificates). Is the machine"
-                                  " registered?".format(f=filename, sp=service_path)))
-    if response.status_code != 200:
-        _raise_error(local_path, "Could not fetch {f} from {sp} (error code: {e}).".format(
-            f=filename, sp=service_path, e=response.status_code))
-
-    if not allow_empty and not response.content:
-        _raise_error(local_path, "File {lp} successfully retrieved but it's empty".format(lp=local_path))
-    logger.warning("File {sp} successfully retrieved and read ({l} bytes)".format(
-        sp=service_path, l=len(response.content)))
-
-    return response.content.decode(encoding)
-
 
 def load_data_asset(actor_requesting_asset,
                     asset_filename,
