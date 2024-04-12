@@ -44,7 +44,7 @@ def process(cpi_messages):
             reporting.Remediation(hint="Review the current policy in /etc/crypto-policies/state/CURRENT.pol"),
             reporting.RelatedResource('package', 'crypto-policies'),
             reporting.ExternalLink(
-                url='https://red.ht/rhel-9-security-considerations',
-                title='Security Considerations in adopting RHEL 9'
+                url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/',
+                title='Security Considerations in adopting OL 9'
             )
         ])

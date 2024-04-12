@@ -8,13 +8,13 @@ def _report_foreign():
             'device-mapper-multipath now defaults to ignoring foreign devices'
         ),
         reporting.Summary(
-            'In RHEL-9, the default value for the "enable_foreign" option has '
+            'In OL-9, the default value for the "enable_foreign" option has '
             'changed to "NONE". This means that multipath will no longer list '
             'devices that are not managed by device-mapper. In order to retain '
-            'the default RHEL-8 behavior of listing foreign multipath devices, '
+            'the default OL-8 behavior of listing foreign multipath devices, '
             '\'enable_foreign ""\' will be added to the defaults section of '
             '"/etc/multipath.conf". If you wish to change to the default '
-            'RHEL-9 behavior, please remove this line. This option only '
+            'OL-9 behavior, please remove this line. This option only '
             'effects the devices that multipath lists. It has no impact on '
             'what devices are managed.'),
         reporting.Severity(reporting.Severity.INFO),
@@ -29,13 +29,13 @@ def _report_allow_usb():
             'device-mapper-multipath now defaults to ignoring USB devices'
         ),
         reporting.Summary(
-            'In RHEL-9, the default multipath configuration has changed to '
+            'In OL-9, the default multipath configuration has changed to '
             'ignore USB devices. A new config option, "allow_usb_devices" has '
-            'been added to control this.  In order to retain the RHEL-8 '
+            'been added to control this.  In order to retain the OL-8 '
             'behavior of treating USB devices like other block devices. '
             '"allow_usb_devices yes" will be added to the defaults section '
             'of "/etc/multipath.conf". If you wish to change to the default '
-            'RHEL-9 behavior, please remove this line.'),
+            'OL-9 behavior, please remove this line.'),
         reporting.Severity(reporting.Severity.INFO),
         reporting.Groups([reporting.Groups.SERVICES]),
         reporting.RelatedResource('package', 'device-mapper-multipath')
@@ -56,9 +56,9 @@ def _report_invalid_regexes(paths):
         ),
         reporting.Summary(
             'Some options in device-mapper-multipath configuration files '
-            'have values that are regular expressions. In RHEL-8, if such an '
+            'have values that are regular expressions. In OL-8, if such an '
             'option had a value of "*", multipath would internally convert it '
-            'to ".*". In RHEL-9, values of "*" are no longer accepted. '
+            'to ".*". In OL-9, values of "*" are no longer accepted. '
             'These regular expression values have been found in {}. They '
             'will be converted to ".*"'.format(paths_str)),
         reporting.Severity(reporting.Severity.INFO),

@@ -11,15 +11,15 @@ FMT_LIST_SEPARATOR = '\n    - '
 # framework prints external links in the file as well.
 SUMMARY_FMT = (
     'Digital signatures using SHA-1 hash algorithm are no longer considered'
-    ' secure and are not allowed to be used on RHEL 9 systems by default.'
+    ' secure and are not allowed to be used on OL 9 systems by default.'
     ' This causes issues when using DNF/RPM to handle packages with RSA/SHA1'
     ' signatures as the signature cannot be checked with the default'
     ' cryptographic policy. Any such packages cannot be installed, removed,'
     ' or replaced unless the signature check is disabled in dnf/rpm'
     ' or SHA-1 is enabled using non-default crypto-policies.'
     ' For more information see the following documents:\n'
-    '  - Major changes in RHEL 9: {major_changes_url}\n'
-    '  - Security Considerations in adopting RHEL 9: {crypto_policies_url}\n'
+    '  - Major changes in OL 9: {major_changes_url}\n'
+    '  - Security Considerations in adopting OL 9: {crypto_policies_url}\n'
     ' The list of problematic packages: {bad_pkgs}'
 )
 
@@ -30,8 +30,8 @@ REMEDY_HINT = (
     ' remove the incompatible packages.'
 )
 
-MAJOR_CHANGE_URL = 'https://red.ht/rhel-9-overview-major-changes'
-CRYPTO_POLICIES_URL = 'https://red.ht/rhel-9-security-considerations'
+MAJOR_CHANGE_URL = 'https://docs.oracle.com/en/operating-systems/oracle-linux/9/relnotes9.4/ol9-NewFeaturesandChanges.html'
+CRYPTO_POLICIES_URL = 'https://docs.oracle.com/en/operating-systems/oracle-linux/9/security/security-ImplementingAdditionalSecurityFeaturesandBestPractices.html#system-crypto-policies'
 
 
 def _get_rpms_with_sha1_sig():
@@ -41,12 +41,12 @@ def _get_rpms_with_sha1_sig():
 
 def _is_sha1_allowed(current_policy):
     """
-    Return True if we are sure the current policy allows SHA-1 on RHEL 9. False otherwise
+    Return True if we are sure the current policy allows SHA-1 on OL 9. False otherwise
 
-    The LEGACY policy and policies like DEFAULT:SHA1 enables SHA-1 on RHEL 9.
+    The LEGACY policy and policies like DEFAULT:SHA1 enables SHA-1 on OL 9.
     """
     # TODO(pstodulk): this is just naive implementation
-    # NOTE: The SHA1 sub policy does not exist on RHEL 8. It has to be created
+    # NOTE: The SHA1 sub policy does not exist on OL 8. It has to be created
     # manually by user in such a case.
     # NOTE: for now, limit the check for :SHA1 to DEFAULT:SHA1 only as otherwise we will
     # not be probably able to set correctly the policies inside the target
@@ -77,11 +77,11 @@ def process():
             reporting.Remediation(hint=REMEDY_HINT),
             reporting.ExternalLink(
                 url=MAJOR_CHANGE_URL,
-                title='Major changes in RHEL 9'
+                title='Major changes in OL 9'
             ),
             reporting.ExternalLink(
                 url=CRYPTO_POLICIES_URL,
-                title='Security Considerations in adopting RHEL 9'
+                title='Security Considerations in adopting OL 9'
             )
         ]
         if not _is_sha1_allowed(cpi.current_policy):

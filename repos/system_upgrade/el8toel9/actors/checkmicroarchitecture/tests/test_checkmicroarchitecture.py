@@ -60,6 +60,6 @@ def test_invalid_microarchitecture(monkeypatch):
     assert 'Architecture not x86-64. Skipping microarchitecture test.' not in api.current_logger().infomsg
     assert reporting.create_report.called == 1
     assert 'microarchitecture is unsupported' in produced_title
-    assert 'RHEL9 has a higher CPU requirement' in produced_summary
+    assert 'OL9 has a higher CPU requirement' in produced_summary
     assert reporting.create_report.report_fields['severity'] == reporting.Severity.HIGH
     assert is_inhibitor(reporting.create_report.report_fields)

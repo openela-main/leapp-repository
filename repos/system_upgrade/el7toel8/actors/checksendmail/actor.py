@@ -34,7 +34,7 @@ class CheckSendmail(Actor):
                 reporting.Title('TCP wrappers support removed in the next major version'),
                 reporting.Summary(
                     'TCP wrappers are legacy host-based ACL (Access Control List) system '
-                    'which has been removed in the next major version of RHEL.'
+                    'which has been removed in the next major version of OL.'
                 ),
                 reporting.Remediation(
                     hint='Please migrate from TCP wrappers to some other access control mechanism and delete '

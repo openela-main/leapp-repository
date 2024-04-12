@@ -8,23 +8,23 @@ X86_64_V2_FLAGS = ['cx16', 'lahf_lm', 'popcnt', 'pni', 'sse4_1', 'sse4_2', 'ssse
 
 
 def _inhibit_upgrade(missing_flags):
-    title = 'Current x86-64 microarchitecture is unsupported in RHEL9'
-    summary = ('RHEL9 has a higher CPU requirement than older versions, it now requires a CPU '
+    title = 'Current x86-64 microarchitecture is unsupported in OL9'
+    summary = ('OL9 has a higher CPU requirement than older versions, it now requires a CPU '
                'compatible with x86-64-v2 instruction set or higher.\n\n'
                'Missings flags detected are: {}\n'.format(', '.join(missing_flags)))
 
     reporting.create_report([
         reporting.Title(title),
         reporting.Summary(summary),
-        reporting.ExternalLink(title='Building Red Hat Enterprise Linux 9 for the x86-64-v2 microarchitecture level',
-                               url='https://red.ht/rhel-9-intel-microarchitectures'),
+        reporting.ExternalLink(title='Oracle Linux 9 Microarchitecture Changes',
+                               url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/relnotes9.0/ol9-NewFeaturesandChanges.html#ol9-features-install'),
         reporting.Severity(reporting.Severity.HIGH),
         reporting.Groups([reporting.Groups.INHIBITOR]),
         reporting.Groups([reporting.Groups.SANITY]),
         reporting.Remediation(hint=('If case of using virtualization, virtualization platforms often allow '
                                     'configuring a minimum denominator CPU model for compatibility when migrating '
                                     'between different CPU models. Ensure that minimum requirements are not below '
-                                    'that of RHEL9\n')),
+                                    'that of OL9\n')),
     ])
 
 

@@ -5,8 +5,8 @@ from leapp.libraries.stdlib import api
 from leapp.models import DistributionSignedRPM, TrackedFilesInfoSource
 
 DEFAULT_OPENSSL_CONF = '/etc/pki/tls/openssl.cnf'
-URL_8_CRYPTOPOLICIES = 'https://red.ht/rhel-8-system-wide-crypto-policies'
-URL_9_CRYPTOPOLICIES = 'https://red.ht/rhel-9-system-wide-crypto-policies'
+URL_8_CRYPTOPOLICIES = 'https://docs.oracle.com/en/operating-systems/oracle-linux/8/security/security-ImplementingAdditionalSecurityFeaturesandBestPractices.html#system-crypto-policies'
+URL_9_CRYPTOPOLICIES = 'https://docs.oracle.com/en/operating-systems/oracle-linux/9/security/security-ImplementingAdditionalSecurityFeaturesandBestPractices.html#system-crypto-policies'
 
 
 def check_ibmca():
@@ -21,7 +21,7 @@ def check_ibmca():
     summary = (
         'The presence of openssl-ibmca package suggests that the system may be configured'
         ' to use the IBMCA OpenSSL engine.'
-        ' Due to major changes in OpenSSL and libica between RHEL {source} and RHEL {target} it is not'
+        ' Due to major changes in OpenSSL and libica between OL {source} and OL {target} it is not'
         ' possible to migrate OpenSSL configuration files automatically. Therefore,'
         ' it is necessary to enable IBMCA {tech} in the OpenSSL config file manually'
         ' after the system upgrade.'
@@ -78,7 +78,7 @@ def check_default_openssl():
     # current wording could be inaccurate.
     summary = (
         'The OpenSSL configuration file ({fpath}) has been'
-        ' modified on the system. RHEL 8 (and newer) systems provide a crypto-policies'
+        ' modified on the system. OL 8 (and newer) systems provide a crypto-policies'
         ' mechanism ensuring usage of system-wide secure cryptography algorithms.'
         ' Also the target system uses newer version of OpenSSL that is not fully'
         ' compatible with the current one.'
@@ -91,7 +91,7 @@ def check_default_openssl():
         ' the upgrade if it depends on the current OpenSSL configuration.'
         ' Such a problem may be caused by using a particular OpenSSL engine, as'
         ' OpenSSL engines built for the'
-        ' RHEL {source} system are not compatible with RHEL {target}.'
+        ' OL {source} system are not compatible with OL {target}.'
         .format(
             fpath=DEFAULT_OPENSSL_CONF,
             source=version.get_source_major_version(),
@@ -102,9 +102,9 @@ def check_default_openssl():
         # NOTE(pstodulk): that a try to make things with engine/providers a
         # little bit better (see my TODO note above)
         summary += (
-            '\n\nNote the legacy ENGINE API is deprecated since RHEL 8 and'
+            '\n\nNote the legacy ENGINE API is deprecated since OL 8 and'
             ' it is required to use the new OpenSSL providers API instead on'
-            ' RHEL 9 systems.'
+            ' OL 9 systems.'
         )
     hint = (
         'Check that your ability to login to the system does not depend on'

@@ -15,7 +15,7 @@ def line_empty(line):
 def parse_config(config):
     """Parse OpenSSH server configuration or the output of sshd test option."""
 
-    # RHEL7 defaults
+    # OL7 defaults
     ret = OpenSshConfig(
         permit_root_login=[],
         deprecated_directives=[]

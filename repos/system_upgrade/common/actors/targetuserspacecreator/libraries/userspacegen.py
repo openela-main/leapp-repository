@@ -56,7 +56,6 @@ from leapp.utils.deprecation import suppress_deprecation
 
 PROD_CERTS_FOLDER = 'prod-certs'
 PERSISTENT_PACKAGE_CACHE_DIR = '/var/lib/leapp/persistent_package_cache'
-DEDICATED_LEAPP_PART_URL = 'https://access.redhat.com/solutions/7011704'
 
 
 def _check_deprecated_rhsm_skip():
@@ -158,7 +157,7 @@ def _import_gpg_keys(context, install_root_dir, target_major_version):
     except CalledProcessError as exc:
         raise StopActorExecutionError(
             message=(
-                'Unable to import GPG certificates to install RHEL {} userspace packages.'
+                'Unable to import GPG certificates to install OL {} userspace packages.'
                 .format(target_major_version)
             ),
             details={'details': str(exc), 'stderr': exc.stderr}
@@ -175,8 +174,8 @@ def _handle_transaction_err_msg_size_old(err):
 
     message = ('There is not enough space on the file system hosting /var/lib/leapp directory '
                'to extract the packages.')
-    details = {'hint': "Please follow the instructions in the '{}' section of the article at: "
-                       "link: https://access.redhat.com/solutions/5057391".format(article_section)}
+    details = {'hint': "Please ensure enough space is available "
+                       "documentation link: https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp/leapp-Preface.html "}
 
     raise StopActorExecutionError(message=message, details=details)
 
@@ -201,8 +200,7 @@ def _handle_transaction_err_msg_size(err):
         'It is also a good practice to create dedicated partition'
         ' for /var/lib/leapp when more space is needed, which can be'
         ' dropped after the system upgrade is fully completed'
-        ' For more info, see: {}'
-        .format(size_str, DEDICATED_LEAPP_PART_URL)
+        .format(size_str)
     )
     # we do not want to confuse customers by the orig msg speaking about
     # missing space on '/'. Skip the Disk Requirements section.
@@ -247,7 +245,7 @@ def prepare_target_userspace(context, userspace_dir, enabled_repos, packages):
         try:
             context.call(cmd, callback_raw=utils.logging_handler)
         except CalledProcessError as exc:
-            message = 'Unable to install RHEL {} userspace packages.'.format(target_major_version)
+            message = 'Unable to install OL {} userspace packages.'.format(target_major_version)
             details = {'details': str(exc), 'stderr': exc.stderr}
 
             if 'more space needed on the' in exc.stderr:
@@ -809,7 +807,7 @@ def _get_rhsm_available_repoids(context):
     # at-least-one-appstream and at-least-one-baseos among present repoids
     if not repoids or all("baseos" not in ri for ri in repoids) or all("appstream" not in ri for ri in repoids):
         reporting.create_report([
-            reporting.Title('Cannot find required basic RHEL target repositories.'),
+            reporting.Title('Cannot find required basic OL target repositories.'),
             reporting.Summary(
                 'This can happen when a repository ID was entered incorrectly either while using the --enablerepo'
                 ' option of leapp or in a third party actor that produces a CustomTargetRepositoryMessage.'
@@ -818,25 +816,21 @@ def _get_rhsm_available_repoids(context):
             reporting.Severity(reporting.Severity.HIGH),
             reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint=(
-                'It is required to have RHEL repositories on the system'
+                ' It is required to have OL repositories on the system '
                 ' provided by the subscription-manager unless the --no-rhsm'
                 ' option is specified. You might be missing a valid SKU for'
                 ' the target system or have a failed network connection.'
                 ' Check whether your system is attached to a valid SKU that is'
-                ' providing RHEL {} repositories.'
-                ' If you are using Red Hat Satellite, read the upgrade documentation'
-                ' to set up Satellite and the system properly.'
+                ' providing OL {} repositories.'
+                ' If you are using Oracle Linux Manager, read the upgrade documentation'
+                ' to set up OLM and the system properly.'
 
             ).format(target_major_version)),
-            reporting.ExternalLink(
-                url='https://access.redhat.com/solutions/5392811',
-                title='RHEL 7 to RHEL 8 LEAPP Upgrade Failing When Using Red Hat Satellite'
-            ),
             reporting.ExternalLink(
                 # https://red.ht/preparing-for-upgrade-to-rhel8
                 # https://red.ht/preparing-for-upgrade-to-rhel9
                 # https://red.ht/preparing-for-upgrade-to-rhel10
-                url='https://red.ht/preparing-for-upgrade-to-rhel{}'.format(target_major_version),
+                url='https://docs.oracle.com/en/operating-systems/oracle-linux/{}/leapp/leapp-PreparingfortheUpgrade.html#chap-leapp-prep'.format(target_major_version),
                 title='Preparing for the upgrade')
             ])
         raise StopActorExecution()
@@ -936,7 +930,7 @@ def _get_rh_available_repoids(context, indata):
                 os.rename('{0}.back'.format(foreign_repofile), foreign_repofile)
 
     api.current_logger().debug(
-        'The following repofiles are considered as provided by RedHat: {0}'.format(' '.join(rh_repoids))
+        'The following repofiles are considered as provided by Oracle: {0}'.format(' '.join(rh_repoids))
     )
     return rh_repoids
 
@@ -945,7 +939,7 @@ def gather_target_repositories(context, indata):
     """
     Get available required target repositories and inhibit or raise error if basic checks do not pass.
 
-    In case of repositories provided by Red Hat, it's checked whether the basic
+    In case of repositories provided by Oracle, it's checked whether the basic
     required repositories are available (or at least defined) in the given
     context. If not, raise StopActorExecutionError.
 
@@ -988,19 +982,13 @@ def gather_target_repositories(context, indata):
         reporting.create_report([
             reporting.Title('There are no enabled target repositories'),
             reporting.Summary(
-                'This can happen when a system is not correctly registered with the subscription manager'
-                ' or, when the leapp --no-rhsm option has been used, no custom repositories have been'
-                ' passed on the command line.'
+                 'This can happen when no custom repositories have been passed on the command line.'
             ),
             reporting.Groups([reporting.Groups.REPOSITORY]),
             reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Severity(reporting.Severity.HIGH),
             reporting.Remediation(hint=(
-                'Ensure the system is correctly registered with the subscription manager and that'
-                ' the current subscription is entitled to install the requested target version {version}.'
-                ' If you used the --no-rhsm option (or the LEAPP_NO_RHSM=1 environment variable is set),'
-                ' ensure the custom repository file is provided with'
-                ' properly defined repositories and that the --enablerepo option for leapp is set if the'
+                ' Check that the --enablerepo option for leapp is set if the'
                 ' repositories are defined in any repofiles under the /etc/yum.repos.d/ directory.'
                 ' For more information on custom repository files, see the documentation.'
                 ' Finally, verify that the "/etc/leapp/files/repomap.json" file is up-to-date.'
@@ -1009,7 +997,7 @@ def gather_target_repositories(context, indata):
                 # https://red.ht/preparing-for-upgrade-to-rhel8
                 # https://red.ht/preparing-for-upgrade-to-rhel9
                 # https://red.ht/preparing-for-upgrade-to-rhel10
-                url='https://red.ht/preparing-for-upgrade-to-rhel{}'.format(target_major_version),
+                url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/leapp',
                 title='Preparing for the upgrade'),
             reporting.ExternalLink(
                 url='https://access.redhat.com/solutions/7001181',
@@ -1034,12 +1022,10 @@ def gather_target_repositories(context, indata):
             reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Severity(reporting.Severity.HIGH),
             reporting.ExternalLink(
-                # NOTE: Article covers both RHEL 7 to RHEL 8 and RHEL 8 to RHEL 9
-                url='https://access.redhat.com/articles/4977891',
-                title='Customizing your Red Hat Enterprise Linux in-place upgrade'),
+                url='https://docs.oracle.com/en/operating-systems/oracle-linux/9/leapp',
+                title='Using Command Arguments to Enable Repositories'),
             reporting.Remediation(hint=(
-                'Consider using the custom repository file, which is documented in the official'
-                ' upgrade documentation. Check whether a repository ID has been'
+                ' Check whether a repository ID has been'
                 ' entered incorrectly with the --enablerepo option of leapp.'
                 ' Check the leapp logs to see the list of all available repositories.'
             ))

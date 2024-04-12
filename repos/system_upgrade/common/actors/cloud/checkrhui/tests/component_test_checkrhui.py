@@ -26,7 +26,7 @@ from leapp.models import (
 from leapp.reporting import Report
 from leapp.snactor.fixture import current_actor_context
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 
 def mk_pkg(name):

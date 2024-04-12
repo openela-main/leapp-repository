@@ -6,9 +6,9 @@ from leapp.tags import ChecksPhaseTag, IPUWorkflowTag
 
 class CheckMemory(Actor):
     """
-    The actor check the size of RAM against RHEL8 minimal hardware requirements
+    The actor check the size of RAM against OL8 minimal hardware requirements
 
-    Using the following resource: https://access.redhat.com/articles/rhel-limits
+    Using the following resource: https://docs.oracle.com/en/operating-systems/oracle-linux/9/install/
     """
 
     name = 'checkmemory'

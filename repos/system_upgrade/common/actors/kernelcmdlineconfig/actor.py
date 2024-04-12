@@ -9,7 +9,7 @@ from leapp.tags import FinalizationPhaseTag, IPUWorkflowTag
 
 class KernelCmdlineConfig(Actor):
     """
-    Append extra arguments to the target RHEL kernel command line
+    Append extra arguments to the target OL kernel command line
     """
 
     name = 'kernelcmdlineconfig'

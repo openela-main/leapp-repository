@@ -5,7 +5,7 @@ from leapp.libraries.stdlib import api
 from leapp.models import DistributionSignedRPM, NISConfig
 
 report_summary = (
-    'The NIS components (ypserv, ypbind, and yp-tools) are no longer available in RHEL-9.'
+    'The NIS components (ypserv, ypbind, and yp-tools) are no longer available in OL-9.'
     ' The technology behind those packages is based an outdated design patterns, which are'
     ' no longer considered as secure. There is no direct alternative with fully compatible'
     ' features.'
@@ -14,9 +14,6 @@ report_summary = (
 report_hint = (
     'The alternatives are LDAP and for some use cases Kerberos or migrating to IPA.'
 )
-
-report_link_url = 'https://access.redhat.com/solutions/5991271'
-
 
 def report_nis():
     """
@@ -61,8 +58,6 @@ def report_nis():
         reporting.Summary(report_summary),
         reporting.Severity(reporting.Severity.MEDIUM),
         reporting.Groups([reporting.Groups.SERVICES]),
-        reporting.ExternalLink(title='RHEL 9 (NIS) discontinuation',
-                               url=report_link_url),
         reporting.Remediation(hint=report_hint),
     ]
 

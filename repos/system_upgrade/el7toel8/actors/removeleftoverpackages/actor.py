@@ -9,7 +9,7 @@ from leapp.tags import ExperimentalTag, IPUWorkflowTag, RPMUpgradePhaseTag
 
 class RemoveLeftoverPackages(Actor):
     """
-    Remove el7 packages left on the system after the upgrade to RHEL 8.
+    Remove el7 packages left on the system after the upgrade to OL 8.
 
     Removal of el7 packages is necessary in order to keep the machine in supported state.
     Actor generates report telling users what packages have been removed.

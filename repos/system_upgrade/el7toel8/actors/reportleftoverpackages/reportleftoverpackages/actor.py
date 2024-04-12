@@ -24,7 +24,7 @@ class ReportLeftoverPackages(Actor):
         to_remove = ['-'.join([pkg.name, pkg.version, pkg.release]) for pkg in leftover_packages.items]
 
         if removed_packages:
-            title = 'Leftover RHEL 7 packages have been removed'
+            title = 'Leftover OL 7 packages have been removed'
 
             if removed_packages.items:
                 removed = ['-'.join([pkg.name, pkg.version, pkg.release]) for pkg in removed_packages.items]
@@ -52,10 +52,10 @@ class ReportLeftoverPackages(Actor):
             self.log.info('No leftover packages, skipping...')
             return
 
-        summary = 'Following RHEL 7 packages have not been upgraded:\n{}\n'.format('\n'.join(to_remove))
+        summary = 'Following OL 7 packages have not been upgraded:\n{}\n'.format('\n'.join(to_remove))
         summary += 'Please remove these packages to keep your system in supported state.\n'
         create_report([
-            reporting.Title('Some RHEL 7 packages have not been upgraded'),
+            reporting.Title('Some OL 7 packages have not been upgraded'),
             reporting.Summary(summary),
             reporting.Severity(reporting.Severity.HIGH),
             reporting.Groups([reporting.Groups.SANITY]),

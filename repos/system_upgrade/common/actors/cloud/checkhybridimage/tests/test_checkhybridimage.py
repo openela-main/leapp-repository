@@ -7,7 +7,7 @@ from leapp.libraries.stdlib import api
 from leapp.models import FirmwareFacts, InstalledRPM, RPM
 from leapp.reporting import Report
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 WA_AGENT_RPM = RPM(
     name='WALinuxAgent', version='0.1', release='1.sm01', epoch='1', packager=RH_PACKAGER, arch='noarch',
     pgpsig='RSA/SHA256, Mon 01 Jan 1970 00:00:00 AM -03, Key ID 199e2f91fd431d51'

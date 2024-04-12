@@ -10,7 +10,8 @@ from leapp.libraries.common.config import get_consumed_data_stream_id, get_env
 from leapp.libraries.common.rpms import get_leapp_packages, LeappComponents
 from leapp.libraries.stdlib import api
 
-SERVICE_HOST_DEFAULT = "https://cert.cloud.redhat.com"
+# Dummy Oracle URL
+SERVICE_HOST_DEFAULT = "https://cert.cloud.oracle.com"
 REQUEST_TIMEOUT = (5, 30)
 MAX_ATTEMPTS = 3
 ASSET_PROVIDED_DATA_STREAMS_FIELD = 'provided_data_streams'

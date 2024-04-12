@@ -8,7 +8,7 @@ CUSTOM_NETWORK_SCRIPTS = [
     "/sbin/ifdown-local",
     "/sbin/ifdown-pre-local",
 ]
-DOC_URL = "https://red.ht/upgrading-RHEL-8-to-RHEL-9-network-scripts"
+DOC_URL = "https://docs.oracle.com/en/operating-systems/oracle-linux/9/network/network-ConfiguringtheSystemsNetwork.html#topic_fg3_yfc_fzb"
 
 
 def generate_report(existing_custom_network_scripts):
@@ -17,8 +17,8 @@ def generate_report(existing_custom_network_scripts):
     # Show documentation url if custom network-scripts detected
     title = "custom network-scripts detected"
     summary = (
-        "RHEL 9 does not support the legacy network-scripts package that was"
-        " deprecated in RHEL 8. Custom network-scripts have been detected."
+        "OL 9 does not support the legacy network-scripts package that was"
+        " deprecated in OL 8. Custom network-scripts have been detected."
     )
 
     reporting.create_report(
@@ -37,7 +37,7 @@ def generate_report(existing_custom_network_scripts):
             reporting.Groups([reporting.Groups.NETWORK, reporting.Groups.SERVICES]),
             reporting.ExternalLink(
                 title=(
-                    "Upgrading from RHEL 8 to 9 - migrating custom network-scripts to"
+                    "Upgrading from OL 8 to 9 - migrating custom network-scripts to"
                     " NetworkManager dispatcher scripts"
                 ),
                 url=DOC_URL,

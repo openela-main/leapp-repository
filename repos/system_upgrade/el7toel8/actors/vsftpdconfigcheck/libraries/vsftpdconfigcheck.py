@@ -10,7 +10,7 @@ def check_config_supported(tcpwrap_facts, vsftpd_facts):
         create_report([
             reporting.Title('Unsupported vsftpd configuration'),
             reporting.Summary(
-                    'tcp_wrappers support has been removed in RHEL-8. '
+                    'tcp_wrappers support has been removed in OL8. '
                     'Some configuration files set the tcp_wrappers option to true and '
                     'there is some vsftpd-related configuration in /etc/hosts.deny '
                     'or /etc/hosts.allow. Please migrate it manually. '
@@ -24,8 +24,8 @@ def check_config_supported(tcpwrap_facts, vsftpd_facts):
             reporting.Groups([reporting.Groups.SERVICES, reporting.Groups.NETWORK]),
             reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.ExternalLink(
-                title='Replacing TCP Wrappers in RHEL 8',
-                url='https://access.redhat.com/solutions/3906701'
+                title='Replacing TCP Wrappers in OL 8',
+                url='https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp'
             ),
             reporting.RelatedResource('package', 'tcp_wrappers'),
             reporting.RelatedResource('package', 'vsftpd'),

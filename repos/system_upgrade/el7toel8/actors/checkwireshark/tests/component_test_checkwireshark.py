@@ -2,7 +2,7 @@ from leapp.models import DistributionSignedRPM, RPM
 from leapp.reporting import Report
 from leapp.snactor.fixture import current_actor_context
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 
 def test_actor_with_grep_package(current_actor_context):

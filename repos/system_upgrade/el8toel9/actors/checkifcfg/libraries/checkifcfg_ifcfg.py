@@ -74,8 +74,8 @@ def process():
 
     if bad_type_files:
         title = 'Network configuration for unsupported device types detected'
-        summary = ('RHEL 9 does not support the legacy network-scripts'
-                   ' package that was deprecated in RHEL 8 in favor of'
+        summary = ('OL 9 does not support the legacy network-scripts'
+                   ' package that was deprecated in OL 8 in favor of'
                    ' NetworkManager. Files for device types that are not'
                    ' supported by NetworkManager are present in the system.'
                    ' Files with the problematic configuration:{}').format(
@@ -104,8 +104,8 @@ def process():
 
     if not_controlled_files:
         title = 'Network configuration with disabled NetworkManager support detected'
-        summary = ('RHEL 9 does not support the legacy network-scripts'
-                   ' package that was deprecated in RHEL 8 in favor of'
+        summary = ('OL 9 does not support the legacy network-scripts'
+                   ' package that was deprecated in OL 8 in favor of'
                    ' NetworkManager. Configuration present in the system'
                    ' prohibit NetworkManager from loading it.'
                    ' Files with the problematic configuration:{}').format(

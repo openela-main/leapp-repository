@@ -9,7 +9,7 @@ from leapp.libraries.common.testutils import create_report_mocked, CurrentActorM
 from leapp.libraries.stdlib import api
 from leapp.models import DistributionSignedRPM, KernelInfo, RPM
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 # Does not make sense to run any tests when the module is not accessible
 pytest.importorskip("rpm")

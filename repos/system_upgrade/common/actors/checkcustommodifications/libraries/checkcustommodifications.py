@@ -84,9 +84,9 @@ def check_modified_code(msgs):
     summary = (
         'We have detected that some files of the tooling processing the in-place'
         ' upgrade have been modified. Note that such modifications can be allowed'
-        ' only after consultation with Red Hat - e.g. when support suggests'
+        ' only after consultation with Oracle - e.g. when support suggests'
         ' the change to resolve discovered problem.'
-        ' If these changes have not been approved by Red Hat, the in-place upgrade'
+        ' If these changes have not been approved by Oracle, the in-place upgrade'
         ' is unsupported.'
         '\nFollowing files have been modified:{files}'
         .format(files=_pretty_files(filtered_msgs))
@@ -102,10 +102,12 @@ def check_custom_actors(msgs):
     title = 'Detected custom leapp actors or files.'
     summary = (
         'We have detected installed custom actors or files on the system.'
-        ' These can be provided e.g. by third party vendors, Red Hat consultants,'
+        ' These can be provided e.g. by third party vendors, Oracle consultants,'
         ' or can be created by users to customize the upgrade (e.g. to migrate'
         ' custom applications).'
-        ' This is allowed and appreciated. However Red Hat is not responsible'
+        ' You may also have actors, that are leftovers of previous OL7 to OL8 '
+         'upgrade '
+        ' This is allowed and appreciated. However Oracle is not responsible'
         ' for any issues caused by these custom leapp actors.'
         ' Note that upgrade tooling is under agile development which could'
         ' require more frequent update of custom actors.'
@@ -120,8 +122,8 @@ def check_custom_actors(msgs):
     )
     links = [
         reporting.ExternalLink(
-            url='https://red.ht/customize-rhel-upgrade',
-            title='Customizing your Red Hat Enterprise Linux in-place upgrade'
+            url='https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp/',
+            title='Upgrading Systems With Leapp'
         )
     ]
 

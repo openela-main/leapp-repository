@@ -7,7 +7,7 @@ from leapp.tags import ChecksPhaseTag, IPUWorkflowTag
 
 class CheckMicroarchitecture(Actor):
     """
-    Inhibit if RHEL9 microarchitecture requirements are not satisfied
+    Inhibit if OL9 microarchitecture requirements are not satisfied
 
 
     As per `x86-64-ABI`_ In addition to the AMD64 baseline architecture, several
@@ -16,7 +16,7 @@ class CheckMicroarchitecture(Actor):
     sense that features from previous levels are implicitly included in later
     levels.
 
-    RHEL9 has a higher CPU requirement than older versions, it now requires a
+    OL9 has a higher CPU requirement than older versions, it now requires a
     CPU compatible with ``x86-64-v2`` instruction set or higher.
 
     .. table:: Required CPU features by microarchitecure level with a
