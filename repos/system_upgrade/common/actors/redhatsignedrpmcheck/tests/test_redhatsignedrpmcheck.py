@@ -4,7 +4,7 @@ from leapp.libraries.common.testutils import create_report_mocked, produce_mocke
 from leapp.libraries.stdlib import api
 from leapp.models import InstalledUnsignedRPM, RPM
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 
 def test_actor_execution_without_unsigned_data(monkeypatch):

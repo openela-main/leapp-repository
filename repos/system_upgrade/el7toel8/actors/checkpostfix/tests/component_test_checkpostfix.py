@@ -2,7 +2,7 @@ from leapp.models import DistributionSignedRPM, RPM
 from leapp.reporting import Report
 from leapp.snactor.fixture import current_actor_context
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 with_postfix = [
     RPM(name='grep', version='0.1', release='1.sm01', epoch='1', packager=RH_PACKAGER, arch='noarch',

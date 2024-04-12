@@ -1,7 +1,7 @@
 from leapp.models import InstalledKdeAppsFacts, InstalledRPM, RPM
 from leapp.snactor.fixture import current_actor_context
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 #  KDE apps (only name matters, other values are irrelevant)
 okular_RPM = RPM(name='okular', version='0.1', release='1.sm01', epoch='1', packager=RH_PACKAGER, arch='noarch',

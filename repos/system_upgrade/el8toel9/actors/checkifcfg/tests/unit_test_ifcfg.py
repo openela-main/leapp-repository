@@ -2,7 +2,7 @@ from leapp.models import IfCfg, IfCfgProperty, InstalledRPM, RPM, RpmTransaction
 from leapp.reporting import Report
 from leapp.utils.report import is_inhibitor
 
-RH_PACKAGER = "Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>"
+RH_PACKAGER = "Oracle America <https://github.com/oracle/oracle-linux>"
 
 NETWORK_SCRIPTS_RPM = RPM(
     name="network-scripts",

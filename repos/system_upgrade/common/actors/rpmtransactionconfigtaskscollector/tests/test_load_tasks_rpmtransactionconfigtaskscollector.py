@@ -4,7 +4,7 @@ from leapp.libraries.actor.rpmtransactionconfigtaskscollector import load_tasks,
 from leapp.libraries.stdlib import api
 from leapp.models import DistributionSignedRPM, RPM
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 
 def test_load_tasks(tmpdir, monkeypatch):

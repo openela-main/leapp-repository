@@ -9,7 +9,7 @@ def _generate_rpm_with_name(name):
                release='1.sm01',
                epoch='1',
                pgpsig='RSA/SHA256, Mon 01 Jan 1970 00:00:00 AM -03, Key ID 199e2f91fd431d51',
-               packager='Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>',
+               packager='Oracle America <https://github.com/oracle/oracle-linux>',
                arch='noarch')
 
 

@@ -12,7 +12,7 @@ from leapp.models import (
 )
 from leapp.snactor.fixture import current_actor_context
 
-RH_PACKAGER = 'Red Hat, Inc. <http://bugzilla.redhat.com/bugzilla>'
+RH_PACKAGER = 'Oracle America <https://github.com/oracle/oracle-linux>'
 
 
 def fake_package(pkg_name):
