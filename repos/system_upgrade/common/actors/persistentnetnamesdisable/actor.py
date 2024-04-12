@@ -30,7 +30,7 @@ class PersistentNetNamesDisable(Actor):
         return len(interfaces) == 1 and interfaces[0].name == 'eth0'
 
     def disable_persistent_naming(self):
-        self.log.info("Single eth0 network interface detected. Appending 'net.ifnames=0' to RHEL-8 kernel commandline")
+        self.log.info("Single eth0 network interface detected. Appending 'net.ifnames=0' to OL8 kernel commandline")
         self.produce(KernelCmdlineArg(**{'key': 'net.ifnames', 'value': '0'}))
 
     def process(self):
@@ -44,14 +44,11 @@ class PersistentNetNamesDisable(Actor):
                 reporting.Summary(
                     'Detected multiple physical network interfaces where one or more use kernel naming (e.g. eth0). '
                     'Upgrade process can not continue because stability of names can not be guaranteed. '
-                    'Please read the article at https://access.redhat.com/solutions/4067471 for more information.'
+                    'Please read the leapp upgrade guide for more information.'
                 ),
                 reporting.ExternalLink(
-                    title='How to perform an in-place upgrade to RHEL 8 when using kernel NIC names on RHEL 7',
-                    url='https://access.redhat.com/solutions/4067471'
-                ),
-                reporting.Remediation(
-                    hint='Rename all ethX network interfaces following the attached KB solution article.'
+                    title='How to perform an in-place upgrade to OL 8',
+                    url='https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp'
                 ),
                 reporting.Severity(reporting.Severity.HIGH),
                 reporting.Groups([reporting.Groups.NETWORK]),

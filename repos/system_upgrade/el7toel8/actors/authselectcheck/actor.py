@@ -41,7 +41,7 @@ class AuthselectCheck(Actor):
                                 'PAM and nsswitch.conf configuration. '
                                 'If no, current configuration will be kept '
                                 'intact.',
-                    reason='There is a new tool called authselect in RHEL8 '
+                    reason='There is a new tool called authselect in OL8 '
                            'that replaced authconfig which is used to manage '
                            'authentication (PAM) and identity (nsswitch.conf) '
                            'sources. It is recommended to switch to this tool.'
@@ -96,7 +96,7 @@ class AuthselectCheck(Actor):
                 'Authselect will be used to configure PAM and nsswitch.conf.'
             ),
             reporting.Summary(
-                'There is a new tool called authselect in RHEL8 that '
+                'There is a new tool called authselect in OL8 that '
                 'replaced authconfig. The upgrade process detected '
                 'that authconfig was used to generate current '
                 'configuration and it will automatically convert it '
@@ -122,7 +122,7 @@ class AuthselectCheck(Actor):
                 'Current PAM and nsswitch.conf configuration will be kept.'
             ),
             reporting.Summary(
-                'There is a new tool called authselect in RHEL8 that '
+                'There is a new tool called authselect in OL8 that '
                 'replaced authconfig. The upgrade process was unable '
                 'to find an authselect profile that would be equivalent '
                 'to your current configuration. Therefore your '
@@ -148,7 +148,7 @@ class AuthselectCheck(Actor):
                     'Authselect will be used to configure PAM and nsswitch.conf.'
                 ),
                 reporting.Summary(
-                    'There is a new tool called authselect in RHEL8 that '
+                    'There is a new tool called authselect in OL8 that '
                     'replaced authconfig. The upgrade process suggested '
                     'an authselect profile that is similar to your '
                     'current configuration and your system will be switched '
@@ -168,7 +168,7 @@ class AuthselectCheck(Actor):
                     'Current PAM and nsswitch.conf configuration will be kept.'
                 ),
                 reporting.Summary(
-                    'There is a new tool called authselect in RHEL8 that '
+                    'There is a new tool called authselect in OL8 that '
                     'replaced authconfig. The upgrade process suggested '
                     'an authselect profile that is similar to your '
                     'current configuration. However this suggestion was '

@@ -1,10 +1,10 @@
 from leapp import reporting
 from leapp.libraries.common.config.version import get_source_major_version
 
-MIGRATION_GUIDE_7 = "https://red.ht/IdM-upgrading-RHEL-7-to-RHEL-8"
+MIGRATION_GUIDE_7 = "https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp"
 
 # TBD: update the doc url when migration guide 8->9 becomes available
-MIGRATION_GUIDE_8 = "https://red.ht/IdM-upgrading-RHEL-8-to-RHEL-9"
+MIGRATION_GUIDE_8 = "https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp"
 MIGRATION_GUIDES = {
     '7': MIGRATION_GUIDE_7,
     '8': MIGRATION_GUIDE_8
@@ -24,7 +24,7 @@ def ipa_inhibit_upgrade(ipainfo):
             "does not support in-place upgrade."
         ),
         reporting.Remediation(
-            hint="Follow the IdM RHEL migration guide lines."
+            hint="Follow the IdM OL migration guide lines."
         ),
         reporting.ExternalLink(
             url=MIGRATION_GUIDES[get_source_major_version()],
@@ -63,7 +63,7 @@ def ipa_warn_pkg_installed(ipainfo):
         ),
         reporting.ExternalLink(
             url=MIGRATION_GUIDES[get_source_major_version()],
-            title="Migrating IdM from RHEL 7 to 8",
+            title="Migrating IdM from OL 7 to 8",
         ),
         reporting.Severity(reporting.Severity.MEDIUM),
         reporting.Groups([reporting.Groups.SERVICES]),

@@ -13,7 +13,7 @@ def skip_check():
     if os.getenv('LEAPP_DEVEL_SKIP_CHECK_OS_RELEASE'):
         reporting.create_report([
             reporting.Title('Skipped OS release check'),
-            reporting.Summary('Source RHEL release check skipped via LEAPP_DEVEL_SKIP_CHECK_OS_RELEASE env var.'),
+            reporting.Summary('Source OL release check skipped via LEAPP_DEVEL_SKIP_CHECK_OS_RELEASE env var.'),
             reporting.Severity(reporting.Severity.HIGH),
             reporting.Groups(COMMON_REPORT_TAGS)
         ] + related)
@@ -23,7 +23,7 @@ def skip_check():
 
 
 def check_os_version():
-    """ Check the RHEL minor version and inhibit the upgrade if it does not match the supported ones """
+    """ Check the OL minor version and inhibit the upgrade if it does not match the supported ones """
     if not version.is_supported_version():
         supported_releases = []
         for rel in version.SUPPORTED_VERSIONS:
@@ -31,7 +31,7 @@ def check_os_version():
                 supported_releases.append(rel.upper() + ' ' + ver)
         reporting.create_report([
             reporting.Title(
-                'The installed OS version is not supported for the in-place upgrade to the target RHEL version'
+                'The installed OS version is not supported for the in-place upgrade to the target OL version'
             ),
             reporting.Summary(
                 'The supported OS releases for the upgrade process:\n'

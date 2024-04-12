@@ -27,9 +27,9 @@ class OpenSshConfig(Model):
     use_privilege_separation = fields.Nullable(fields.StringEnum(['sandbox',
                                                                   'yes',
                                                                   'no']))
-    """ Value of the UsePrivilegeSeparation directive, if present. Removed in RHEL 8. """
+    """ Value of the UsePrivilegeSeparation directive, if present. Removed in OL 8. """
     protocol = fields.Nullable(fields.String())
-    """ Value of the Protocols directive, if present. Removed in RHEL 8. """
+    """ Value of the Protocols directive, if present. Removed in OL 8. """
     ciphers = fields.Nullable(fields.String())
     """ Value of the Ciphers directive, if present. Ciphers separated by comma. """
     macs = fields.Nullable(fields.String())

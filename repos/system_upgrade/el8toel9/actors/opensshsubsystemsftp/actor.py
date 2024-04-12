@@ -7,7 +7,7 @@ from leapp.tags import ChecksPhaseTag, IPUWorkflowTag
 
 class OpenSshSubsystemSftp(Actor):
     """
-    The RHEL9 changes the SCP to use SFTP protocol internally. The both RHEL8 and RHEL9
+    The OL9 changes the SCP to use SFTP protocol internally. The both OL8 and OL9
     enable SFTP server by default, but if the user disabled the SFTP for some reason,
     it might make sense to warn that some previously working SCP operations could stop
     working.

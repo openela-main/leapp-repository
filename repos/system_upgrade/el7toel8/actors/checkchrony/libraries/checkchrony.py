@@ -28,7 +28,7 @@ def check_chrony(chrony_installed):
         reporting.create_report([
             reporting.Title('chrony using default configuration'),
             reporting.Summary(
-                'default chrony configuration in RHEL8 uses leapsectz directive, which cannot be used with '
+                'default chrony configuration in OL8 uses leapsectz directive, which cannot be used with '
                 'leap smearing NTP servers, and uses a single pool directive instead of four server directives'
             ),
             reporting.Severity(reporting.Severity.MEDIUM),
@@ -41,7 +41,7 @@ def check_chrony(chrony_installed):
     else:
         reporting.create_report([
             reporting.Title('chrony using non-default configuration'),
-            reporting.Summary('chrony behavior will not change in RHEL8'),
+            reporting.Summary('chrony behavior will not change in OL8'),
             reporting.Severity(reporting.Severity.LOW),
             reporting.Groups([
                     reporting.Groups.SERVICES,

@@ -3,9 +3,9 @@ from leapp.libraries.common.config.version import get_source_major_version, get_
 from leapp.libraries.stdlib import api
 
 DEFAULT_PESID = {
-    '7': 'rhel7-base',
-    '8': 'rhel8-BaseOS',
-    '9': 'rhel9-BaseOS'
+    '7': 'ol7-latest',
+    '8': 'ol8-BaseOS',
+    '9': 'ol9-BaseOS'
 }
 
 

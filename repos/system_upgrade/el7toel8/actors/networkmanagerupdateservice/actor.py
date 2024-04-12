@@ -7,13 +7,13 @@ class NetworkManagerUpdateService(Actor):
     """
     Updates NetworkManager services status.
 
-    On Red Hat Enterprise Linux 7 if the NetworkManager service was disabled and
-    NetworkManager-wait-online enabled, the former would not be started. This changed on Red Hat
-    Enterprise Linux 8, where NM-w-o 'Requires' NM and so NM can be started even if disabled. Upon
+    On Oracle Linux 7 if the NetworkManager service was disabled and
+    NetworkManager-wait-online enabled, the former would not be started. This changed on Oracle
+    Linux 8, where NM-w-o 'Requires' NM and so NM can be started even if disabled. Upon
     upgrade, to keep the previous behavior we must disable NM-w-o when NM is disabled.
 
     See also:
-      https://bugzilla.redhat.com/show_bug.cgi?id=1520865
+      https://linux.oracle.com/errata/ELBA-2018-0778.html
     """
 
     name = 'network_manager_update_service'

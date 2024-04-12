@@ -6,18 +6,18 @@ from leapp.models import CustomTargetRepository, RepositoriesBlacklisted, Reposi
 
 # {OS_MAJOR_VERSION: PESID}
 UNSUPPORTED_PESIDS = {
-    "7": "rhel7-optional",
-    "8": "rhel8-CRB",
-    "9": "rhel9-CRB"
+    "7": "ol7-optional",
+    "8": "ol8-crb",
+    "9": "ol9-crb"
 }
 
 
 def _report_using_unsupported_repos(repos):
     report = [
-        reporting.Title("Using repository not supported by Red Hat"),
+        reporting.Title("Using repository not supported by Oracle"),
         reporting.Summary(
             "The following repositories have been used for the "
-            "upgrade, but they are not supported by the Red Hat.:\n"
+            "upgrade, but they are not supported by Oracle.:\n"
             "- {}".format("\n - ".join(repos))
         ),
         reporting.Severity(reporting.Severity.HIGH),
@@ -36,7 +36,7 @@ def _report_excluded_repos(repos):
         reporting.Title("Excluded target system repositories"),
         reporting.Summary(
             "The following repositories are not supported by "
-            "Red Hat and are excluded from the list of repositories "
+            "Oracle and are excluded from the list of repositories "
             "used during the upgrade.\n- {}".format("\n- ".join(repos))
         ),
         reporting.Severity(reporting.Severity.INFO),
@@ -75,7 +75,7 @@ def _get_pesid_repos(repo_mapping, pesid, major_version):
     Returns a list of pesid repos with the specified pesid and major version.
 
     :param str pesid: The PES ID representing the family of repositories.
-    :param str major_version: The major version of the RHEL OS.
+    :param str major_version: The major version of the OL OS.
     :returns: A set of repoids with the specified pesid and major version.
     :rtype: List[PESIDRepositoryEntry]
     """
@@ -126,7 +126,7 @@ def _are_optional_repos_disabled(repo_mapping, repos_on_system):
 
 def process():
     """
-    Exclude target repositories provided by Red Hat without support.
+    Exclude target repositories provided by Oracle without support.
 
     Conditions to exclude:
     - there are not such repositories already enabled on the source system
@@ -134,7 +134,7 @@ def process():
     - such repositories are not required for the upgrade explicitly by the user
       (e.g. via the --enablerepo option or via the /etc/leapp/files/leapp_upgrade_repositories.repo file)
 
-    E.g. CRB repository is provided by Red Hat but it is without the support.
+    E.g. CRB repository is provided by Oracle but it is without the support.
     """
 
     repo_mapping = next(api.consume(RepositoriesMapping), None)
