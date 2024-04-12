@@ -242,8 +242,6 @@ def prepare_target_userspace(context, userspace_dir, enabled_repos, packages):
             ] + repos_opt + packages
         if config.is_verbose():
             cmd.append('-v')
-        if rhsm.skip_rhsm():
-            cmd += ['--disableplugin', 'subscription-manager']
         try:
             context.call(cmd, callback_raw=utils.logging_handler)
         except CalledProcessError as exc:
@@ -1064,8 +1062,6 @@ def _gather_target_repositories(context, indata, prod_cert_path):
     :param prod_cert_path: path where the target product cert is stored
     :type prod_cert_path: string
     """
-    rhsm.set_container_mode(context)
-    rhsm.switch_certificate(context, indata.rhsm_info, prod_cert_path)
 
     _install_custom_repofiles(context, indata.custom_repofiles)
     return gather_target_repositories(context, indata)
@@ -1121,10 +1117,6 @@ def _create_target_userspace(context, indata, packages, files, target_repoids):
                 if os.path.isfile(dst_in_host) and dst_in_host.endswith('.repo'):
                     api.current_logger().debug('Removing repofile: {0}'.format(dst_in_host))
                     os.remove(dst_in_host)
-
-    # and do not forget to set the rhsm into the container mode again
-    with mounting.NspawnActions(_get_target_userspace()) as target_context:
-        rhsm.set_container_mode(target_context)
 
 
 def _apply_rhui_access_preinstall_tasks(context, rhui_setup_info):
