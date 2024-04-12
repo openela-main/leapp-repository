@@ -17,7 +17,6 @@ from leapp.libraries.common.config import architecture, utils
 from leapp.libraries.stdlib import api
 from leapp.models import DistributionSignedRPM, KernelInfo
 
-
 def get_all_pkgs_with_name(pkg_name):
     """
     Get all installed packages of the given name signed by Red Hat.
