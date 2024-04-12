@@ -11,9 +11,9 @@ def generate_report(packages):
     if not packages:
         return
     unsigned_packages_new_line = '\n'.join(['- ' + p for p in packages])
-    title = 'Packages not signed by Red Hat found on the system'
-    summary = ('The following packages have not been signed by Red Hat'
-               ' and may be removed during the upgrade process in case Red Hat-signed'
+    title = 'Packages not signed by Oracle found on the system'
+    summary = ('The following packages have not been signed by Oracle'
+               ' and may be removed during the upgrade process in case Oracle-signed'
                ' packages to be removed during the upgrade depend on them:\n{}'
                .format(unsigned_packages_new_line))
     reporting.create_report([

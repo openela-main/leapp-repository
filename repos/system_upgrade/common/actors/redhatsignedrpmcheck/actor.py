@@ -5,15 +5,15 @@ from leapp.reporting import Report
 from leapp.tags import ChecksPhaseTag, IPUWorkflowTag
 
 
-class RedHatSignedRpmCheck(Actor):
+class OracleSignedRpmCheck(Actor):
     """
-    Check if there are packages not signed by Red Hat in use. If yes, warn user about it.
+    Check if there are packages not signed by Oracle in use. If yes, warn user about it.
 
-    If any any installed RPM package does not contain a valid signature from Red Hat, a message
+    If any any installed RPM package does not contain a valid signature from Oracle, a message
     containing a warning is produced.
     """
 
-    name = 'red_hat_signed_rpm_check'
+    name = 'oracle_signed_rpm_check'
     consumes = (InstalledUnsignedRPM,)
     produces = (Report,)
     tags = (IPUWorkflowTag, ChecksPhaseTag)
