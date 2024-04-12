@@ -87,21 +87,21 @@ def _get_test_target_repofile():
     The valid RepositoryFile containing valid BaseOS and AppStream repositories
     """
     return RepositoryFile(
-        file='/etc/yum.repos.d/target_rhel.repo',
+        file='/etc/yum.repos.d/target_ol.repo',
         data=[
             RepositoryData(
                 repoid='BaseOS',
-                name="RHEL BaseOS repository",
+                name="OL BaseOS repository",
                 baseurl="/whatever/",
                 enabled=True,
-                additional_fields='{"gpgkey":"file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"}'
+                additional_fields='{"gpgkey":"file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle"}'
             ),
             RepositoryData(
                 repoid='AppStream',
-                name="RHEL AppStream repository",
+                name="OL AppStream repository",
                 baseurl="/whatever/",
                 enabled=True,
-                additional_fields='{"gpgkey":"file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release"}'
+                additional_fields='{"gpgkey":"file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle"}'
             ),
         ],
     )
@@ -112,7 +112,7 @@ def _get_test_target_repofile_additional():
     The custom target repofile containing "problematic" repositories
     """
     return RepositoryFile(
-        file='/etc/yum.repos.d/my_target_rhel.repo',
+        file='/etc/yum.repos.d/target_ol.repo',
         data=[
             RepositoryData(
                 repoid='MyRepo',
@@ -219,17 +219,17 @@ def _gpg_show_keys_mocked(key_path):
 
     This is needed to get away from dependency on the filesystem
     """
-    if key_path == '/etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release':
+    if key_path == '/etc/pki/rpm-gpg/RPM-GPG-KEY-oracle':
         return {
             'stdout': [
                 'pub:-:4096:1:199E2F91FD431D51:1256212795:::-:::scSC::::::23::0:',
                 'fpr:::::::::567E347AD0044ADE55BA8A5F199E2F91FD431D51:',
                 ('uid:-::::1256212795::DC1CAEC7997B3575101BB0FCAAC6191792660D8F::'
-                 'Red Hat, Inc. (release key 2) <security@redhat.com>::::::::::0:'),
+                 'Oracle Corporation. (release key 2) <security@oracle.com>::::::::::0:'),
                 'pub:-:4096:1:5054E4A45A6340B3:1646863006:::-:::scSC::::::23::0:',
                 'fpr:::::::::7E4624258C406535D56D6F135054E4A45A6340B3:',
                 ('uid:-::::1646863006::DA7F68E3872D6E7BDCE05225E7EB5F3ACDD9699F::'
-                 'Red Hat, Inc. (auxiliary key 3) <security@redhat.com>::::::::::0:'),
+                 'Oracle Corporation. (auxiliary key 3) <security@oracle.com>::::::::::0:'),
             ],
             'stderr': (),
             'exit_code': 0,
