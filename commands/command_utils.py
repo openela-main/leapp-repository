@@ -131,7 +131,7 @@ def vet_upgrade_path(args):
     if env_version_override:
         check_version(env_version_override)
         return (env_version_override, flavor)
-    target_release = args.target or get_target_version(flavor)
+    target_release = get_target_version(flavor)
     supported_target_versions = get_supported_target_versions(flavor)
     if target_release not in supported_target_versions:
         raise CommandError(

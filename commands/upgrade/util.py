@@ -189,24 +189,12 @@ def prepare_configuration(args):
     else:
         os.environ['LEAPP_EXPERIMENTAL'] = '0'
     os.environ['LEAPP_UNSUPPORTED'] = '0' if os.getenv('LEAPP_UNSUPPORTED', '0') == '0' else '1'
-    if args.no_rhsm:
-        os.environ['LEAPP_NO_RHSM'] = '1'
-    elif not os.path.exists('/usr/sbin/subscription-manager'):
-        os.environ['LEAPP_NO_RHSM'] = '1'
-    elif os.getenv('LEAPP_NO_RHSM') != '1':
-        os.environ['LEAPP_NO_RHSM'] = os.getenv('LEAPP_DEVEL_SKIP_RHSM', '0')
 
     if args.no_insights_register:
         os.environ['LEAPP_NO_INSIGHTS_REGISTER'] = '1'
 
     if args.enablerepo:
         os.environ['LEAPP_ENABLE_REPOS'] = ','.join(args.enablerepo)
-
-    if os.environ.get('LEAPP_NO_RHSM', '0') == '1' or args.no_rhsm_facts:
-        os.environ['LEAPP_NO_RHSM_FACTS'] = '1'
-
-    if args.channel:
-        os.environ['LEAPP_TARGET_PRODUCT_CHANNEL'] = args.channel
 
     if args.iso:
         os.environ['LEAPP_TARGET_ISO'] = args.iso
