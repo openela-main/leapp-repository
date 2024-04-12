@@ -4,7 +4,7 @@ from leapp.libraries.stdlib import api
 from leapp.libraries.stdlib import run
 from leapp.models import OracleEnabledRepos
 from leapp.tags import FirstBootPhaseTag, IPUWorkflowTag
-
+import os
 
 class OraclePostEnableRepos(Actor):
     """
@@ -17,13 +17,14 @@ class OraclePostEnableRepos(Actor):
     tags = (FirstBootPhaseTag, IPUWorkflowTag)
 
     def process(self):
-        leapp_enabled_repos = next(api.consume(OracleEnabledRepos), None)
-        repos_to_enable = leapp_enabled_repos.enabled_repos.split(',')
-        for repo in repos_to_enable:
-            try:
-                api.current_logger().warning('Trying to enable repo {}'.format(repo))
-                stdlib.run(['dnf', 'config-manager', '--enable', repo])
-            except (OSError, stdlib.CalledProcessError):
-                api.current_logger().warning('Failed to enable repo', exc_info=True)
-                return
+        if not os.getenv('LEAPP_TARGET_ISO'):
+            leapp_enabled_repos = next(api.consume(OracleEnabledRepos), None)
+            repos_to_enable = leapp_enabled_repos.enabled_repos.split(',')
+            for repo in repos_to_enable:
+                try:
+                    api.current_logger().warning('Trying to enable repo {}'.format(repo))
+                    stdlib.run(['dnf', 'config-manager', '--enable', repo])
+                except (OSError, stdlib.CalledProcessError):
+                    api.current_logger().warning('Failed to enable repo', exc_info=True)
+                    return
 

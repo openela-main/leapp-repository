@@ -942,6 +942,11 @@ def _rewrite_oci_vars_in_repofiles(context, indata):
 
     repofiles = repofileutils.get_parsed_repofiles(context)
     repodir=(os.path.join(constants.SCRATCH_DIR, 'repofiles'))
+    
+    for repofile in repofiles[:]:
+        if "iso.repo" in repofile.file:
+            repofiles.remove(repofile)
+
     if os.path.exists(repodir):
         shutil.rmtree(repodir)
 

@@ -9,7 +9,7 @@ from leapp.models import StorageInfo, TargetOSInstallationImage
 
 def inhibit_if_not_valid_iso_file(iso):
     inhibit_title = None
-    target_os = 'RHEL {}'.format(version.get_target_major_version())
+    target_os = 'OL {}'.format(version.get_target_major_version())
     if not os.path.exists(iso.path):
         inhibit_title = 'Provided {target_os} installation ISO does not exists.'.format(target_os=target_os)
         inhibit_summary_tpl = 'The supplied {target_os} ISO path \'{iso_path}\' does not point to an existing file.'
@@ -48,7 +48,7 @@ def inhibit_if_failed_to_mount_iso(iso):
     if iso.was_mounted_successfully:
         return False
 
-    target_os = 'RHEL {0}'.format(version.get_target_major_version())
+    target_os = 'OL {0}'.format(version.get_target_major_version())
     title = 'Failed to mount the provided {target_os} installation image.'
     summary = 'The provided {target_os} installation image {iso_path} could not be mounted.'
     hint = 'Verify that the provided ISO is a valid {target_os} installation image'
@@ -63,33 +63,33 @@ def inhibit_if_failed_to_mount_iso(iso):
     return True
 
 
-def inhibit_if_wrong_iso_rhel_version(iso):
-    # If the major version could not be determined, the iso.rhel_version will be an empty string
-    if not iso.rhel_version:
+def inhibit_if_wrong_iso_ol_version(iso):
+    # If the major version could not be determined, the iso.ol_version will be an empty string
+    if not iso.ol_version:
         reporting.create_report([
             reporting.Title(
-                'Failed to determine RHEL version provided by the supplied installation image.'),
+                'Failed to determine OL version provided by the supplied installation image.'),
             reporting.Summary(
-                'Could not determine what RHEL version does the supplied installation image'
+                'Could not determine what OL version does the supplied installation image'
                 ' located at {iso_path} provide.'.format(iso_path=iso.path)
             ),
-            reporting.Remediation(hint='Check that the supplied image is a valid RHEL installation image.'),
+            reporting.Remediation(hint='Check that the supplied image is a valid OL installation image.'),
             reporting.Severity(reporting.Severity.MEDIUM),
             reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Groups([reporting.Groups.REPOSITORY]),
         ])
         return
 
-    iso_rhel_major_version = iso.rhel_version.split('.')[0]
+    iso_ol_major_version = iso.ol_version.split('.')[0]
     req_major_ver = version.get_target_major_version()
-    if iso_rhel_major_version != req_major_ver:
-        summary = ('The provided RHEL installation image provides RHEL {iso_rhel_ver}, however, a RHEL '
-                   '{required_rhel_ver} image is required for the upgrade.')
+    if iso_ol_major_version != req_major_ver:
+        summary = ('The provided OL installation image provides OL {iso_ol_ver}, however, a OL '
+                   '{required_ol_ver} image is required for the upgrade.')
 
         reporting.create_report([
-            reporting.Title('The provided installation image provides invalid RHEL version.'),
-            reporting.Summary(summary.format(iso_rhel_ver=iso.rhel_version, required_rhel_ver=req_major_ver)),
-            reporting.Remediation(hint='Check that the supplied image is a valid RHEL installation image.'),
+            reporting.Title('The provided installation image provides invalid OL version.'),
+            reporting.Summary(summary.format(iso_ol_ver=iso.ol_version, required_ol_ver=req_major_ver)),
+            reporting.Remediation(hint='Check that the supplied image is a valid OL installation image.'),
             reporting.Severity(reporting.Severity.MEDIUM),
             reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Groups([reporting.Groups.REPOSITORY]),
@@ -115,8 +115,8 @@ def inhibit_if_iso_not_located_on_persistent_partition(iso):
 
     if not is_iso_on_persistent_partition:
         target_ver = version.get_target_major_version()
-        title = 'The RHEL {target_ver} installation image is not located on a persistently mounted partition'
-        summary = ('The provided RHEL {target_ver} installation image {iso_path} is located'
+        title = 'The OL {target_ver} installation image is not located on a persistently mounted partition'
+        summary = ('The provided OL {target_ver} installation image {iso_path} is located'
                    ' on a partition without an entry in /etc/fstab, causing the partition '
                    ' to be persistently mounted.')
         hint = ('Move the installation image to a partition that is persistently mounted, or create an /etc/fstab'
@@ -144,10 +144,10 @@ def inihibit_if_iso_does_not_contain_basic_repositories(iso):
     if missing_basic_repoids:
         target_ver = version.get_target_major_version()
 
-        title = 'Provided RHEL {target_ver} installation ISO is missing fundamental repositories.'
-        summary = ('The supplied RHEL {target_ver} installation ISO {iso_path} does not contain '
+        title = 'Provided OL {target_ver} installation ISO is missing fundamental repositories.'
+        summary = ('The supplied OL {target_ver} installation ISO {iso_path} does not contain '
                    '{missing_repos} repositor{suffix}')
-        hint = 'Check whether the supplied ISO is a valid RHEL {target_ver} installation image.'
+        hint = 'Check whether the supplied ISO is a valid OL {target_ver} installation image.'
 
         reporting.create_report([
             reporting.Title(title.format(target_ver=target_ver)),
@@ -177,6 +177,6 @@ def perform_target_iso_checks():
     if not is_iso_invalid:
         failed_to_mount_iso = inhibit_if_failed_to_mount_iso(target_iso)
         if not failed_to_mount_iso:
-            inhibit_if_wrong_iso_rhel_version(target_iso)
+            inhibit_if_wrong_iso_ol_version(target_iso)
             inhibit_if_iso_not_located_on_persistent_partition(target_iso)
             inihibit_if_iso_does_not_contain_basic_repositories(target_iso)
