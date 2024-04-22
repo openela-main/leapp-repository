@@ -96,8 +96,8 @@ class _BreadCrumbs(object):
         messages = get_messages(('IPUConfig',), self._crumbs['run_id'])
         versions = json.loads((messages or [{}])[0].get('message', {}).get(
             'data', '{}')).get('version', {'target': 'N/A', 'source': 'N/A'})
-        self._crumbs['target_os'] = 'Red Hat Enterprise Linux {target}'.format(**versions)
-        self._crumbs['source_os'] = 'Red Hat Enterprise Linux {source}'.format(**versions)
+        self._crumbs['target_os'] = 'Oracle Linux {target}'.format(**versions)
+        self._crumbs['source_os'] = 'Oracle Linux {source}'.format(**versions)
         self._crumbs['activity_ended'] = datetime.datetime.utcnow().isoformat() + 'Z'
         self._crumbs['env'] = {k: v for k, v in os.environ.items() if k.startswith('LEAPP_')}
         try:
