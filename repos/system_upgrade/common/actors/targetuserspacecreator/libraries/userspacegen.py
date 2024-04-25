@@ -930,7 +930,7 @@ def _get_rh_available_repoids(context, indata):
                 os.rename('{0}.back'.format(foreign_repofile), foreign_repofile)
 
     api.current_logger().debug(
-        'The following repofiles are considered as provided by RedHat: {0}'.format(' '.join(rh_repoids))
+        'The following repofiles are considered as provided by Oracle: {0}'.format(' '.join(rh_repoids))
     )
     return rh_repoids
 
