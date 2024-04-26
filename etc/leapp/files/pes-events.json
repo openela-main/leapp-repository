@@ -4221,40 +4221,6 @@
                 "x86_64",
                 "aarch64"
             ],
-            "id": 1107,
-            "in_packageset": {
-                "package": [
-                    {
-                        "name": "setools-gui",
-                        "repository": "ol7-base"
-                    }
-                ],
-                "set_id": 3107
-            },
-            "initial_release": {
-                "major_version": 7,
-                "minor_version": 7,
-                "modified": "2018-05-15T00:00:00.0Z",
-                "os_name": "OL",
-                "tag": null,
-                "z_stream": null
-            },
-            "out_packageset": null,
-            "release": {
-                "major_version": 8,
-                "minor_version": 0,
-                "modified": "2019-07-19T00:00:00.0Z",
-                "os_name": "OL",
-                "tag": null,
-                "z_stream": null
-            }
-        },
-        {
-            "action": 1,
-            "architectures": [
-                "x86_64",
-                "aarch64"
-            ],
             "id": 1108,
             "in_packageset": {
                 "package": [
