@@ -23,12 +23,14 @@ def create_inhibitors(inhibiting_entries):
         reporting.create_report([
             reporting.Title(
                 'Leapp detected loaded kernel drivers which have been removed '
-                'in OL {}. Upgrade cannot proceed.'.format(get_target_major_version())
+                'in OL {} with currently booted kernel. Upgrade cannot proceed. '
+                'If RHCK kernel is booted, consider switching to the latest UEK kernel and rerunning upgrade.'.format(get_target_major_version())
             ),
             reporting.Summary(
                 (
-                    'Support for the following OL {source} device drivers has been removed in OL {target}:\n'
-                    '     - {drivers}\n'
+                    'Support for the following OL {source} device drivers has been removed in OL {target} with currently booted kernel:\n'
+                    '- {drivers}\n'
+                    'If RHCK kernel is booted, consider switching to the latest UEK kernel and rerunning upgrade.'
                 ).format(
                     drivers='\n     - '.join([entry.driver_name for entry in drivers]),
                     target=get_target_major_version(),
