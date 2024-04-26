@@ -28,13 +28,12 @@ class i686Inhibit(Actor):
                 continue
             name, version, release, epoch, packager, arch, pgpsig = entry.split('|')
             for item in issuePackages:
-                if item in name:
+                if name in item:
                     if arch == "i686":
-                       issueList.append(name + '.' + arch)
+                       issueList.append((name + '.' + arch).encode("utf-8"))
         if issueList:
             issueList = str(issueList).strip("[]")
             issueList = issueList.replace("'","")
-            issueList = 'usbguard'
 
             warnMsg = 'rpm(s) ' + issueList + ' for i686 architecture installed. This will cause dependency failure on upgrade.'
             self.log.warning(warnMsg)
@@ -47,9 +46,8 @@ class i686Inhibit(Actor):
                         reporting.Groups([reporting.Groups.INHIBITOR]),
                         reporting.Remediation(
                             hint=(
-                                "Please run command #yum remove for all conflicting packages before upgrade, e.g. #sudo yum remove -y " + issueList.replace(",","") + ".i686"  
+                                "Please run command #yum remove for all conflicting packages before upgrade, e.g. #sudo yum remove -y " + issueList.replace(",","")
                             )
                         ),
                     ]
                 )
-
