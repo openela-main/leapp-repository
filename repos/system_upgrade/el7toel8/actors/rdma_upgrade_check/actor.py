@@ -27,7 +27,7 @@ class RDMAUpgradeCheck(Actor):
 
         has_rdma_release = has_package(InstalledRPM, 'oracle-rdma-release')
         has_libibverbs = has_package(InstalledRPM, 'libibverbs')
-        if not has_rdma_release and not has_libibverbs:    
+        if not has_rdma_release or not has_libibverbs:    
 	        return
         
         to_remove = ['libfabric']
