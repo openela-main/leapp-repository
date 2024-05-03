@@ -4,3 +4,7 @@ initial-setup
 
 # make-devel package has been removed in OL9, required to resolve conflicts Orabug 34817186
 make-devel
+
+
+#there is no shim-ia32 on OL9
+shim-ia32
