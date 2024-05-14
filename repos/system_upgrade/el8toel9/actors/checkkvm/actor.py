@@ -1,6 +1,6 @@
 from leapp.actors import Actor
 from leapp.dialogs import Dialog
-from leapp.models import DistributionSignedRPM, InstalledRPM
+from leapp.models import DistributionSignedRPM, InstalledRPM, RpmTransactionTasks
 from leapp.libraries import stdlib
 from leapp.libraries.stdlib import api
 from leapp.libraries.common.config import architecture
@@ -20,7 +20,7 @@ class CheckKVM(Actor):
 
     name = 'check_kvm'
     consumes = (DistributionSignedRPM,)
-    produces = (Report,)
+    produces = (Report,RpmTransactionTasks,)
     tags = (ChecksPhaseTag, IPUWorkflowTag)
 
     def process(self):
@@ -39,15 +39,20 @@ class CheckKVM(Actor):
         """
         Find Oracle KVM packages
         """
+        rpms_to_exclude = []
         rpms = next(api.consume(DistributionSignedRPM), DistributionSignedRPM()).items
         kvm_packages = []
 
         for pkg in rpms:
             if pkg.repository == 'ol8_kvm_appstream':
+                if pkg.name == 'libvirt-bash-completion' and pkg.stream == 'kvm_utils':
+                    rpms_to_exclude.append('libvirt-daemon-common')
+                    api.produce(RpmTransactionTasks(to_exclude=rpms_to_exclude))
                 api.current_logger().info('Oracle KVM package found {}'.format(pkg.name))
                 kvm_packages.append(pkg.name)
-
+        
         if kvm_packages:
+            api.current_logger().info('Excluding OL9 package from transaction: {}'.format('libvirt-daemon-common'))
             return kvm_packages
 
     def is_kvm_utils_enabled(self):
