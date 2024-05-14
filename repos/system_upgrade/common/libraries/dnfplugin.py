@@ -275,7 +275,7 @@ def _transaction(context, stage, target_repoids, tasks, plugin_info, xfs_info,
                 # This will make sure it is so
                 modules_to_reset = {(module.name, module.stream) for module in tasks.modules_to_reset}
                 modules_to_enable = {(module.name, module.stream) for module in tasks.modules_to_enable}
-                module_reset_list = [module[0] for module in modules_to_reset - modules_to_enable]
+                module_reset_list = [module[0] for module in modules_to_reset]
                 # exclude needed packages
                 if tasks.to_exclude:
                     exclude = 'excludepkgs={}'.format(','.join(tasks.to_exclude))

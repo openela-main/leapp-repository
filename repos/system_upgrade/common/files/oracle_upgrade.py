@@ -3,9 +3,10 @@ from __future__ import print_function
 
 import json
 import sys
-
+import logging
 import dnf
 import dnf.cli
+import dnf.module.module_base
 
 CMDS = ['check', 'download', 'dry-run', 'upgrade']
 """
@@ -46,6 +47,25 @@ class OracleUpgradeCommand(dnf.cli.Command):
         parser.add_argument('tid', nargs=1, choices=CMDS,
                             metavar="[%s]" % "|".join(CMDS))
         parser.add_argument('filename')
+
+    def _process_entities(self, entities, op, entity_name):
+        """
+        Adds list of packages for given operation to the transaction
+        """
+        entities_notfound = []
+
+        for spec in entities:
+            try:
+                op(spec)
+            except dnf.exceptions.MarkingError:
+                if isinstance(spec, (list, tuple)):
+                    entities_notfound.extend(spec)
+                else:
+                    entities_notfound.append(spec)
+        if entities_notfound:
+            err_str = ('{} marked by Leapp to {} not found '
+                       'in repositories metadata: '.format(entity_name, op.__name__) + ' '.join(entities_notfound))
+            print('Warning: ' + err_str, file=sys.stderr)
 
     def _process_packages(self, pkg_set, op):
         '''
@@ -109,12 +129,33 @@ class OracleUpgradeCommand(dnf.cli.Command):
         to_remove = self.plugin_data['pkgs_info']['to_remove']
         to_upgrade = self.plugin_data['pkgs_info']['to_upgrade']
 
+        module_base = dnf.module.module_base.ModuleBase(self.base)
+        # Module tasks
+        modules_to_enable = self.plugin_data['pkgs_info'].get('modules_to_enable', ())
+
+        available_modules_to_enable = []
+        unavailable_modules = []
+        for module in modules_to_enable:
+            matching_modules, dummy_nsvcap = module_base.get_modules(module)
+            target_bucket = available_modules_to_enable if matching_modules else unavailable_modules
+            target_bucket.append(module)
+
+        if unavailable_modules:
+            dnf_plugin_logger = logging.getLogger('dnf.plugin')
+            msg = 'The following modules were requested to be enabled, but they are unavailable: %s'
+            dnf_plugin_logger.warning(msg, ', '.join(unavailable_modules))
+
         # Packages to be removed
         self._process_packages(to_remove, self.base.remove)
         # Packages to be installed
         self._process_packages(to_install, self.base.install)
         # Packages to be upgraded
         self._process_packages(to_upgrade, self.base.upgrade)
+
+        # Modules to enable
+        self._process_entities(entities=[available_modules_to_enable],
+                               op=module_base.enable,
+                               entity_name='Module stream')
 
         self.base.distro_sync()
 
