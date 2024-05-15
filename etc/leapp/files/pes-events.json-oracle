@@ -5972,6 +5972,977 @@
       }
     },
     {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9135,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "20"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8135
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nodejs",
+            "stream": "20"
+          },
+          "out_modulestream": {
+            "name": "nodejs",
+            "stream": "20"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "20"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9135
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9137,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "mariadb",
+                "stream": "10.11"
+              }
+            ],
+            "name": "mariadb",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8137
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "mariadb",
+            "stream": "10.11"
+          },
+          "out_modulestream": {
+            "name": "mariadb",
+            "stream": "10.11"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "mariadb",
+                "stream": "10.11"
+              }
+            ],
+            "name": "mariadb",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9137
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9141,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.24"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8141
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nginx",
+            "stream": "1.24"
+          },
+          "out_modulestream": {
+            "name": "nginx",
+            "stream": "1.24"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.24"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9141
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9142,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "scala",
+                "stream": "2.10"
+              }
+            ],
+            "name": "jansi",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8142
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "scala",
+            "stream": "2.10"
+          },
+          "out_modulestream": null
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "name": "jansi",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9142
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9144,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+},
+{
+"name": "maven",
+"stream": "3.5"
+}
+],
+"name": "jansi-native",
+"repository": "oll8-AppStream"
+}
+],
+"set_id": 9144
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 2,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9145,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "jline",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9145
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9154,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "jline",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9154
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9155,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "javapackages-tools",
+"stream": "201801"
+}
+],
+"name": "jline",
+"repository": "ol8-crb"
+}
+],
+"set_id": 9155
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9146,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9146
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9147,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "maven",
+"stream": "3.5"
+},
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9147
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 2,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9148,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "maven",
+"stream": "3.5"
+},
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9148
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 5,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9149,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "javapackages-tools",
+"stream": "201801"
+}
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-crb"
+}
+],
+"set_id": 9149
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9150,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "scala",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9150
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9151,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "scala-apidoc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9151
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9152,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "scala-swing",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9152
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9153,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "scala",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9153
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9143,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "swig",
+                "stream": "4.1"
+              }
+            ],
+            "name": "swig",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8143
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "swig",
+            "stream": "4.1"
+          },
+          "out_modulestream": {
+           "name": "swig",
+           "stream": "4.1"
+         }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "swig",
+                "stream": "4.1"
+              }
+            ],
+            "name": "swig",
+            "repository": "ol9-crb"
+          }
+        ],
+        "set_id": 9143
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9138,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8138
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          },
+          "out_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9138
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9134,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php-common",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8134
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          },
+          "out_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php-common",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9134
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9139,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "16"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8139
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "postgresql",
+            "stream": "16"
+          },
+          "out_modulestream": {
+            "name": "postgresql",
+            "stream": "16"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "16"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9139
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9140,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "maven",
+                "stream": "3.8"
+              }
+            ],
+            "name": "maven",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8140
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "maven",
+            "stream": "3.8"
+          },
+          "out_modulestream": {
+            "name": "maven",
+            "stream": "3.8"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "maven",
+                "stream": "3.8"
+              }
+            ],
+            "name": "maven",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9140
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
       "action": 1,
       "architectures": [
         "x86_64",
@@ -7889,6 +8860,198 @@ null
 "os_name": "OL"
 }
 },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9156,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.22"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 9156
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nginx",
+            "stream": "1.22"
+          },
+          "out_modulestream": {
+            "name": "nginx",
+            "stream": "1.22"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.22"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9156
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9157,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "18"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 9157
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nodejs",
+            "stream": "18"
+          },
+          "out_modulestream": {
+            "name": "nodejs",
+            "stream": "18"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "18"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9157
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9158,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "15"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 9158
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "postgresql",
+            "stream": "15"
+          },
+          "out_modulestream": {
+            "name": "postgresql",
+            "stream": "15"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "15"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9158
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
     {
       "action": 6,
         "architectures": [
