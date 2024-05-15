@@ -11,7 +11,11 @@ OBSOLETED_KEYS_MAP = {
         "gpg-pubkey-37017186-45761324",
         "gpg-pubkey-db42a60e-37ea5438",
     ],
-    9: ["gpg-pubkey-d4082792-5b32db75"],
+    9: ["gpg-pubkey-d4082792-5b32db75",
+        "gpg-pubkey-16c083cd-49af3996",
+        "gpg-pubkey-a1af403a-62b43dc9",
+        "gpg-pubkey-ad986da3-5cabf60d",
+    ],
 }
 
 
