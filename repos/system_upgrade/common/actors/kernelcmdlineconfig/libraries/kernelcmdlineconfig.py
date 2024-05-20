@@ -1,4 +1,5 @@
 import re
+import glob
 
 from leapp import reporting
 from leapp.exceptions import StopActorExecutionError
@@ -82,26 +83,26 @@ def modify_args_for_default_kernel(kernel_info,
                                    kernelargs_msgs_to_add,
                                    kernelargs_msgs_to_remove,
                                    configs_to_modify_explicitly=None):
-    grubby_modify_kernelargs_cmd = ['grubby',
-                                    '--update-kernel={0}'.format(kernel_info.kernel_img_path)]
+    kernels = glob.glob("/boot/vmlinuz*el9*")
+    for kernel_version in kernels:
+        grubby_modify_kernelargs_cmd = ['grubby', '--update-kernel={}'.format(kernel_version)]
 
-    if kernelargs_msgs_to_add:
-        grubby_modify_kernelargs_cmd += [
-            '--args', '{}'.format(format_kernelarg_msgs_for_grubby_cmd(kernelargs_msgs_to_add))
-        ]
+        if kernelargs_msgs_to_add:
+            grubby_modify_kernelargs_cmd += [
+                '--args', '{}'.format(format_kernelarg_msgs_for_grubby_cmd(kernelargs_msgs_to_add))
+            ]
 
-    if kernelargs_msgs_to_remove:
-        grubby_modify_kernelargs_cmd += [
-            '--remove-args', '{}'.format(format_kernelarg_msgs_for_grubby_cmd(kernelargs_msgs_to_remove))
-        ]
+        if kernelargs_msgs_to_remove:
+            grubby_modify_kernelargs_cmd += [
+                '--remove-args', '{}'.format(format_kernelarg_msgs_for_grubby_cmd(kernelargs_msgs_to_remove))
+            ]
 
-    if configs_to_modify_explicitly:
-        for config_to_modify in configs_to_modify_explicitly:
-            cmd = grubby_modify_kernelargs_cmd + ['-c', config_to_modify]
-            run_grubby_cmd(cmd)
-    else:
-        run_grubby_cmd(grubby_modify_kernelargs_cmd)
-
+        if configs_to_modify_explicitly:
+            for config_to_modify in configs_to_modify_explicitly:
+                cmd = grubby_modify_kernelargs_cmd + ['-c', config_to_modify]
+                run_grubby_cmd(cmd)
+        else:
+            run_grubby_cmd(grubby_modify_kernelargs_cmd)
 
 def _extract_grubby_value(record):
     data = record.split('=', 1)[1]
@@ -149,7 +150,6 @@ def modify_kernel_args_in_boot_cfg(configs_to_modify_explicitly=None):
     kernel_info = next(api.consume(InstalledTargetKernelInfo), None)
     if not kernel_info:
         return
-
     # Collect desired kernelopt modifications
     kernelargs_msgs_to_add, kernelargs_msgs_to_remove = retrieve_arguments_to_modify()
     if not kernelargs_msgs_to_add and not kernelargs_msgs_to_remove:
