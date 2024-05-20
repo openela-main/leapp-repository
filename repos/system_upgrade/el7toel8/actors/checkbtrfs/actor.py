@@ -9,8 +9,6 @@ class CheckBtrfs(Actor):
     """
     Check if Btrfs filesystem is in use. If yes, inhibit the upgrade process.
 
-    Btrfs filesystem was introduced as Technology Preview with initial releases of RHEL 6 and 7. It
-    was deprecated on versions 6.6 and 7.4 and will not be present in next major version.
     """
 
     name = 'check_btrfs'
@@ -27,26 +25,15 @@ class CheckBtrfs(Actor):
             for active_module in fact.kernel_modules:
                 if active_module.filename == 'btrfs':
                     create_report([
-                        reporting.Title('Btrfs has been removed from RHEL8'),
+                        reporting.Title('Btrfs supported in UEK only'),
                         reporting.Summary(
-                            'The Btrfs file system was introduced as Technology Preview with the '
-                            'initial release of Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7. As of '
-                            'versions 6.6 and 7.4 this technology has been deprecated and removed in RHEL8.'
+                            'The Btrfs file system has been removed in RHCK8, only supported using UEK in OL8'
                         ),
                         reporting.ExternalLink(
-                            title='Considerations in adopting RHEL 8 - btrfs has been removed.',
-                            url='https://red.ht/file-systems-and-storage-removed-btrfs-rhel-8'
-                        ),
-                        reporting.ExternalLink(
-                            title='How do I prevent a kernel module from loading automatically?',
-                            url='https://access.redhat.com/solutions/41278'
-                        ),
-                        reporting.ExternalLink(
-                            title='Leapp upgrade fail with error "Inhibitor: Btrfs has been removed from RHEL8"',
-                            url='https://access.redhat.com/solutions/7020130'
+                            title='Managing the Btrfs File System',
+                            url='https://docs.oracle.com/en/operating-systems/oracle-linux/8/fsadmin/fsadmin-ManagingtheBtrfsFileSystem.html#btrfs-main'  # noqa: E501; pylint: disable=line-too-long
                         ),
                         reporting.Severity(reporting.Severity.HIGH),
-                        reporting.Groups([reporting.Groups.INHIBITOR]),
                         reporting.Groups([reporting.Groups.FILESYSTEM]),
                         reporting.Remediation(hint=hint, commands=[command]),
                         reporting.RelatedResource('kernel-driver', 'btrfs')
