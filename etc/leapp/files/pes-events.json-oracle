@@ -1,0 +1,9291 @@
+{
+  "legal_notice": "Oracle",
+  "packageinfo": [
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9001",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "oraclelinux-release-el8",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8001"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "oraclelinux-release-el9",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9001"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9002",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "oci-included-release-el8",
+            "repository": "ol8-oci_included"
+          }
+        ],
+        "set_id": "8002"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "oci-included-release-el9",
+            "repository": "ol9-oci_included"
+          }
+        ],
+        "set_id": "9002"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9003",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "unified-monitoring-agent",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8003"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9004",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "autogen-libopts",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8088"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9005",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "bind-export-libs",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8089"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9006",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "bitmap-fixed-fonts",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8090"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9007",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "celt051",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8091"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9008",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "dleyna-connector-dbus",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8092"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9009",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "dleyna-core",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8093"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9010",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "dleyna-server",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8094"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9011",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "file-roller",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8095"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9012",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "frei0r-plugins",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8096"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9013",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "frei0r-plugins",
+            "repository": "ol8-crb"
+          }
+        ],
+        "set_id": "8097"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9014",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gavl",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8098"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9015",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "GConf2",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8099"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9016",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "genisoimage",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8100"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9017",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gnu-free-fonts-common",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8101"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9018",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gnu-free-mono-fonts",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8102"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9019",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gnu-free-sans-fonts",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8103"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9020",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gnu-free-serif-fonts",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8104"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9021",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gssdp",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8105"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9022",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gtksourceview3",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8106"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9023",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gupnp",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8107"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9024",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gupnp-av",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8108"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9025",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gupnp-dlna",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8109"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9026",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "ibus-kkc",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8110"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9027",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "iptstate",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8111"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9028",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "isl",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8112"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9029",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "jimtcl",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8113"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9030",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "khmeros-fonts-common",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8114"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9031",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "kyotocabinet-libs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8115"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9032",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libavc1394",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8116"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9033",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libcacard",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8117"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9034",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libcroco",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8118"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9035",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libdmapsharing",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8119"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9036",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libdv",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8120"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9037",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libgdither",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8121"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9038",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libidn",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8122"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9039",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libiec61883",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8123"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9040",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libimobiledevice",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8124"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9041",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libkkc",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8125"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9042",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libkkc-common",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8126"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9043",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libkkc-data",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8127"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9044",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libmcpp",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8128"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9045",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libmetalink",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8129"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9046",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libmodman",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8130"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9047",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libmusicbrainz5",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8131"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9048",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "liboauth",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8132"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9049",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libplist",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8133"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9050",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libraw1394",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8134"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9051",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libtar",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8135"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9052",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libusal",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8136"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9053",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libusbmuxd",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8137"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9054",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libvirt-gconfig",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8138"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9055",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libvirt-gobject",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8139"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9056",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libvncserver",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8140"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9057",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libXvMC",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8141"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9058",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libXxf86misc",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8142"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9059",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "lua-socket",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8143"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9060",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "marisa",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8144"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9061",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "mcpp",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8145"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9062",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "metacity",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8146"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9063",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "mousetweaks",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8147"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9064",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "mozjs60",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8148"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9065",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "nautilus-sendto",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8149"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9066",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "ncompress",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8150"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9067",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "netcf-libs",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "virt",
+                "stream": "ol"
+              }
+            ]
+          }
+        ],
+        "set_id": "8151"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9068",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "netcf-libs",
+            "repository": "ol8-crb"
+          }
+        ],
+        "set_id": "8152"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9069",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "pakchois",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8153"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9070",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "paps-libs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8154"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9071",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python2-pip-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python27",
+                "stream": "2.7"
+              }
+            ]
+          }
+        ],
+        "set_id": "8155"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-pip-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9003"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9072",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python2-setuptools-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python27",
+                "stream": "2.7"
+              }
+            ]
+          }
+        ],
+        "set_id": "8156"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-setuptools-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9004"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9073",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python36",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python36",
+                "stream": "3.6"
+              }
+            ]
+          }
+        ],
+        "set_id": "8157"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9074",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "skkdic",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8158"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9075",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "spice-glib",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8159"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9076",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "spice-gtk3",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8160"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9077",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "spice-server",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8161"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9078",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "trousers",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8162"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9079",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "trousers-lib",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8163"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9080",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "usbmuxd",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8164"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9081",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xorg-x11-drv-ati",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8165"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9082",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xorg-x11-drv-intel",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8166"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9083",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xorg-x11-drv-nouveau",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8167"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9084",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xorg-x11-drv-qxl",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8168"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9085",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xorg-x11-drv-vesa",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8169"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9086",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xorg-x11-font-utils",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8170"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9090",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "ksplice-release-el8",
+            "repository": "ol8-oci_included"
+          }
+        ],
+        "set_id": "8190"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "ksplice-release-el9",
+            "repository": "ol9-oci_included"
+          }
+        ],
+        "set_id": "9006"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9091",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "cgdcbxd",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8191"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9092",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "ctags",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8192"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9093",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libgovirt",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8193"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9094",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libcgroup",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8194"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9095",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "xdelta",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8195"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 4,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9096",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "oswatcher",
+            "repository": "ol8-addons"
+          }
+        ],
+        "set_id": "8196"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "pcp",
+            "repository": "ol9-AppStream"
+          },
+          {
+            "name": "pcp-system-tools",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9007"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9097",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python36-pip-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python36",
+                "stream": "3.6"
+              }
+            ]
+          }
+        ],
+        "set_id": "8197"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-pip-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9008"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9098",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python36-setuptools-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python36",
+                "stream": "3.6"
+              }
+            ]
+          }
+        ],
+        "set_id": "8198"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-setuptools-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9009"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9099",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python38-pip-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python38",
+                "stream": "3.8"
+              }
+            ]
+          }
+        ],
+        "set_id": "8199"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-pip-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9010"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9100",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python38-setuptools-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python38",
+                "stream": "3.8"
+              }
+            ]
+          }
+        ],
+        "set_id": "8200"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-setuptools-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9011"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9101",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python39-pip-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python39",
+                "stream": "3.9"
+              }
+            ]
+          }
+        ],
+        "set_id": "8201"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-pip-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9012"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9102",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "python39-setuptools-wheel",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "python39",
+                "stream": "3.9"
+              }
+            ]
+          }
+        ],
+        "set_id": "8202"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "python3-setuptools-wheel",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9013"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9091",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-runtime",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8091"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9092",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8092"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9100",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-elfutils-debuginfod-client",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8100"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "elfutils-debuginfod-client",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9100"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9101",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-binutils",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8101"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "binutils",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9101"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9102",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-dyninst",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8102"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "dyninst",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9102"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9103",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-systemtap-client",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8103"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "systemtap-client",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9103"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9104",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-annobin-docs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8104"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "annobin-docs",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9104"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9105",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-libstdc++-devel",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8105"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "libstdc++-devel",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9105"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9106",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-ltrace",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8106"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "ltrace",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9106"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9107",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-strace",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8107"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "strace",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9107"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9108",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-systemtap",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8108"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "systemtap",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9108"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9109",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-perftools",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8109"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "perftools",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9109"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9110",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-toolchain",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8110"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "toolchain",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9110"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9111",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-elfutils-libelf",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8111"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "elfutils-libelf",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9111"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9112",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-elfutils-libs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8112"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "elfutils-libs",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9112"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9113",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-gcc",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8113"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "gcc",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9113"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9114",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-systemtap-runtime",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8114"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "systemtap-runtime",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9114"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9115",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-elfutils",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8115"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "elfutils",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9115"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9116",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-dwz",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8116"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "dwz",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9116"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9117",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-gcc-c++",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8117"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "gcc-c++",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9117"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9118",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-make",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8118"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "make",
+            "repository": "ol9-BaseOS"
+          }
+        ],
+        "set_id": "9118"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9119",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-systemtap-devel",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8119"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "systemtap-devel",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9119"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9120",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-valgrind",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8120"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "valgrind",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9120"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9121",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-gdb",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8121"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "gdb",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9121"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9122",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-11-gcc-gfortran",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8122"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": {
+        "package": [
+          {
+            "name": "gcc-gfortran",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": "9122"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9123,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "2.7"
+              },
+              {
+                "name": "ruby",
+                "stream": "3.0"
+              },
+              {
+                "name": "ruby",
+                "stream": "2.5"
+              },
+              {
+                "name": "ruby",
+                "stream": "2.6"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8123
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "2.5"
+          },
+          "out_modulestream": null
+        },
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "2.6"
+          },
+          "out_modulestream": null
+        },
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "2.7"
+          },
+          "out_modulestream": null
+        },
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "3.0"
+          },
+          "out_modulestream": null
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              null
+            ],
+            "name": "ruby",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9123
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9124,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.1"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8124
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "3.1"
+          },
+          "out_modulestream": {
+            "name": "ruby",
+            "stream": "3.1"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.1"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9124
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9124,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.3"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8124
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "3.3"
+          },
+          "out_modulestream": {
+            "name": "ruby",
+            "stream": "3.3"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.3"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9124
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9135,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "20"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8135
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nodejs",
+            "stream": "20"
+          },
+          "out_modulestream": {
+            "name": "nodejs",
+            "stream": "20"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "20"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9135
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9137,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "mariadb",
+                "stream": "10.11"
+              }
+            ],
+            "name": "mariadb",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8137
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "mariadb",
+            "stream": "10.11"
+          },
+          "out_modulestream": {
+            "name": "mariadb",
+            "stream": "10.11"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "mariadb",
+                "stream": "10.11"
+              }
+            ],
+            "name": "mariadb",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9137
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9141,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.24"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8141
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nginx",
+            "stream": "1.24"
+          },
+          "out_modulestream": {
+            "name": "nginx",
+            "stream": "1.24"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.24"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9141
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9142,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "scala",
+                "stream": "2.10"
+              }
+            ],
+            "name": "jansi",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8142
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "scala",
+            "stream": "2.10"
+          },
+          "out_modulestream": null
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "name": "jansi",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9142
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9144,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+},
+{
+"name": "maven",
+"stream": "3.5"
+}
+],
+"name": "jansi-native",
+"repository": "oll8-AppStream"
+}
+],
+"set_id": 9144
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 2,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9145,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "jline",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9145
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9154,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "jline",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9154
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9155,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "javapackages-tools",
+"stream": "201801"
+}
+],
+"name": "jline",
+"repository": "ol8-crb"
+}
+],
+"set_id": 9155
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9146,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9146
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9147,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "maven",
+"stream": "3.5"
+},
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9147
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 2,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9148,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "maven",
+"stream": "3.5"
+},
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9148
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 5,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9149,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "javapackages-tools",
+"stream": "201801"
+}
+],
+"name": "hawtjni-runtime",
+"repository": "ol8-crb"
+}
+],
+"set_id": 9149
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 6,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9150,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "scala",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9150
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9151,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "scala-apidoc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9151
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9152,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+null
+],
+"name": "scala-swing",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9152
+},
+"initial_release": null,
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+{
+"action": 1,
+"architectures": [
+"aarch64",
+"x86_64"
+],
+"id": 9153,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "scala",
+"stream": "2.10"
+}
+],
+"name": "scala",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 9153
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 4,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 0,
+"os_name": "OL"
+}
+},
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9143,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "swig",
+                "stream": "4.1"
+              }
+            ],
+            "name": "swig",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8143
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "swig",
+            "stream": "4.1"
+          },
+          "out_modulestream": {
+           "name": "swig",
+           "stream": "4.1"
+         }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "swig",
+                "stream": "4.1"
+              }
+            ],
+            "name": "swig",
+            "repository": "ol9-crb"
+          }
+        ],
+        "set_id": 9143
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9138,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8138
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          },
+          "out_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9138
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9134,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php-common",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8134
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          },
+          "out_modulestream": {
+            "name": "php",
+            "stream": "8.2"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "php",
+                "stream": "8.2"
+              }
+            ],
+            "name": "php-common",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9134
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9139,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "16"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8139
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "postgresql",
+            "stream": "16"
+          },
+          "out_modulestream": {
+            "name": "postgresql",
+            "stream": "16"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "16"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9139
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9140,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "maven",
+                "stream": "3.8"
+              }
+            ],
+            "name": "maven",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8140
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "maven",
+            "stream": "3.8"
+          },
+          "out_modulestream": {
+            "name": "maven",
+            "stream": "3.8"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "maven",
+                "stream": "3.8"
+              }
+            ],
+            "name": "maven",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9140
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9125",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "ruby-irb",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "2.5"
+              }
+            ]
+          }
+        ],
+        "set_id": "8125"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9126",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "ruby-irb",
+            "repository": "ol8-AppStream",
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.1"
+              }
+            ]
+          }
+        ],
+        "set_id": "8126"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": {
+      "package": [
+        {
+          "name": "rubygem-irb",
+          "repository": "ol9-AppStream"
+        }
+      ],
+      "set_id": "9126"
+    },
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9127",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "iptables-ebtables",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8127"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": {
+      "package": [
+        {
+          "name": "iptables-nft-services",
+          "repository": "ol9-AppStream"
+        }
+      ],
+      "set_id": "9127"
+    },
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9128",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "iptables",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8128"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": {
+      "package": [
+        {
+          "name": "iptables-nft",
+          "repository": "ol9-BaseOS"
+        }
+      ],
+      "set_id": "9128"
+    },
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9129",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "iptables-arptables",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8129"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": {
+      "package": [
+        {
+          "name": "iptables-nft",
+          "repository": "ol9-BaseOS"
+        }
+      ],
+      "set_id": "9129"
+    },
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9130",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "iptables-services",
+            "repository": "ol8-BaseOS"
+          }
+        ],
+        "set_id": "8130"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": {
+      "package": [
+        {
+          "name": "iptables-nft-services",
+          "repository": "ol9-AppStream"
+        }
+      ],
+      "set_id": "9130"
+    },
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9129",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "apache-commons-io-javadoc",
+            "repository": "ol8-crb",
+            "modulestreams": [
+              {
+                "name": "javapackages-tools",
+                "stream": "201801"
+              }
+            ]
+
+          }
+        ],
+        "set_id": "8129"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": null
+    ,
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9130",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "apache-commons-lang3-javadoc",
+            "repository": "ol8-crb",
+            "modulestreams": [
+              {
+                "name": "javapackages-tools",
+                "stream": "201801"
+              }
+            ]
+          }
+        ],
+        "set_id": "8130"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": null
+    ,
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9131",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "apache-commons-codec-javadoc",
+            "repository": "ol8-crb",
+            "modulestreams": [
+              {
+                "name": "javapackages-tools",
+                "stream": "201801"
+              }
+            ]
+          }
+        ],
+        "set_id": "8131"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": null
+    ,
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9132",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libasan6",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": "8132"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+    "out_packageset": null
+    ,
+    "release": {
+      "checked": true,
+      "major_version": 9,
+      "minor_version": 0,
+      "modified": "2022-04-01T09:00:00.0Z",
+      "os_name": "OL",
+      "tag": null,
+      "z_stream": null
+    }
+    },
+    {
+      "action": 3,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9133",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "libvirt-client",
+            "repository": "ol8-kvm_appstream",
+            "modulestreams": [
+              {
+                "name": "virt",
+                "stream": "kvm_utils"
+              }
+            ]
+          },
+          {
+            "name": "libvirt-daemon",
+            "repository": "ol8-kvm_appstream",
+            "modulestreams": [
+              {
+                "name": "virt",
+                "stream": "kvm_utils"
+              }
+            ]
+          },
+          {
+            "name": "libvirt-libs",
+            "repository": "ol8-kvm_appstream",
+            "modulestreams": [
+              {
+                "name": "virt",
+                "stream": "kvm_utils"
+              }
+            ]
+          },
+          {
+            "name": "libvirt-bash-completion",
+            "repository": "ol8-kvm_appstream",
+            "modulestreams": [
+              {
+                "name": "virt",
+                "stream": "kvm_utils"
+              }
+            ]
+          },
+          {
+            "name": "libvirt-daemon-config-network",
+            "repository": "ol8-kvm_appstream",
+            "modulestreams": [
+              {
+                "name": "virt",
+                "stream": "kvm_utils"
+              }
+            ]
+          }
+         ],
+        "set_id": "8133"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+      {
+      "in_modulestream": {
+      "name": "virt",
+      "stream": "kvm_utils"
+      },
+      "out_modulestream": null
+      }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "name": "libvirt-client",
+            "repository": "ol9-kvm_utils"
+          },
+          {
+            "name": "libvirt-daemon",
+            "repository": "ol9-kvm_utils"
+          },
+          {
+            "name": "libvirt-libs",
+            "repository": "ol9-kvm_utils"
+          }
+        ],
+        "set_id": "9133"
+      },
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 4,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13973,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19774
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "RHEL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13974,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-bundled-gems",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19775
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13975,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-default-gems",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19776
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13976,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-devel",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19777
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13977,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-doc",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19778
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13978,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-bigdecimal",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19779
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13979,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-bundler",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19780
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13980,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-io-console",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19781
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13981,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-irb",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19782
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13982,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-json",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19783
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13983,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-minitest",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19784
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13984,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-mysql2",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19785
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13985,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-mysql2-doc",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19786
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13986,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-pg",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19787
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13987,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-pg-doc",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19788
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13988,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-power_assert",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19789
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13989,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-psych",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19790
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13990,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-racc",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19791
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13991,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rake",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19792
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13992,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rbs",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19793
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13993,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rdoc",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19794
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13994,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rexml",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19795
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13995,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rss",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19796
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13996,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygems",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19797
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13997,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygems-devel",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19798
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13998,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-test-unit",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19799
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 13999,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-typeprof",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19800
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14000,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-libs",
+"repository": "ol9-AppStream"
+}
+],
+"set_id": 19801
+},
+"initial_release": {
+"major_version": 9,
+"minor_version": 3,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 9,
+"minor_version": 4,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14001,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19802
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14002,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-bundled-gems",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19803
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14003,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-default-gems",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19804
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14004,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-devel",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19805
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14005,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-doc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19806
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14006,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-abrt",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19807
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14007,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-abrt-doc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19808
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14008,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-bigdecimal",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19809
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14009,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-bundler",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19810
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14010,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-io-console",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19811
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14011,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-irb",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19812
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14012,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-json",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19813
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14013,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-minitest",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19814
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14014,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-mysql2",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19815
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14015,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-mysql2-doc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19816
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14016,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-pg",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19817
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14017,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-pg-doc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19818
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14018,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-power_assert",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19819
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14019,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-psych",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19820
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14020,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-racc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19821
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14021,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rake",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19822
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14022,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rbs",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19823
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14023,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rdoc",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19824
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14024,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rexml",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19825
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14025,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-rss",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19826
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14026,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygems",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19827
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14027,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygems-devel",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19828
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14028,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-test-unit",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19829
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14029,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "rubygem-typeprof",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19830
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+{
+"action": 0,
+"architectures": [
+"aarch64",
+"ppc64le",
+"s390x",
+"x86_64"
+],
+"id": 14030,
+"in_packageset": {
+"package": [
+{
+"modulestreams": [
+{
+"name": "ruby",
+"stream": "3.3"
+}
+],
+"name": "ruby-libs",
+"repository": "ol8-AppStream"
+}
+],
+"set_id": 19831
+},
+"initial_release": {
+"major_version": 8,
+"minor_version": 9,
+"os_name": "OL"
+},
+"modulestream_maps": [],
+"out_packageset": null,
+"release": {
+"major_version": 8,
+"minor_version": 10,
+"os_name": "OL"
+}
+},
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9156,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.22"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 9156
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nginx",
+            "stream": "1.22"
+          },
+          "out_modulestream": {
+            "name": "nginx",
+            "stream": "1.22"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nginx",
+                "stream": "1.22"
+              }
+            ],
+            "name": "nginx",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9156
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9157,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "18"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 9157
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "nodejs",
+            "stream": "18"
+          },
+          "out_modulestream": {
+            "name": "nodejs",
+            "stream": "18"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "nodejs",
+                "stream": "18"
+              }
+            ],
+            "name": "nodejs",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9157
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9158,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "15"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 9158
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "postgresql",
+            "stream": "15"
+          },
+          "out_modulestream": {
+            "name": "postgresql",
+            "stream": "15"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "postgresql",
+                "stream": "15"
+              }
+            ],
+            "name": "postgresql",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9158
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 6,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9134,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.3"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol8-AppStream"
+          }
+        ],
+        "set_id": 8134
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "ruby",
+            "stream": "3.3"
+          },
+          "out_modulestream": {
+            "name": "ruby",
+            "stream": "3.3"
+          }
+        }
+      ],
+      "out_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "ruby",
+                "stream": "3.3"
+              }
+            ],
+            "name": "ruby",
+            "repository": "ol9-AppStream"
+          }
+        ],
+        "set_id": 9134
+      },
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    },
+    {
+      "action": 1,
+      "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": "9136",
+      "in_packageset": {
+        "package": [
+          {
+            "name": "gcc-toolset-10-binutils",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-binutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-binutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-build",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-dwz",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-debuginfod-client",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-debuginfod-client",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-debuginfod-client-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-debuginfod-client-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-libelf",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-libelf",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-libelf-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-libelf-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-libs",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-elfutils-libs",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-gdb-doc",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-gdb-gdbserver",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libatomic-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libatomic-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-liblsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libstdc++-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libstdc++-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libstdc++-docs",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libtsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libubsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-libubsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-ltrace",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-make",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-make-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-make-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-runtime",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-strace",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-systemtap-sdt-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-valgrind",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-valgrind",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-valgrind-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-10-valgrind-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-binutils",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-binutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-binutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-build",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-dwz",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils-libelf",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils-libelf-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils-libelf-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-elfutils-libs",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-gdb-doc",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-gdb-gdbserver",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libasan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libasan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libatomic-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libatomic-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-liblsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libstdc++-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libstdc++-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libstdc++-docs",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libtsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libubsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-libubsan-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-ltrace",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-make",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-make-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-make-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-runtime",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-strace",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-systemtap-sdt-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-systemtap-sdt-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-valgrind",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-valgrind",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-valgrind-devel",
+            "repository": "ol8-kvm_appstream"
+          },
+          {
+            "name": "gcc-toolset-9-valgrind-devel",
+            "repository": "ol8-kvm_appstream"
+          }
+          ],
+       "set_id": "8135"
+      },
+      "initial_release": {
+        "checked": true,
+        "major_version": 8,
+        "minor_version": 5,
+        "modified": "2020-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "out_packageset": null,
+      "release": {
+        "checked": true,
+        "major_version": 9,
+        "minor_version": 0,
+        "modified": "2022-04-01T09:00:00.0Z",
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
+    }
+  ],
+  "timestamp": "202206231638",
+  "provided_data_streams": [
+  "3.0"
+  ]
+}

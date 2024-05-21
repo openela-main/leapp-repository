@@ -1,0 +1,16 @@
+{
+        "data": [
+                {
+                        "available_in_rhel": [8, 9],
+                        "deprecation_announced": "",
+                        "device_id": "unsupported:id",
+                        "device_name": "Unsupported device type",
+                        "device_type": "unsupported",
+                        "driver_name": "",
+                        "maintained_in_rhel": []
+                }
+        ],
+        "provided_data_streams": [
+        "3.0"
+        ]
+}
