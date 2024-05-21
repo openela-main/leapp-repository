@@ -259,8 +259,6 @@ def _transaction(context, stage, target_repoids, tasks, plugin_info, xfs_info,
         common_params = []
         if config.is_verbose():
             common_params.append('-v')
-        if rhsm.skip_rhsm():
-            common_params += ['--disableplugin', 'subscription-manager']
         if plugin_info:
             for info in plugin_info:
                 if stage in info.disable_in:
@@ -293,7 +291,7 @@ def _transaction(context, stage, target_repoids, tasks, plugin_info, xfs_info,
 
         cmd = [
             '/usr/bin/dnf',
-            'rhel-upgrade',
+            'oracle-upgrade',
             stage,
             DNF_PLUGIN_DATA_PATH
         ]
@@ -374,8 +372,6 @@ def install_initramdisk_requirements(packages, target_userspace_info, used_repos
         ] + repos_opt + list(packages)
         if config.is_verbose():
             cmd.append('-v')
-        if rhsm.skip_rhsm():
-            cmd += ['--disableplugin', 'subscription-manager']
         env = {}
         if get_target_major_version() == '9':
             # allow handling new OL 9 syscalls by systemd-nspawn
@@ -391,7 +387,7 @@ def install_initramdisk_requirements(packages, target_userspace_info, used_repos
 
 def perform_transaction_install(target_userspace_info, storage_info, used_repos, tasks, plugin_info, xfs_info):
     """
-    Performs the actual installation with the DNF rhel-upgrade plugin using the target userspace
+    Performs the actual installation with the DNF oracle-upgrade plugin using the target userspace
     """
 
     stage = 'upgrade'
