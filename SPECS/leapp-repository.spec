@@ -2,7 +2,7 @@
 %global repositorydir %{leapp_datadir}/repositories
 %global custom_repositorydir %{leapp_datadir}/custom-repositories
 
-%define leapp_repo_deps  9
+%define leapp_repo_deps  10
 
 %if 0%{?rhel} == 7
     %define leapp_python_sitelib %{python2_sitelib}
@@ -41,22 +41,22 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.19.0
-Release:        4%{?dist}
+Version:        0.20.0
+Release:        2%{?dist}
 Summary:        Repositories for leapp
 
 License:        ASL 2.0
 URL:            https://oamg.github.io/leapp/
 Source0:        https://github.com/oamg/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1:        deps-pkgs-9.tar.gz
+Source1:        deps-pkgs-10.tar.gz
 
 # NOTE: Our packages must be noarch. Do no drop this in any way.
 BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
-Patch0001:      0001-RHSM-Adjust-the-switch-to-container-mode-for-new-RHS.patch
-Patch0002:      0002-Do-not-create-dangling-symlinks-for-containerized-RH.patch
+
+Patch0001:      0001-rhui-do-not-bootstrap-target-client-on-aws.patch
 
 
 %description
@@ -151,6 +151,16 @@ Provides:  leapp-repository-dependencies = %{leapp_repo_deps}
 ##################################################
 Requires:   dnf >= 4
 Requires:   pciutils
+
+# required to be able to format disk images with XFS file systems (default)
+Requires:   xfsprogs
+
+# required to be able to format disk images with Ext4 file systems
+# NOTE: this is not happening by default, but we can expact that many customers
+# will want to / need to do this - especially on RHEL 7 now. Adding this deps
+# as the best trade-off to resolve this problem.
+Requires:   e2fsprogs
+
 %if 0%{?rhel} && 0%{?rhel} == 7
 # Required to gather system facts about SELinux
 Requires:   libselinux-python
@@ -200,7 +210,6 @@ Requires:   python3-gobject-base
 # APPLY PATCHES HERE
 # %%patch0001 -p1
 %patch0001 -p1
-%patch0002 -p1
 
 
 %build
@@ -278,6 +287,59 @@ done;
 # no files here
 
 %changelog
+* Tue Feb 20 2024 Petr Stodulka <pstodulk@redhat.com> - 0.20.0-2
+- Fallback to original RHUI solution on AWS to fix issues caused by changes in RHUI client
+- Resolves: RHEL-16729
+
+* Tue Feb 13 2024 Toshio Kuratomi <toshio@fedoraproject.org> - 0.20.0-1
+- Rebase to new upstream v0.20.0.
+- Fix semanage import issue
+- Fix handling of libvirt's systemd services
+- Add a dracut breakpoint for the pre-upgrade step.
+- Drop obsoleted upgrade paths (obsoleted releases: 8.6, 8.9, 9.0, 9.3)
+- Resolves: RHEL-16729
+
+* Tue Jan 23 2024 Toshio Kuratomi <toshio@fedoraproject.org> - 0.19.0-10
+- Print nice error msg when device and driver deprecation data is malformed
+- Fix another cornercase when preserving symlinks to certificates in /etc/pki
+- Update the leapp upgrade data files - fixing upgrades with idm-tomcatjss
+- Resolves: RHEL-16729
+
+* Fri Jan 19 2024 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-9
+- Do not try to download data files anymore when missing as the service
+  is obsoleted since the data is part of installed packages
+- Update error messages and reports when installed upgrade data files
+  are malformed or missing to instruct user how to resolve it
+- Update the leapp upgrade data files - bump data stream to "3.0"
+- Resolves: RHEL-16729
+
+* Fri Jan 12 2024 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-7
+- Add detection of possible usage of OpenSSL IBMCA engine on IBM Z machines
+- Add detection of modified /etc/pki/tls/openssl.cnf file
+- Update the leapp upgrade data files
+- Fix handling of symlinks under /etc/pki with relative paths specified
+- Report custom actors and modifications of the upgrade tooling
+- Requires xfsprogs and e2fsprogs to ensure that Ext4 and XFS tools are installed
+- Bump leapp-repository-dependencies to 10
+- Resolves: RHEL-1774, RHEL-16729
+
+* Thu Nov 16 2023 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-5
+- Enable new upgrade path for RHEL 8.10 -> RHEL 9.4 (including RHEL with SAP HANA)
+- Introduce generic transition of systemd services states during the IPU
+- Introduce possibility to upgrade with local repositories
+- Improve possibilities of upgrade when a proxy is configured in DNF configutation file
+- Fix handling of symlinks under /etc/pki when managing certificates
+- Fix the upgrade with custom https repositories
+- Default to the NO_RHSM mode when subscription-manager is not installed
+- Detect customized configuration of dynamic linker
+- Drop the invalid `tuv` target channel for the --channel option
+- Fix the issue of going out of bounds in the isccfg parser
+- Fix traceback when saving the rhsm facts results and the /etc/rhsm/facts directory doesn’t exist yet
+- Load all rpm repository substitutions that dnf knows about, not just "releasever" only
+- Simplify handling of upgrades on systems using RHUI, reducing the maintenance burden for cloud providers
+- Detect possible unexpected RPM GPG keys has been installed during RPM transaction
+- Resolves: RHEL-16729
+
 * Thu Nov 02 2023 Petr Stodulka <pstodulk@redhat.com> - 0.19.0-4
 - Fix the upgrade for systems without subscription-manager package
 - Resolves: RHEL-14901
