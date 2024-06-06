@@ -1,0 +1,777 @@
+{
+    "datetime": "202202071200",
+    "version_format": "1.0.0",
+    "mapping": [
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-latest",
+                    "target": [
+                        "ol8-BaseOS",
+						"ol8-AppStream"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-optional",
+                    "target": [
+                        "ol8-crb"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-uekr5",
+                    "target": [
+                        "ol8-uek"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-uekr6",
+                    "target": [
+                        "ol8-uek"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-leapp",
+                    "target": [
+                        "ol8-BaseOS"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-addons",
+                    "target": [
+                        "ol8-addons"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-ksplice",
+                    "target": [
+                        "ol8-ksplice"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_oci_included",
+                    "target": [
+                        "ol8-oci_included"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_MySQL80",
+                    "target": [
+                        "ol8-MySQL80"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_UEKR5_RDMA",
+                    "target": [
+                        "ol8-UEKR6_RDMA"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_UEKR6_RDMA",
+                    "target": [
+                        "ol8-UEKR6_RDMA"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_oraclelinuxmanager210_client",
+                    "target": [
+                        "ol8-oraclelinuxmanager210_client"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_kvm_utils",
+                    "target": [
+                        "ol8-kvm_appstream"
+                    ]
+                }
+            ]
+        },
+        {
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7_developer_kvm_utils",
+                    "target": [
+                        "ol8-kvm_appstream"
+                    ]
+                }
+            ]
+        }
+    ],
+    "repositories": [
+        {
+            "pesid": "ol7-latest",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_latest",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-latest",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_latest",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7-optional",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_optional_latest",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-optional",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_optional_latest",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-uekr6",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR6",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7-uekr6",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR6",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-uekr5",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR5",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7-uekr5",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR5",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-leapp",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_leapp",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7-leapp",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_leapp",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-addons",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_addons",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7-addons",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_addons",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7-ksplice",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_ksplice",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7-ksplice",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_ksplice",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_oci_included",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oci_included",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_oci_included",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oci_included",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_MySQL80",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_MySQL80",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_MySQL80",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_MySQL80",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_UEKR5_RDMA",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR5_RDMA",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_UEKR5_RDMA",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR5_RDMA",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_UEKR6_RDMA",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR6_RDMA",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_UEKR6_RDMA",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_UEKR6_RDMA",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_oraclelinuxmanager210_client",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oraclelinuxmanager210_client",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_oraclelinuxmanager210_client",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oraclelinuxmanager210_client",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_kvm_utils",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_kvm_utils",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_kvm_utils",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_kvm_utils",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_developer_kvm_utils",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_developer_kvm_utils",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol7_developer_kvm_utils",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_developer_kvm_utils",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-BaseOS",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_baseos_latest",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-BaseOS",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_baseos_latest",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-AppStream",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_appstream",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-AppStream",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_appstream",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-uek",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_UEKR6",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-uek",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_UEKR6",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-crb",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_codeready_builder",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-crb",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_codeready_builder",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-addons",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_addons",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-addons",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_addons",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-ksplice",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_ksplice",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-ksplice",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_ksplice",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-oci_included",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oci_included",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-oci_included",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oci_included",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-MySQL80",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_MySQL80",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-MySQL80",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_MySQL80",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-UEKR6_RDMA",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_UEKR6_RDMA",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-UEKR6_RDMA",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_UEKR6_RDMA",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-oraclelinuxmanager210_client",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oraclelinuxmanager210_client",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-oraclelinuxmanager210_client",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oraclelinuxmanager210_client",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8-kvm_appstream",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_kvm_appstream",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-kvm_appstream",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_kvm_appstream",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        }
+    ]
+}

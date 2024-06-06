@@ -1,0 +1,1115 @@
+{
+  "data": [
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "3w-9xxx",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "3w-sas",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "aic79xx",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "aoe",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "arcmsr",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "acard-ahci",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_mv",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_nv",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_promise",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_qstor",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_sil",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_sil24",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_sis",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_svw",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_sx4",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_uli",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_via",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sata_vsc",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "bfa",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "cxgb3",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "cxgb3i",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "floppy",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "hptiop",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "initio",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "isci",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "iw_cxgb3",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mptctl",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mtip32xx",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mvsas",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mvumi",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "osd",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "libosd",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "osst",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_acpi",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_ali",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_amd",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_arasan_cf",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_artop",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_atiixp",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_atp867x",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_cmd64x",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_cs5536",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_hpt366",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_hpt37x",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_hpt3x2n",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_hpt3x3",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_it8213",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_it821x",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_jmicron",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_marvell",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_netcell",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_ninja32",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_oldpiix",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_pdc2027x",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_pdc202xx_old",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_piccolo",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_rdc",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_sch",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_serverworks",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_sil680",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_sis",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_via",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pdc_adma",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pm80xx",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pmcraid",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "qlcnic",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "qlge",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "stex",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "sx8",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "tulip",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "ufshcd",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "carl9170",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "iwl4965",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "iwl3945",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mwl8k",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "rt73usb",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "rt61pci",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "rtl8187",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "wil6210",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7,
+        8
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "e1000",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7,
+        8
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mptbase",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7,
+        8
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mptsas",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7,
+        8
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mptscsih",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7,
+        8
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "mptspi",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7,
+        8
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "qla3xxx",
+      "maintained_in_rhel": [
+        7
+      ]
+    }
+  ]
+}

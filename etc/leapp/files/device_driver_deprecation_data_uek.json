@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "osd",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "libosd",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "osst",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "pata_cs5536",
+      "maintained_in_rhel": [
+        7
+      ]
+    },
+    {
+      "available_in_rhel": [
+        7
+      ],
+      "deprecation_announced": "",
+      "device_id": "",
+      "device_name": "",
+      "device_type": "pci",
+      "driver_name": "ufshcd",
+      "maintained_in_rhel": [
+        7
+      ]
+    }
+  ]
+}
