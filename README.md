@@ -3,6 +3,13 @@
 
 ---
 
+## Details:
+- This repository is based on upstream tag https://github.com/oamg/leapp-repository/tree/v0.20.0
+- On top all current patches from https://gitlab.com/redhat/centos-stream/rpms/leapp-repository were ported
+- Oracle patches were mostly applied as is
+- Patches that updated upstream references were mostly squashed into a single patch
+- Oracle specific mappings ( repositories, events ) were added as additional files, reference upstream files are kept as is.
+
 ## Troubleshooting
 
 ### Where can I report an issue or RFE related to the framework or other actors?
