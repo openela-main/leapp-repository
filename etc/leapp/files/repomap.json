@@ -773,5 +773,8 @@
                 }
             ]
         }
+    ],
+    "provided_data_streams": [
+    "3.0"
     ]
 }

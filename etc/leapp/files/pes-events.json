@@ -88087,5 +88087,8 @@
             }
         }
     ],
-    "timestamp": "202212060900"
+  "timestamp": "202212060900",
+  "provided_data_streams": [
+  "3.0"
+  ]
 }
