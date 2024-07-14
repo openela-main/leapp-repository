@@ -7,7 +7,7 @@ stage() {
 }
 
 get_kernel_version() {
-    rpm -qa kernel --qf '%{VERSION}-%{RELEASE}.%{ARCH}\n' | sort --version-sort | tail --lines=1
+    rpm -qa | grep kernel-uek | cut -d- -f3- | sort | tail -n 1
 }
 
 dracut_install_modules()
