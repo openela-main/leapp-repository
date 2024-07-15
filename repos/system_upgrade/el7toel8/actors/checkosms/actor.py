@@ -14,7 +14,7 @@ import subprocess
 class CheckOSMS(Actor):
     """
     Check if OS Management Service (OSMS) is configured and active. If yes, inhibit the upgrade process.
-
+    Do not inhibit, if leapp is executed with --osms flag
     """
 
     name = 'check_osms'
@@ -23,6 +23,8 @@ class CheckOSMS(Actor):
     tags = (ChecksPhaseTag, IPUWorkflowTag)
 
     def process(self):
+        if os.getenv('LEAPP_OSMS') == '1':
+            return
         if has_package(InstalledRPM, 'osms-agent'):
             api.current_logger().warning('osms-agent package has been detected')
             self.produce_inhibitor()
