@@ -4,7 +4,7 @@ from leapp.libraries.common.rpms import get_leapp_packages, LeappComponents
 from leapp.libraries.stdlib import api
 from leapp.models import DeviceDriverDeprecationData, DeviceDriverDeprecationEntry
 from leapp.models.fields import ModelViolationError
-
+from leapp.libraries import stdlib
 
 def process():
     """
@@ -15,7 +15,13 @@ def process():
     # This is how you get the StringEnum choices value, so we can filter based on the model definition
     supported_device_types = set(DeviceDriverDeprecationEntry.device_type.serialize()['choices'])
 
-    data_file_name = 'device_driver_deprecation_data.json'
+    running_kernel_version = stdlib.run(['uname', '-r'])['stdout'].strip()
+    if (running_kernel_version.find('uek') != -1):
+        datafile="device_driver_deprecation_data_uek.json"
+    else:
+        datafile="device_driver_deprecation_data.json"
+    api.current_logger().info('Using device deprecation data file {}'.format(datafile))
+    data_file_name = datafile
     # NOTE(pstodulk): load_data_assert raises StopActorExecutionError, see
     # the code for more info. Keeping the handling on the framework in such
     # a case as we have no work to do in such a case here.
@@ -46,7 +52,7 @@ def process():
             ' The data inside is either incorrect or old. To restore the original'
             ' {lp} file, remove it and reinstall the following packages: {rpms}'
             .format(
-                lp='/etc/leapp/file/device_driver_deprecation_data.json',
+                lp=datafile,
                 rpms=', '.join(get_leapp_packages(component=LeappComponents.REPOSITORY))
             )
         )
