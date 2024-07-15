@@ -88085,6 +88085,90 @@
                 "tag": null,
                 "z_stream": null
             }
+        },
+        {
+            "action": 1,
+            "architectures": [
+                "aarch64",
+                "x86_64"
+            ],
+            "id": 3251,
+            "in_packageset": {
+                "package": [
+                    {
+                        "name": "dtrace-utils",
+                        "repository": "ol7_latest"
+                    }
+                ],
+                "set_id": 5255
+            },
+            "initial_release": {
+                "checked": true,
+                "major_version": 7,
+                "minor_version": 7,
+                "modified": "2020-04-15T08:02:11.587383Z",
+                "os_name": "OL",
+                "tag": null,
+                "z_stream": null
+            },
+            "out_packageset": null,
+            "release": {
+                "checked": true,
+                "major_version": 8,
+                "minor_version": 0,
+                "modified": "2018-03-20T09:24:34.698000Z",
+                "os_name": "OL",
+                "tag": null,
+                "z_stream": null
+            }
+        },
+        {
+            "action": 4,
+            "architectures": [
+                "aarch64",
+                "x86_64"
+            ],
+            "id": 3252,
+            "in_packageset": {
+                "package": [
+                    {
+                        "name": "oled-tools",
+                        "repository": "ol7_addons"
+                    }
+                ],
+                "set_id": 5256
+            },
+            "initial_release": {
+                "checked": true,
+                "major_version": 7,
+                "minor_version": 7,
+                "modified": "2020-04-15T08:02:11.587383Z",
+                "os_name": "OL",
+                "tag": null,
+                "z_stream": null
+            },
+            "out_packageset": {
+                "package": [
+                    {
+                        "name": "oled-tools",
+                        "repository": "ol8-addons"
+                    },
+                    {
+                        "name": "dtrace",
+                        "repository": "ol8-uek"
+                    }
+                ],
+                "set_id": 6268
+            },
+            "release": {
+                "checked": true,
+                "major_version": 8,
+                "minor_version": 0,
+                "modified": "2018-03-20T09:24:34.698000Z",
+                "os_name": "OL",
+                "tag": null,
+                "z_stream": null
+            }
         }
     ],
   "timestamp": "202212060900",
