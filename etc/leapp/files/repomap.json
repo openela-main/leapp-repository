@@ -170,6 +170,18 @@
                     ]
                 }
             ]
+        },
+		{
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-gluster8",
+                    "target": [
+                        "ol8-gluster_appstream"
+                    ]
+                }
+            ]
         }
     ],
     "repositories": [
@@ -509,6 +521,18 @@
                 }
             ]
         },
+		{
+            "pesid": "ol7-gluster8",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_gluster8",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
         {
             "pesid": "ol8-BaseOS",
             "entries": [
@@ -768,6 +792,18 @@
                     "major_version": "8",
                     "repoid": "ol8_kvm_appstream",
                     "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-gluster_appstream",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_gluster_appstream",
+                    "arch": "x86_64",
                     "repo_type": "rpm",
                     "channel": "ga"
                 }

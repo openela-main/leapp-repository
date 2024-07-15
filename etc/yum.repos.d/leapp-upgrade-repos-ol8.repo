@@ -74,3 +74,10 @@ baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL8/kvm/appstream/$bas
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
+
+[ol8_gluster_appstream]
+name=Oracle Linux $releasever Gluster Appstream ($basearch)
+baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL8/gluster/appstream/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=1
+enabled=0
