@@ -5,6 +5,7 @@ import os
 import shutil
 import tarfile
 from datetime import datetime
+import platform
 
 from leapp.cli.commands import command_utils
 from leapp.cli.commands.config import get_config
@@ -195,6 +196,26 @@ def prepare_configuration(args):
 
     if args.enablerepo:
         os.environ['LEAPP_ENABLE_REPOS'] = ','.join(args.enablerepo)
+    if args.oci and args.oraclelinux:
+        raise CommandError('--oci and --oraclelinux cannot be run together')
+    if args.oci:
+        if platform.machine() == 'aarch64':
+            OCI_REPOS = os.getenv('LEAPP_OCI_REPOS', 'ol8_baseos_latest,ol8_appstream,ol8_addons,ol8_ksplice,ol8_oci_included')
+        else:
+            OCI_REPOS = os.getenv('LEAPP_OCI_REPOS', 'ol8_baseos_latest,ol8_appstream,ol8_UEKR6,ol8_addons,ol8_ksplice,ol8_oci_included')
+        if args.enablerepo:
+            os.environ['LEAPP_ENABLE_REPOS'] = OCI_REPOS + "," + (','.join(args.enablerepo))
+        else:
+            os.environ['LEAPP_ENABLE_REPOS'] = OCI_REPOS
+    if args.oraclelinux:
+        if platform.machine() == 'aarch64':
+            OL_REPOS = os.getenv('LEAPP_ORACLELINUX_REPOS', 'ol8_baseos_latest,ol8_appstream')
+        else:
+            OL_REPOS = os.getenv('LEAPP_ORACLELINUX_REPOS', 'ol8_baseos_latest,ol8_appstream,ol8_UEKR6')
+        if args.enablerepo:
+            os.environ['LEAPP_ENABLE_REPOS'] = OL_REPOS + "," + (','.join(args.enablerepo))
+        else:
+            os.environ['LEAPP_ENABLE_REPOS'] = OL_REPOS
 
     if args.iso:
         os.environ['LEAPP_TARGET_ISO'] = args.iso
