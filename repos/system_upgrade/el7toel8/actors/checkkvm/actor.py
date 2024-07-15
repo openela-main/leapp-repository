@@ -95,7 +95,7 @@ class CheckKVM(Actor):
             reporting.Title('Difference in QEMU emulator in OL8'),
             reporting.Summary(summary),
             reporting.Severity(reporting.Severity.LOW),
-            reporting.Tags([reporting.Tags.FILESYSTEM])
+            reporting.Groups([reporting.Groups.FILESYSTEM])
         ])
 
     def produce_inhibitor(self,pkgs):
