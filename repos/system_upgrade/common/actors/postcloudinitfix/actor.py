@@ -9,7 +9,7 @@ import os
 
 class PostCloudInitFix(Actor):
     """
-    Remove the object cache in cloud-init that causes issus with OL8 python36
+    Remove the object cache in cloud-init that causes issues with OL8 python36
 
     """
 
