@@ -218,7 +218,31 @@
                     ]
                 }
             ]
-        }
+        },
+		{
+	    "source_major_version": "7",
+	    "target_major_version": "8",
+	    "entries": [
+		{
+		    "source": "ol7_oracle_instantclient",
+		    "target": [
+			"ol8_oracle_instantclient"
+		    ]
+		}
+	    ]
+	},
+		{
+	    "source_major_version": "7",
+	    "target_major_version": "8",
+	    "entries": [
+		{
+		    "source": "ol7_oracle_instantclient21",
+		    "target": [
+			"ol8_oracle_instantclient21"
+		    ]
+		}
+	    ]
+	}
     ],
     "repositories": [
         {
@@ -641,6 +665,54 @@
                 }
             ]
         },
+                {
+            "pesid": "ol7_oracle_instantclient",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oracle_instantclient",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol7_oracle_instantclient",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oracle_instantclient",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol7_oracle_instantclient21",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oracle_instantclient21",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol7_oracle_instantclient21",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_oracle_instantclient21",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
         {
             "pesid": "ol8-BaseOS",
             "entries": [
@@ -961,6 +1033,54 @@
                     "major_version": "8",
                     "repoid": "ol8_olcne14",
                     "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8_oracle_instantclient",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oracle_instantclient",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol8_oracle_instantclient",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oracle_instantclient",
+                    "arch": "aarch64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+        {
+            "pesid": "ol8_oracle_instantclient21",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oracle_instantclient21",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol8_oracle_instantclient21",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_oracle_instantclient21",
+                    "arch": "aarch64",
                     "repo_type": "rpm",
                     "channel": "ga"
                 }

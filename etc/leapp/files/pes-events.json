@@ -88213,7 +88213,95 @@
                 "tag": null,
                 "z_stream": null
             }
+        },
+    {
+        "action": 3,
+        "architectures": [
+            "aarch64",
+            "x86_64"
+        ],
+        "id": 3253,
+        "in_packageset": {
+            "package": [
+                {
+                    "name": "oracle-release-el7",
+                    "repository": "ol7_latest"
+                }
+            ],
+            "set_id": 5257
+        },
+        "initial_release": {
+            "checked": true,
+            "major_version": 7,
+            "minor_version": 7,
+            "modified": "2020-04-15T08:02:11.587383Z",
+            "os_name": "OL",
+            "tag": null,
+            "z_stream": null
+        },
+        "out_packageset": {
+            "package": [
+                {
+                    "name": "oracle-release-el8",
+                    "repository": "ol8-BaseOS"
+                }
+            ],
+            "set_id": 6269
+        },
+        "release": {
+            "checked": true,
+            "major_version": 8,
+            "minor_version": 0,
+            "modified": "2018-03-20T09:24:34.698000Z",
+            "os_name": "OL",
+            "tag": null,
+            "z_stream": null
         }
+    },
+    {
+        "action": 3,
+        "architectures": [
+            "aarch64",
+            "x86_64"
+        ],
+        "id": 3254,
+        "in_packageset": {
+            "package": [
+                {
+                    "name": "oracle-instantclient-release-el7",
+                    "repository": "ol7_latest"
+                }
+            ],
+            "set_id": 5258
+        },
+        "initial_release": {
+            "checked": true,
+            "major_version": 7,
+            "minor_version": 7,
+            "modified": "2020-04-15T08:02:11.587383Z",
+            "os_name": "OL",
+            "tag": null,
+            "z_stream": null
+        },
+        "out_packageset": {
+            "package": [
+                {
+                    "name": "oracle-instantclient-release-el8",
+                    "repository": "ol8-BaseOS"
+                }
+            ],
+            "set_id": 6270
+        },
+        "release": {
+            "checked": true,
+            "major_version": 8,
+            "minor_version": 0,
+            "modified": "2018-03-20T09:24:34.698000Z",
+            "os_name": "OL",
+            "tag": null,
+            "z_stream": null
+        }
+    }
     ],
   "timestamp": "202212060900",
   "provided_data_streams": [
