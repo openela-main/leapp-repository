@@ -14,7 +14,7 @@ import subprocess
 class CheckOSMS(Actor):
     """
     Check if OS Management Service (OSMS) is configured and active. If yes, inhibit the upgrade process.
-    Do not inhibit, if leapp is executed with --osms flag or it is auto-detect that instance is the OCI Managed Instance.
+    Do not inhibit, if it is auto-detected that instance is the OCI Managed Instance.
     """
 
     name = 'check_osms'
@@ -55,7 +55,7 @@ class CheckOSMS(Actor):
     def produce_inhibitor(self):
         remediation = ('The OSMS agent is included in OCI Oracle Linux platform images '
                        'and installed by default. If the instance is not actively managed '
-                       'by OSMS, you can add --osms flag, or OSMS agent can be disabled '
+                       'by OSMS, you should disable OSMS agent '
                        'from the OCI console and the upgrade can proceed. Please refer to '
                        'https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp/ '
                        'for information about upgrading instances managed by OSMS.')
@@ -63,7 +63,7 @@ class CheckOSMS(Actor):
             reporting.Title('The OS Management Service (OSMS) agent is running on this instance and instance is not identified as managed'),
             reporting.Summary(
                 'The OSMS service is active on this instance.\n\n'
-                'Upgrade cannot proceed with the OSMS agent active, unless you supply --osms option to leapp or ensure '
+                'Upgrade cannot proceed with the OSMS agent active, unless you ensure '
                 'yum reports system as receiving updates from OSMS. '
                 'Please refer to https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp/ '
                 'for information about upgrading instances managed by OSMS. '

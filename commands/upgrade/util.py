@@ -203,10 +203,6 @@ def prepare_configuration(args):
         os.environ['LEAPP_ENABLE_REPOS'] = ','.join(args.enablerepo)
     if args.oci and args.oraclelinux:
         raise CommandError('--oci and --oraclelinux cannot be run together')
-    if args.osms and not args.oci:
-        raise CommandError('--osms should be run together with --oci')
-    if args.osms and args.oraclelinux:
-        raise CommandError('--osms and --oraclelinux cannot be run together')
     if args.oci:
         if platform.machine() == 'aarch64':
             OCI_REPOS = os.getenv('LEAPP_OCI_REPOS', 'ol8_baseos_latest,ol8_appstream,ol8_addons,ol8_ksplice,ol8_oci_included')
@@ -226,7 +222,7 @@ def prepare_configuration(args):
         else:
             os.environ['LEAPP_ENABLE_REPOS'] = OL_REPOS
 
-    if args.osms or detect_osms():
+    if args.oci and detect_osms():
         os.environ['LEAPP_OSMS'] = '1'
 
     if args.iso:

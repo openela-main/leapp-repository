@@ -17,7 +17,6 @@ from leapp.utils.output import beautify_actor_exception, report_errors, report_i
 @command_opt('debug', is_flag=True, help='Enable debug mode', inherit=False)
 @command_opt('verbose', is_flag=True, help='Enable verbose logging', inherit=False)
 @command_opt('oci', is_flag=True, help='Enable OCI repositories', inherit=False)
-@command_opt('osms', is_flag=True, help='Enable managed instances upgrade', inherit=False)
 @command_opt('oraclelinux', is_flag=True, help='Enable Oracle Linux repositories', inherit=False)
 @command_opt('enablerepo', action='append', metavar='<repoid>',
              help='Enable specified repository. Can be used multiple times.')
