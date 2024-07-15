@@ -182,6 +182,30 @@
                     ]
                 }
             ]
+        },
+		{
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-olcne15",
+                    "target": [
+                        "ol8-olcne15"
+                    ]
+                }
+            ]
+        },
+		{
+            "source_major_version": "7",
+            "target_major_version": "8",
+            "entries": [
+                {
+                    "source": "ol7-olcne14",
+                    "target": [
+                        "ol8-olcne14"
+                    ]
+                }
+            ]
         }
     ],
     "repositories": [
@@ -533,6 +557,30 @@
                 }
             ]
         },
+		{
+            "pesid": "ol7-olcne15",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_olcne15",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol7-olcne14",
+            "entries": [
+                {
+                    "major_version": "7",
+                    "repoid": "ol7_olcne14",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
         {
             "pesid": "ol8-BaseOS",
             "entries": [
@@ -803,6 +851,30 @@
                 {
                     "major_version": "8",
                     "repoid": "ol8_gluster_appstream",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+		{
+            "pesid": "ol8-olcne15",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_olcne15",
+                    "arch": "x86_64",
+                    "repo_type": "rpm",
+                    "channel": "ga"
+                }
+            ]
+        },
+                {
+            "pesid": "ol8-olcne14",
+            "entries": [
+                {
+                    "major_version": "8",
+                    "repoid": "ol8_olcne14",
                     "arch": "x86_64",
                     "repo_type": "rpm",
                     "channel": "ga"

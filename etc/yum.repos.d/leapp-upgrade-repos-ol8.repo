@@ -81,3 +81,17 @@ baseurl=https://yum$ociregion.oracle.com/repo/OracleLinux/OL8/gluster/appstream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 gpgcheck=1
 enabled=0
+
+[ol8_olcne15]
+name=Oracle Linux Cloud Native Environment version 1.5 ($basearch)
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/olcne15/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=1
+enabled=0
+
+[ol8_olcne14]
+name=Oracle Linux Cloud Native Environment version 1.4 ($basearch)
+baseurl=https://yum$ociregion.$ocidomain/repo/OracleLinux/OL8/olcne14/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=1
+enabled=0
