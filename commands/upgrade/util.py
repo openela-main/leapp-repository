@@ -6,6 +6,7 @@ import shutil
 import tarfile
 from datetime import datetime
 import platform
+import subprocess
 
 from leapp.cli.commands import command_utils
 from leapp.cli.commands.config import get_config
@@ -16,6 +17,13 @@ from leapp.utils.audit import get_checkpoints, get_connection, get_messages
 from leapp.utils.output import report_unsupported
 from leapp.utils.report import fetch_upgrade_report_messages, generate_report_file
 
+
+def detect_osms():
+    osms_enabled_tag = "This system is receiving updates from OSMS"
+    for line in subprocess.check_output(['yum', 'repolist']).split('\n'):
+        if osms_enabled_tag in line:
+           return True
+    return False
 
 def disable_database_sync():
     def disable_db_sync_decorator(f):
@@ -218,7 +226,7 @@ def prepare_configuration(args):
         else:
             os.environ['LEAPP_ENABLE_REPOS'] = OL_REPOS
 
-    if args.osms:
+    if args.osms or detect_osms():
         os.environ['LEAPP_OSMS'] = '1'
 
     if args.iso:
