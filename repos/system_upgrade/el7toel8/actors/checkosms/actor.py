@@ -71,11 +71,11 @@ class CheckOSMS(Actor):
                 'for more information about OSMS and Oracle Linux 8.'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.SERVICES,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.SERVICES,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint=remediation)
         ])
 

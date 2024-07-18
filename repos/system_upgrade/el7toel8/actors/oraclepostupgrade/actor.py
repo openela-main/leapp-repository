@@ -34,6 +34,6 @@ class OraclePostUpgrade(Actor):
             reporting.Title('Leapp upgrade file {} renamed'.format(leapp_upgrade_repo_file)),
             reporting.Summary(
                 'The upgrade repo file has been renamed "{}"'.format(leapp_save_file)),
-            reporting.Tags([reporting.Tags.UPGRADE_PROCESS]),
+            reporting.Groups([reporting.Groups.UPGRADE_PROCESS]),
         ])
 

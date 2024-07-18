@@ -133,11 +133,11 @@ class CheckOLM(Actor):
                 url='https://docs.oracle.com/en/operating-systems/oracle-linux-manager/2.10/admin/'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR])
+            reporting.Groups([reporting.Groups.INHIBITOR])
         ])
 
 

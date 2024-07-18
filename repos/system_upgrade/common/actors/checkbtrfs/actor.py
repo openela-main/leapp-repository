@@ -66,7 +66,7 @@ class CheckBtrfs(Actor):
                 url='https://docs.oracle.com/en/operating-systems/oracle-linux/8/fsadmin/fsadmin-ManagingtheBtrfsFileSystem.html#btrfs-main'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([reporting.Tags.FILESYSTEM]),
+            reporting.Groups([reporting.Groups.FILESYSTEM]),
             reporting.RelatedResource('kernel-driver', 'btrfs')
         ])
 
@@ -78,12 +78,12 @@ class CheckBtrfs(Actor):
                 'and need to confirm UEK as default boot kernel in OL8 '
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([
-                    reporting.Tags.FILESYSTEM,
-                    reporting.Tags.SECURITY,
-                    reporting.Tags.TOOLS
+            reporting.Groups([
+                    reporting.Groups.FILESYSTEM,
+                    reporting.Groups.SECURITY,
+                    reporting.Groups.TOOLS
             ]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint='Confirm UEK kernel install and default boot'),
             reporting.RelatedResource('kernel-driver', 'btrfs')
         ])

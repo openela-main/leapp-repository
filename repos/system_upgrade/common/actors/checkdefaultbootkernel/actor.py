@@ -56,7 +56,7 @@ class CheckDefaultBootKernel(Actor):
                 'Setting default boot kernel in OL8 to {}'.format(kernel_type)
             ),
             reporting.Severity(reporting.Severity.MEDIUM),
-            reporting.Tags([reporting.Tags.KERNEL])
+            reporting.Groups([reporting.Groups.KERNEL])
         ])
 
     def produce_inhibitor(self):
@@ -66,8 +66,8 @@ class CheckDefaultBootKernel(Actor):
                 'Unable to detect default boot kernel, is grubby installed.'
             ),
             reporting.Severity(reporting.Severity.HIGH),
-            reporting.Tags([reporting.Tags.KERNEL]),
-            reporting.Flags([reporting.Flags.INHIBITOR]),
+            reporting.Groups([reporting.Groups.KERNEL]),
+            reporting.Groups([reporting.Groups.INHIBITOR]),
             reporting.Remediation(hint='Check if grubby is installed.')
         ])
 
