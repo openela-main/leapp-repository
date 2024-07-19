@@ -23,5 +23,5 @@ def mount_target_iso():
         # likely mean that either the fstab entry for the partition points uses a different device that the one that
         # was mounted during pre-reboot, or the fstab has been tampered with before rebooting. Either way, there is
         # nothing at this point how we can recover.
-        msg = 'Failed to mount the target RHEL ISO file containing RPMs to install during the upgrade.'
+        msg = 'Failed to mount the target OL ISO file containing RPMs to install during the upgrade.'
         raise StopActorExecutionError(message=msg, details={'details': '{0}'.format(err)})

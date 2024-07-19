@@ -65,7 +65,7 @@ def check_dynamic_linker_configuration():
             'files in the {conf_dir} directory and additional entries in the '
             '{ldlib_envar} or {ldpre_envar} variables. These modifications '
             'configure the dynamic linker to use different libraries that might '
-            'not be provided by Red Hat products or might not be present during '
+            'not be provided by Oracle products or might not be present during '
             'the whole upgrade process. The following custom configurations '
             'were detected by leapp:{cust_configs}'
             .format(

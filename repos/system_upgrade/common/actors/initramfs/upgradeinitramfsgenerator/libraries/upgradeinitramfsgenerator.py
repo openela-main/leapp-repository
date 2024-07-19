@@ -20,7 +20,6 @@ from leapp.utils.deprecation import suppress_deprecation
 
 INITRAM_GEN_SCRIPT_NAME = 'generate-initram.sh'
 DRACUT_DIR = '/dracut'
-DEDICATED_LEAPP_PART_URL = 'https://access.redhat.com/solutions/7011704'
 
 
 def _get_target_kernel_version(context):
@@ -288,8 +287,6 @@ def _check_free_space(context):
         'It is also a good practice to create dedicated partition'
         ' for /var/lib/leapp when more space is needed, which can be'
         ' dropped after the system upgrade is fully completed.'
-        ' For more info, see: {}'
-        .format(DEDICATED_LEAPP_PART_URL)
     )
     detail = (
         'Remaining free space is lower than 500MB which is not enough to'

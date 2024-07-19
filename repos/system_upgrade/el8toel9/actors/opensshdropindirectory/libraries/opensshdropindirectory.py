@@ -6,9 +6,9 @@ from leapp.models import DistributionSignedRPM
 # The main SSHD configuration file
 SSHD_CONFIG = '/etc/ssh/sshd_config'
 
-# The include directive needed, taken from RHEL9 sshd_config with leapp comment
+# The include directive needed, taken from OL9 sshd_config with leapp comment
 INCLUDE = 'Include /etc/ssh/sshd_config.d/*.conf'
-INCLUDE_BLOCK = ''.join(('# Added by leapp during upgrade from RHEL8 to RHEL9\n', INCLUDE, '\n'))
+INCLUDE_BLOCK = ''.join(('# Added by leapp during upgrade from OL8 to OL9\n', INCLUDE, '\n'))
 
 
 def prepend_string_if_not_present(f, content, check_string):

@@ -5,7 +5,7 @@ get_rhel_major_release() {
     [ -z "$_os_version" ] && {
         # This should not happen as /etc/initrd-release is supposed to have API
         # stability, but check is better than broken system.
-        warn "Cannot determine the major RHEL version."
+        warn "Cannot determine the major OL version."
         warn "The upgrade environment cannot be setup reliably."
         echo "Content of the /etc/initrd-release:"
         cat /etc/initrd-release

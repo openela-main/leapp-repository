@@ -8,7 +8,7 @@ from leapp.libraries.stdlib import api
 # TODO copied from opensslconfigscanner/libraries/readconf.py
 CONFIG = '/etc/pki/tls/openssl.cnf'
 
-LEAPP_COMMENT = '# Modified by leapp during upgrade to RHEL 9\n'
+LEAPP_COMMENT = '# Modified by leapp during upgrade to OL 9\n'
 APPEND_STRING = (
     '[provider_sect]\n'
     'default = default_sect\n'

@@ -26,12 +26,12 @@ class CheckFips(Actor):
 
         if version.get_target_major_version() == '8':
             if fips_info.is_enabled:
-                title = 'Automated upgrades from RHEL 7 to RHEL 8 in FIPS mode are not supported'
+                title = 'Automated upgrades from OL 7 to OL 8 in FIPS mode are not supported'
                 summary = ('Leapp has detected that FIPS is enabled on this system. '
-                           'Automated in-place upgrade of RHEL 7 systems in FIPS mode is currently unsupported '
+                           'Automated in-place upgrade of OL 7 systems in FIPS mode is currently unsupported '
                            'and manual intervention is required.')
 
-                fips_7to8_steps_docs_url = 'https://red.ht/planning-upgrade-to-rhel8'
+                fips_7to8_steps_docs_url = 'https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp/leapp-PreparingfortheUpgrade.html#chap-leapp-prep'
 
                 reporting.create_report([
                     reporting.Title(title),
@@ -39,7 +39,7 @@ class CheckFips(Actor):
                     reporting.Severity(reporting.Severity.HIGH),
                     reporting.Groups([reporting.Groups.SECURITY, reporting.Groups.INHIBITOR]),
                     reporting.ExternalLink(url=fips_7to8_steps_docs_url,
-                                           title='Planning an upgrade from RHEL 7 to RHEL 8')
+                                           title='Planning an upgrade from OL 7 to OL 8')
                 ])
         else:
             # FIXME(mhecko): We include these files manually as they are not included automatically when the fips

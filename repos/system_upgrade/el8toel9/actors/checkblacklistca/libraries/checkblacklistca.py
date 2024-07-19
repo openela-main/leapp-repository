@@ -51,7 +51,7 @@ def process():
             reporting.Summary(
                 'The directories which store user and administrator supplied '
                 'distrusted certificates have change names from blacklist in '
-                'RHEL8 to blocklist in RHEL9. As a result {} and '
+                'OL8 to blocklist in OL9. As a result {} and '
                 '{} will be deleted.'.format(reportString, deleteString)),
             reporting.Severity(reporting.Severity.INFO),
             reporting.Groups([reporting.Groups.SECURITY]),
@@ -63,8 +63,8 @@ def process():
             reporting.Summary(
                 'The directories which stores user and administrator supplied '
                 'distrusted certificates has change names from blacklist in '
-                'RHEL8 to blocklist in RHEL9. But we are unable to access the '
-                'RHEL8 directory {} because {}. You can clear this error by '
+                'OL8 to blocklist in OL9. But we are unable to access the '
+                'OL8 directory {} because {}. You can clear this error by '
                 'correcting the condition, or by moving the contents to {} '
                 'and removing {} completely'
                 '. '.format(ble.sourceDir, ble.error, ble.targetDir, ble.sourceDir)),

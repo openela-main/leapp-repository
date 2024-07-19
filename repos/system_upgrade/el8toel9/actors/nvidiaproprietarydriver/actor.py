@@ -10,8 +10,6 @@ class CheckNvidiaProprietaryDriver(Actor):
     Check if NVIDIA proprietary driver is in use. If yes, inhibit the upgrade process.
 
     Updating bare metal (or VM) with the binary NVIDIA driver will end up with a blacklisted nouveau.
-
-    See also https://bugzilla.redhat.com/show_bug.cgi?id=2057026
     """
 
     name = 'check_nvidia_proprietary_driver'
@@ -34,11 +32,6 @@ class CheckNvidiaProprietaryDriver(Actor):
                             '\n\n'
                             'Please uninstall the NVIDIA graphics driver before upgrading to make sure you have a '
                             'graphical session after upgrading.'
-                    ),
-                    reporting.ExternalLink(
-                            title='How to uninstall proprietary NVIDIA graphics driver and switch back to Red Hat '
-                                  'shipped nouveau graphics driver?',
-                            url='https://access.redhat.com/solutions/421683'
                     ),
                     reporting.Severity(reporting.Severity.HIGH),
                     reporting.Groups([reporting.Groups.INHIBITOR]),

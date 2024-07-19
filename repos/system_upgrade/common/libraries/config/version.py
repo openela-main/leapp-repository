@@ -93,7 +93,7 @@ class _SupportedVersionsDict(dict):
     def _feed_supported_versions(self):
         major = get_source_major_version()
         if major not in _SUPPORTED_VERSIONS:
-            raise KeyError('{} is not a supported source version of RHEL'.format(major))
+            raise KeyError('{} is not a supported source version of OL'.format(major))
         self.data = _SUPPORTED_VERSIONS[major]
 
     def __getitem__(self, key):

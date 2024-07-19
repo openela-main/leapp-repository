@@ -28,7 +28,7 @@ class FirewalldCheckServiceTftpClient(Actor):
             create_report([
                 reporting.Title('Firewalld Service tftp-client Is Unsupported'),
                 reporting.Summary('Firewalld has service "{service}" enabled. '
-                                  'Service "{service}" has been removed in RHEL-9.'.format(
+                                  'Service "{service}" has been removed in OL-9.'.format(
                                       service=tftp_client_service)),
                 reporting.Severity(reporting.Severity.HIGH),
                 reporting.Groups([reporting.Groups.SANITY, reporting.Groups.FIREWALL]),
