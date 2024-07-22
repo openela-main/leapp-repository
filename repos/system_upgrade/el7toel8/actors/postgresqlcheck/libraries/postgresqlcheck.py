@@ -5,20 +5,20 @@ from leapp.models import DistributionSignedRPM
 
 # Summary for postgresql-server report
 report_server_inst_summary = (
-    'PostgreSQL server component will be upgraded. Since RHEL-8 includes'
+    'PostgreSQL server component will be upgraded. Since OL-8 includes'
     ' PostgreSQL server 10 by default, which is incompatible with 9.2'
-    ' included in RHEL-7, it is necessary to proceed with additional steps'
+    ' included in OL-7, it is necessary to proceed with additional steps'
     ' for the complete upgrade of the PostgreSQL data.'
 )
 
 report_server_inst_hint = (
     'Back up your data before proceeding with the upgrade'
-    ' and follow steps in the documentation section "Migrating to a RHEL 8 version of PostgreSQL"'
+    ' and follow steps in the documentation section "Migrating to a OL 8 version of PostgreSQL"'
     ' after the upgrade.'
 )
 
 # Link URL for postgresql-server report
-report_server_inst_link_url = 'https://red.ht/rhel-8-migrate-postgresql-server'
+report_server_inst_link_url = 'https://docs.oracle.com/en/operating-systems/oracle-linux/8/leapp/leapp-AboutLeapp.html'
 
 # List of dropped extensions from postgresql-contrib package
 report_contrib_inst_dropext = ['dummy_seclabel', 'test_parser', 'tsearch2']
@@ -45,7 +45,7 @@ def _report_server_installed():
         reporting.Summary(report_server_inst_summary),
         reporting.Severity(reporting.Severity.MEDIUM),
         reporting.Groups([reporting.Groups.SERVICES]),
-        reporting.ExternalLink(title='Migrating to a RHEL 8 version of PostgreSQL',
+        reporting.ExternalLink(title='Migrating to a OL 8 version of PostgreSQL',
                                url=report_server_inst_link_url),
         reporting.RelatedResource('package', 'postgresql-server'),
         reporting.Remediation(hint=report_server_inst_hint),
@@ -73,7 +73,7 @@ def report_installed_packages(_context=api):
     """
     Create reports according to detected PostgreSQL packages.
 
-    Create the report if the postgresql-server rpm (RH signed) is installed.
+    Create the report if the postgresql-server rpm (Oracle signed) is installed.
     Additionally, create another report if the postgresql-contrib rpm
     is installed.
     """
