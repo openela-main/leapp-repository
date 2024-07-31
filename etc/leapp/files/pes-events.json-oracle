@@ -12719,6 +12719,56 @@ null
         "tag": null,
         "z_stream": null
       }
+    },
+    {
+      "action": 1,
+        "architectures": [
+        "x86_64",
+        "aarch64"
+      ],
+      "id": 9137,
+      "in_packageset": {
+        "package": [
+          {
+            "modulestreams": [
+              {
+                "name": "javapackages-tools",
+                "stream": "201801"
+              }
+            ],
+            "name": "maven-wagon-provider-api",
+            "repository": "ol8-crb"
+          }
+        ],
+        "set_id": 8136
+      },
+      "initial_release": {
+        "major_version": 8,
+        "minor_version": 6,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      },
+      "modulestream_maps": [
+        {
+          "in_modulestream": {
+            "name": "javapackages-tools",
+            "stream": "201801"
+          },
+          "out_modulestream": {
+            "name": "maven",
+            "stream": "3.8"
+          }
+        }
+      ],
+      "out_packageset": null,
+      "release": {
+        "major_version": 9,
+        "minor_version": 0,
+        "os_name": "OL",
+        "tag": null,
+        "z_stream": null
+      }
     }
   ],
   "timestamp": "202206231638",
