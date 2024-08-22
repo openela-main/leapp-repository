@@ -14,7 +14,7 @@ import subprocess
 class CheckOSMS(Actor):
     """
     Check if OS Management Service (OSMS) is configured and active. If yes, inhibit the upgrade process.
-
+    Do not inhibit, if it is auto-detected that instance is the OCI Managed Instance.
     """
 
     name = 'check_osms'
@@ -23,6 +23,8 @@ class CheckOSMS(Actor):
     tags = (ChecksPhaseTag, IPUWorkflowTag)
 
     def process(self):
+        if os.getenv('LEAPP_OSMS') == '1':
+            return
         if has_package(InstalledRPM, 'osms-agent'):
             api.current_logger().warning('osms-agent package has been detected')
             self.produce_inhibitor()
@@ -51,21 +53,22 @@ class CheckOSMS(Actor):
         return result
 
     def produce_inhibitor(self):
-        remediation = ('The OSMS agent is included in OCI Oracle Linux platform images '
+        remediation = ('The OSMS agent was included in OCI Oracle Linux platform images '
                        'and installed by default. If the instance is not actively managed '
-                       'by OSMS, the OSMS agent can be disabled from the OCI console and the '
-                       'upgrade can proceed. Please refer to '
+                       'by OSMS, you should disable OSMS agent '
+                       'from the OCI console and the upgrade can proceed. Please refer to '
                        'https://docs.oracle.com/en/operating-systems/oracle-linux/9/leapp/ '
                        'for information about disabling the OSMS agent.')
         create_report([
-            reporting.Title('The OS Management Service (OSMS) agent is running on this instance.'),
+            reporting.Title('The OS Management Service (OSMS) agent is running on this instance and instance is not identified as managed'),
             reporting.Summary(
                 'The OSMS service is active on this instance.\n\n'
                 'The OS Management Service does not currently support Oracle Linux 9 '
                 'AppStreams, also known as modules or module streams.\n'
-                'Upgrade cannot proceed with the OSMS agent active. '
-                'Please refer to https://docs.oracle.com/en-us/iaas/os-management/osms/osms-getstarted.htm '
-                'for more information about OSMS and Oracle Linux 8.'
+                'Upgrade cannot proceed with the OSMS agent active, unless you ensure '
+                'yum reports system as receiving updates from OSMS. '
+                'Please refer to https://docs.oracle.com/en/operating-systems/oracle-linux/9/leapp/ '
+                'for information about upgrading instances managed by OSMS. '
             ),
             reporting.Severity(reporting.Severity.HIGH),
             reporting.Groups([
