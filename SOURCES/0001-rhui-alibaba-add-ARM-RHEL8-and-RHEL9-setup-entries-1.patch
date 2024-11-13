@@ -1,0 +1,43 @@
+From fbc38d4ad1d828e0553579e3719c0e4ed4a2a6bd Mon Sep 17 00:00:00 2001
+From: jinkangkang <1547182170@qq.com>
+Date: Mon, 19 Aug 2024 18:46:08 +0800
+Subject: [PATCH] rhui(alibaba): add ARM RHEL8 and RHEL9 setup entries (#1277)
+
+Since leapp's RHUI mechanism filters setups based on the architecture of the source system,
+it was not possible to upgrade of ARM-based RHEL systems on Alibaba cloud as there
+were no ARM entries in RHUI_SETUPS. This patch adds these entries, making it possible
+for EL 8 -> 9 upgrades of ARM systems on Alibaba cloud.
+---
+ repos/system_upgrade/common/libraries/rhui.py | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/repos/system_upgrade/common/libraries/rhui.py b/repos/system_upgrade/common/libraries/rhui.py
+index 51694ac2..30de0275 100644
+--- a/repos/system_upgrade/common/libraries/rhui.py
++++ b/repos/system_upgrade/common/libraries/rhui.py
+@@ -348,6 +348,22 @@ RHUI_SETUPS = {
+                         ('content.crt', RHUI_PKI_PRODUCT_DIR)
+                       ],
+                       os_version='9'),
++    ],
++    RHUIFamily(RHUIProvider.ALIBABA, arch=arch.ARCH_ARM64, client_files_folder='alibaba'): [
++        mk_rhui_setup(clients={'aliyun_rhui_rhel8'}, leapp_pkg='leapp-rhui-alibaba',
++                      mandatory_files=[('leapp-alibaba.repo', YUM_REPOS_PATH)],
++                      optional_files=[
++                        ('key.pem', RHUI_PKI_DIR),
++                        ('content.crt', RHUI_PKI_PRODUCT_DIR)
++                      ],
++                      os_version='8'),
++        mk_rhui_setup(clients={'aliyun_rhui_rhel9'}, leapp_pkg='leapp-rhui-alibaba',
++                      mandatory_files=[('leapp-alibaba.repo', YUM_REPOS_PATH)],
++                      optional_files=[
++                        ('key.pem', RHUI_PKI_DIR),
++                        ('content.crt', RHUI_PKI_PRODUCT_DIR)
++                      ],
++                      os_version='9'),
+     ]
+ }
+ 
+-- 
+2.45.2
+
