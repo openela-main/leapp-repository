@@ -51,21 +51,20 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.21.0
-Release:        2%{?dist}
+Version:        0.22.0
+Release:        1%{?dist}
 Summary:        Repositories for leapp
 
 License:        ASL 2.0
 URL:            https://oamg.github.io/leapp/
 Source0:        https://github.com/oamg/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Source1:        deps-pkgs-10.tar.gz
+Source1:        deps-pkgs-13.tar.gz
 
 # NOTE: Our packages must be noarch. Do no drop this in any way.
 BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
-Patch0001:      0001-rhui-alibaba-add-ARM-RHEL8-and-RHEL9-setup-entries-1.patch
 
 
 %description
@@ -121,7 +120,7 @@ Requires:       leapp-repository-dependencies = %{leapp_repo_deps}
 
 # IMPORTANT: this is capability provided by the leapp framework rpm.
 # Check that 'version' instead of the real framework rpm version.
-Requires:       leapp-framework >= 5.0
+Requires:       leapp-framework >= 6.0
 
 # Since we provide sub-commands for the leapp utility, we expect the leapp
 # tool to be installed as well.
@@ -213,6 +212,12 @@ Requires:   NetworkManager-libnm
 Requires:   python3-gobject-base
 
 %endif
+
+%if 0%{?rhel} && 0%{?rhel} == 9
+############# RHEL 9 dependencies (when the source system is RHEL 9) ##########
+# Required to convert pam_userdb database from BerkeleyDB to GDBM
+Requires:   libdb-utils
+%endif
 ##################################################
 # end requirement
 ##################################################
@@ -228,7 +233,6 @@ Requires:   python3-gobject-base
 
 # APPLY PATCHES HERE
 # %%patch0001 -p1
-%patch0001 -p1
 
 
 %build
@@ -245,6 +249,9 @@ install -m 0755 -d %{buildroot}%{_sysconfdir}/leapp/transaction/
 install -m 0755 -d %{buildroot}%{_sysconfdir}/leapp/files/
 install -m 0644 etc/leapp/transaction/* %{buildroot}%{_sysconfdir}/leapp/transaction
 install -m 0644 etc/leapp/files/* %{buildroot}%{_sysconfdir}/leapp/files
+
+# uncomment to install existing configs if any exists
+#install -m 0644 etc/leapp/actor_conf.d/* %%{buildroot}%%{_sysconfdir}/leapp/actor_conf.d
 
 # install CLI commands for the leapp utility on the expected path
 install -m 0755 -d %{buildroot}%{leapp_python_sitelib}/leapp/cli/
@@ -264,6 +271,9 @@ find %{buildroot}%{repositorydir}/common -name "test.py" -delete
 rm -rf `find %{buildroot}%{repositorydir} -name "tests" -type d`
 find %{buildroot}%{repositorydir} -name "Makefile" -delete
 find %{buildroot} -name "*.py.orig" -delete
+# .gitkeep file is used to have a directory in the repo. but we do not want these
+# files in the resulting RPM
+find %{buildroot} -name .gitkeep -delete
 
 for DIRECTORY in $(find  %{buildroot}%{repositorydir}/  -mindepth 1 -maxdepth 1 -type d);
 do
@@ -292,6 +302,8 @@ done;
 %dir %{custom_repositorydir}
 %dir %{leapp_python_sitelib}/leapp/cli/commands
 %config %{_sysconfdir}/leapp/files/*
+# uncomment to package installed configs
+#%%config %%{_sysconfdir}/leapp/actor_conf.d/*
 %{_sysconfdir}/leapp/repos.d/*
 %{_sysconfdir}/leapp/transaction/*
 %{repositorydir}/*
@@ -302,6 +314,47 @@ done;
 # no files here
 
 %changelog
+* Fri Feb 14 2025 Petr Stodulka <pstodulk@redhat.com> - 0.22.0-1
+- Rebase to new upstream 0.22.0
+- Minor updates in generated reports
+- Resolves: RHEL-67621, RHEL-67719, RHEL-16881
+
+* Wed Jan 29 2025 Petr Stodulka <pstodulk@redhat.com> - 0.21.0-6
+- Raise an inhibitor if unsupported target version supplied instead of error
+- Prevent a possible crash with LiveMode when adding the upgrade boot entry on systems with LVM
+- Fix the bootloader workaround for upgrades on ARM machines - covering also differences on AWS
+- Resolves: RHEL-67621, RHEL-51072, RHEL-41193
+
+* Fri Jan 17 2025 Petr Stodulka <pstodulk@redhat.com> - 0.21.0-5
+- Fix pes events scanner crashing when there are duplicate packages in the received instructions
+- Fix pes events scanner not respecting user’s transaction configuration
+- Fix storage scanner crashing when command outputs contain colon character
+- Activate LVM VGs with `--sysinit` option to correct the use in the upgrade initramfs
+- Minor improvements in preupgrade reports
+- Resolves: RHEL-67621, RHEL-34570, RHEL-44596, RHEL-50076
+
+* Tue Nov 19 2024 Matej Matuska <mmatuska@redhat.com> - 0.21.0-4
+- Use net.naming-scheme by default
+- Resolves: RHEL-23473
+
+* Mon Nov 18 2024 Petr Stodulka <pstodulk@redhat.com> - 0.21.0-3
+- Introduce upgrade path 8.10 -> 9.6
+- Require leapp-framework 6.0+
+- Update leapp-deps package to satisfy leapp-framework-dependencies 6
+- Add possibility to use net.naming-scheme during the upgrade
+- Cap max size of the sparse files to 1TiB for storage with large amount of free space
+- Enable upgrade for systems with LUKS bound to Clevis with TPM 2.0 token
+- Adjust resource limitations for leapp to be able to perform the upgrade
+- Fix problems with the bootloader when upgrading to RHEL 9.6 on ARM
+- Fix the report when handling broken parsing of kernel cmdline
+- Generate proper error message instead of ModelViolationError when parsing invalid repository definition
+- Handle default kernel cmdline when multiple boot entries for the default kernel are defined
+- Introduce a possibility to configure leapp actors covering RHUI on clouds
+- Skip checking of (PKI) `directory-hash` dir to speedup the upgrade process and clean logs
+- Update leapp upgrade data files
+- Resolves: RHEL-67621, RHEL-57064, RHEL-56251, RHEL-50686, RHEL-41193
+- Resolves: RHEL-34570, RHEL-26459, RHEL-23473, RHEL-16881, RHEL-3294
+
 * Mon Aug 19 2024 Petr Stodulka <pstodulk@redhat.com> - 0.21.0-2
 - Updated SPEC file to drop leapp repositories unrelated to IPU 8 -> 9
 - Resolves: RHEL-27847
