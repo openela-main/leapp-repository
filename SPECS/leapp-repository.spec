@@ -51,7 +51,7 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.22.0
+Version:        0.23.0
 Release:        1%{?dist}
 Summary:        Repositories for leapp
 
@@ -120,7 +120,7 @@ Requires:       leapp-repository-dependencies = %{leapp_repo_deps}
 
 # IMPORTANT: this is capability provided by the leapp framework rpm.
 # Check that 'version' instead of the real framework rpm version.
-Requires:       leapp-framework >= 6.0
+Requires:       leapp-framework >= 6.1
 
 # Since we provide sub-commands for the leapp utility, we expect the leapp
 # tool to be installed as well.
@@ -129,6 +129,10 @@ Requires:       leapp
 # Used to determine RHEL version of a given target RHEL installation image -
 # uncompressing redhat-release package from the ISO.
 Requires:   cpio
+
+# Subpackage for managing fapolicyd rules for %{lpr_name} installed only if
+# fapolicyd is present on the system
+Requires:       (%{lpr_name}-fapolicyd = %{version}-%{release} if fapolicyd)
 
 # The leapp-repository rpm is renamed to %%{lpr_name}
 Obsoletes:      leapp-repository < 0.14.0-5
@@ -227,13 +231,21 @@ Requires:   libdb-utils
 %{summary}
 
 
+%package -n %{lpr_name}-fapolicyd
+Summary:    Manage fapolicyd rules for %{lpr_name} during the upgrade
+
+Requires:   fapolicyd
+
+%description -n %{lpr_name}-fapolicyd
+%{summary}
+
+
 %prep
 %setup -n %{name}-%{version}
 %setup -q  -n %{name}-%{version} -D -T -a 1
 
 # APPLY PATCHES HERE
 # %%patch -P 0001 -p1
-
 
 %build
 cp -a leapp*deps*el%{next_major_ver}.noarch.rpm repos/system_upgrade/%{repo_shortname}/files/bundled-rpms/
@@ -249,6 +261,10 @@ install -m 0755 -d %{buildroot}%{_sysconfdir}/leapp/transaction/
 install -m 0755 -d %{buildroot}%{_sysconfdir}/leapp/files/
 install -m 0644 etc/leapp/transaction/* %{buildroot}%{_sysconfdir}/leapp/transaction
 install -m 0644 etc/leapp/files/* %{buildroot}%{_sysconfdir}/leapp/files
+
+# install rules necessary for fapolicy
+mkdir -p %{buildroot}%{_sysconfdir}/fapolicyd/rules.d/
+install -m 0644 etc/fapolicyd/rules.d/31-leapp-repository.rules %{buildroot}%{_sysconfdir}/fapolicyd/rules.d
 
 # uncomment to install existing configs if any exists
 #install -m 0644 etc/leapp/actor_conf.d/* %%{buildroot}%%{_sysconfdir}/leapp/actor_conf.d
@@ -292,6 +308,12 @@ done;
 %endif
 
 
+%posttrans -n %{lpr_name}-fapolicyd
+if systemctl is-active --quiet fapolicyd; then
+    systemctl restart fapolicyd
+fi
+
+
 %files -n %{lpr_name}
 %doc README.md
 %license LICENSE
@@ -313,7 +335,52 @@ done;
 %files -n %{lpr_name}-deps
 # no files here
 
+
+%files -n %{lpr_name}-fapolicyd
+%attr(644, root, fapolicyd) %config %{_sysconfdir}/fapolicyd/rules.d/31-leapp-repository.rules
+
+
 %changelog
+* Thu Aug 14 2025 Karolina Kula <kkula@redhat.com> - 0.23.0-1
+- Rebase to new upstream 0.23.0
+- Enable in-place upgrades on CentOS Stream systems
+- Inhibit the upgrade on systems using deprecated network-legacy dracut module to prevent kernel panic
+- Introduce leapp-upgrade-el9toel10-fapolicyd subpackage with fapolicyd rules for in-place upgrades
+- Ignore Red Hat subscription-manager actions on non-RHEL distros
+- Add actors to migrate SSSD configuration
+- Update leapp upgrade data files
+- Resolves: RHEL-50847, RHEL-80333, RHEL-86226, RHEL-95975, RHEL-95982, RHEL-102591, RHEL-104389
+
+* Thu Jul 17 2025 Karolina Kula <kkula@redhat.com> - 0.22.0-4
+- Load DNF configuration correctly when using DNF libraries
+- Disable localpkg_gpgcheck during the upgrade if set to allow installation of bundled leapp and leapp-repository deps packages
+- Enable upgrades on systems using RHUI on AWS and Azure
+- Inhibit the upgrade if cgroups v1 are enabled on the system
+- The HybridImage model has been replaced by ConvertGrubenvTask
+- Check the input format of the target version properly
+- Resolves: RHEL-64910, RHEL-64911, RHEL-81212
+
+* Thu Jun 05 2025 Karolina Kula <kkula@redhat.com> - 0.22.0-3
+- Fix parsing of the kernel cmdline
+- Require leapp data with provided_data_streams 4.0+
+- Respect the release_id of the OS when processing DNF repositories to apply correct mapping for CentOS Stream
+- Resolves: RHEL-80336
+
+* Wed May 14 2025 Petr Stodulka <pstodulk@redhat.com> - 0.22.0-2
+- Require leapp-framework >= 6.1
+- Simplified use of the LiveMode experimental feature with additional enhancements
+- Ensure the leapp-upgrade-el9toel10 RPM is not touched during the upgrade transaction
+- Create proper error message when swap of RHUI clients fails
+- Fix the check of deprecated PCI devices and drivers
+- Add RHEL 10.1 product certificates
+- Gracefully handle CentOS OS versioning style
+- Introduced the --enable-experimental-feature to simplify use of experimental features
+- Manage RPM GPG keys during the upgrade respecting used linux distributions
+- Prevent a crach during post-upgrade phases when no custom SELinux modules needs to be migrated
+- Update leapp upgrade data files
+- Minor fixes in reports
+- Resolves: RHEL-49402, RHEL-72544, RHEL-77175, RHEL-80334, RHEL-80335, RHEL-80336, RHEL-80550, RHEL-86689
+
 * Fri Feb 14 2025 Petr Stodulka <pstodulk@redhat.com> - 0.22.0-1
 - Rebase to new upstream 0.22.0
 - Minor updates in generated reports
