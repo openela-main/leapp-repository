@@ -51,7 +51,7 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.23.0
+Version:        0.24.0
 Release:        1%{?dist}
 Summary:        Repositories for leapp
 
@@ -65,7 +65,6 @@ BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
-
 
 %description
 %{summary}
@@ -120,7 +119,7 @@ Requires:       leapp-repository-dependencies = %{leapp_repo_deps}
 
 # IMPORTANT: this is capability provided by the leapp framework rpm.
 # Check that 'version' instead of the real framework rpm version.
-Requires:       leapp-framework >= 6.1
+Requires:       leapp-framework >= 6.2
 
 # Since we provide sub-commands for the leapp utility, we expect the leapp
 # tool to be installed as well.
@@ -341,6 +340,54 @@ fi
 
 
 %changelog
+* Tue Feb 10 2026 Matej Matuska <mmatuska@redhat.com> - 0.24.0-1
+- Rebase to new upstream 0.24.0
+- Introduce new IPU path 8.10 -> 9.8
+- Remove obsoleted IPU paths
+- Fix the upgrade for systems with installed kernel-rt
+- Enable php:8.2 module stream if enabled on the source system
+- Skip check for required baseos & appstream repos when upgrading from CS 8
+- Improve the error message when a problematic DNF repository definition is detected
+- Process enabled DNF module-streams correctly during the upgrade
+- Fix the leapp rerun command when upgrading using LiveMode
+- Ignore trailing slashes when checking that required mountpoints are persistent
+- Wait until filesystems defined in FSTAB are initialized and mounted when booting into the upgrade environment
+- Drop inhibitor for use of LiveMode on aarch64, s390x, ppcle64 architectures
+- LiveMode: Do not install RPMs that are not essential in the initramfs by default
+- Added scan and checks for NVMe devices, inhibiting upgrades on known problematic setups
+- Handle the upgrade on systems with NVMe-FC storage
+- Migrate the UEFI configuration when converting to RHEL
+- Inhibit the upgrade when converting system to a different linux distribution with enabled Secure Boot
+- Resolves: RHEL-128267, RHEL-95215, RHEL-102361, RHEL-46807, RHEL-100961, RHEL-42609, RHEL-33661, RHEL-19249, RHEL-119516
+
+* Wed Dec 17 2025 Matej Matuska <mmatuska@redhat.com> - 0.23.0-3
+- Fix handling of LVM and Multipath during the upgrade
+- Fix remediation command for making symlinks in root directory relative
+- Remove RPM GPG keys of the source distribution when upgrading and converting the system
+- Replace distro specific packages during upgrade and conversion
+- Improve error message when scanning invalid SSHD configuration
+- Update the leapp data files
+- Minor changes in logs and reports
+- Resolves: RHEL-14712, RHEL-30447, RHEL-19247, RHEL-127066, RHEL-124923, RHEL-119516
+
+* Thu Nov 13 2025 Karolina Kula <kkula@redhat.com> - 0.23.0-2
+- Requires leapp-framework 6.2+
+- Detect potentially harmful third party python modules for the target python version
+- Fix detection of encrypted Ceph OSD containers
+- Fix unlocking of LUKS devices when applied on non-rootfs file systems
+- Inhibit the upgrade if pluginpath is configured explicitly in DNF
+- Introduce `--target-os` option to specify target distribution for possible conversion during the upgrade
+- Introduce the `--target-version` alias for the `--target` option
+- Minor changes in logs and reports
+- Modernize the storage initialization when booting to the upgrade environment
+- Prevent sssdupdate actor from rising errors that could stop the upgrade
+- Respect repomapping on CentOS-like distributions
+- Respect repomapping when converting the system to different Linux distribution
+- Skip empty lines when parsing dumped DNF config to prevent confusing warning log
+- Cover JBoss EAP repositories for the upgrade
+- Update the leapp data files
+- Resolves: RHEL-25838, RHEL-35446, RHEL-69601, RHEL-71882, RHEL-90098, RHEL-120328, RHEL-123886
+
 * Thu Aug 14 2025 Karolina Kula <kkula@redhat.com> - 0.23.0-1
 - Rebase to new upstream 0.23.0
 - Enable in-place upgrades on CentOS Stream systems
