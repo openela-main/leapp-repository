@@ -51,7 +51,7 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.23.0
+Version:        0.24.0
 Release:        1%{?dist}
 Summary:        Repositories for leapp
 
@@ -65,7 +65,6 @@ BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
-
 
 %description
 %{summary}
@@ -120,7 +119,7 @@ Requires:       leapp-repository-dependencies = %{leapp_repo_deps}
 
 # IMPORTANT: this is capability provided by the leapp framework rpm.
 # Check that 'version' instead of the real framework rpm version.
-Requires:       leapp-framework >= 6.1
+Requires:       leapp-framework >= 6.2
 
 # Since we provide sub-commands for the leapp utility, we expect the leapp
 # tool to be installed as well.
@@ -341,6 +340,57 @@ fi
 
 
 %changelog
+* Tue Feb 10 2026 Karolina Kula <kkula@redhat.com> - 0.24.0-1
+- Rebase to new upstream 0.24.0
+- Introduce new IPU path 9.8 -> 10.2
+- Remove obsoleted IPU paths
+- Handle the upgrade on systems with NVMe-FC storage
+- Added scan and checks for NVMe devices, inhibitingblocking upgrades on known problematic setups
+- Check installed Xorg RPMs for removed content
+- Detect installed Motif packages when upgrading to RHEL
+- Drop inhibitor for use of LiveMode on aarch64, s390x, ppcle64 architectures
+- Fix the leapp rerun command when upgrading using LiveMode
+- Ignore trailing slashes when checking that required mountpoints are persistent
+- Improve the error message when a problematic DNF repository definition is detected
+- Inhibit the upgrade when converting system to a different linux distribution with enabled Secure Boot
+- LiveMode: Do not install RPMs that are not essential in the initramfs by default
+- Migrate the UEFI configuration when converting to RHEL
+- Process enabled DNF module-streams correctly during the upgrade
+- Setup net.naming-scheme to handle NIC names correctly when upgrading to RHEL 10.2+ (not applied for Centos 10 yet)
+- Update CA bundle path in kerberos configuration
+- Wait until filesystems defined in FSTAB are initialized and mounted when booting into the upgrade environment
+- Resolves: RHEL-65265, RHEL-74265, RHEL-108106, RHEL-128266, RHEL-133549, RHEL-135847, RHEL-141861
+
+* Wed Dec 17 2025 Karolina Kula <kkula@redhat.com> - 0.23.0-3
+- Fix handling of LVM during the upgrade
+- Deliver initial improvements for Multipath during the upgrade
+- Fix remediation command to make symlimk in root directory relative
+- Remove RPM GPG keys of the source distribution when converting system
+- Replace distro specific packages during conversion
+- Improve error message when scanning invalid SSHD configuration
+- Update the leapp data files
+- Minor changes in logs and reports
+- Resolves: RHEL-110190, RHEL-110568
+
+* Thu Nov 13 2025 Petr Stodulka <pstodulk@redhat.com> - 0.23.0-2
+- Requires leapp-framework 6.2+
+- Modernize the storage initialization when booting to the upgrade environment
+- Fix the upgrade on s390x LPAR when rootfs is on LVM
+- Fix the detection of encrypted Ceph OSD containers
+- Fix unlocking of LUKS devices when applied on non-rootfs file systems
+- Detect potentially harmful third party python modules for the target python version
+- Handle correctly live kernel patching during IPU
+- Inhibit the upgrade if pluginpath is configured explicitly in DNF
+- Introduce `--target-os` option to specify target distribution for possible conversion during the upgrade
+- Introduce the `--target-version` alias for the `--target` option
+- Minor changes in logs and reports
+- Prevent sssdupdate actor from rising errors that could stop the upgrade
+- Respect repomapping on CentOS-like distributions
+- Respect repomapping when converting the system to different Linux distribution
+- Skip empty lines when parsing dumped DNF config to prevent confusing warning log
+- Update the leapp data files
+- Resolves: RHEL-76159, RHEL-95983, RHEL-108025, RHEL-108992, RHEL-110563, RHEL-119546
+
 * Thu Aug 14 2025 Karolina Kula <kkula@redhat.com> - 0.23.0-1
 - Rebase to new upstream 0.23.0
 - Enable in-place upgrades on CentOS Stream systems
