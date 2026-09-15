@@ -52,7 +52,7 @@ py2_byte_compile "%1" "%2"}
 
 Name:           leapp-repository
 Version:        0.24.0
-Release:        1%{?dist}
+Release:        1%{?dist}.1
 Summary:        Repositories for leapp
 
 License:        ASL 2.0
@@ -65,6 +65,7 @@ BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
+Patch0001:    0006-Fix-CVE-2026-75092.patch
 
 %description
 %{summary}
@@ -245,6 +246,7 @@ Requires:   fapolicyd
 
 # APPLY PATCHES HERE
 # %%patch -P 0001 -p1
+%patch -P 0001 -p1
 
 %build
 cp -a leapp*deps*el%{next_major_ver}.noarch.rpm repos/system_upgrade/%{repo_shortname}/files/bundled-rpms/
@@ -340,6 +342,10 @@ fi
 
 
 %changelog
+* Tue Sep 08 2026 Petr Stodulka <pstodulk@redhat.com> - 0.24.0-1.1
+- Fix CVE-2026-75092 to secure the scan of mysql configuration
+- Resolves: RHEL-243194
+
 * Tue Feb 10 2026 Karolina Kula <kkula@redhat.com> - 0.24.0-1
 - Rebase to new upstream 0.24.0
 - Introduce new IPU path 9.8 -> 10.2
