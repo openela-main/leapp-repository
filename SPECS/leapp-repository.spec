@@ -51,7 +51,7 @@ py2_byte_compile "%1" "%2"}
 # RHEL 8+ packages to be consistent with other leapp projects in future.
 
 Name:           leapp-repository
-Version:        0.24.0
+Version:        0.25.0
 Release:        1%{?dist}
 Summary:        Repositories for leapp
 
@@ -65,6 +65,7 @@ BuildArch:      noarch
 
 ### PATCHES HERE
 # Patch0001:    filename.patch
+
 
 %description
 %{summary}
@@ -119,7 +120,7 @@ Requires:       leapp-repository-dependencies = %{leapp_repo_deps}
 
 # IMPORTANT: this is capability provided by the leapp framework rpm.
 # Check that 'version' instead of the real framework rpm version.
-Requires:       leapp-framework >= 6.2
+Requires:       leapp-framework >= 6.6
 
 # Since we provide sub-commands for the leapp utility, we expect the leapp
 # tool to be installed as well.
@@ -246,6 +247,7 @@ Requires:   fapolicyd
 # APPLY PATCHES HERE
 # %%patch -P 0001 -p1
 
+
 %build
 cp -a leapp*deps*el%{next_major_ver}.noarch.rpm repos/system_upgrade/%{repo_shortname}/files/bundled-rpms/
 
@@ -340,6 +342,63 @@ fi
 
 
 %changelog
+* Thu Jul 30 2026 Karolina Kula <kkula@redhat.com> - 0.25.0-1
+- Rebase to new upstream 0.25.0
+- Inhibit the upgrade when machine ID is missing or invalid
+- Fix check of Ceph/LUKS volumes based on UUIDs
+- Do not crash when failing to mount a pseudo filesystem during upgrade
+- Prevent hanging system upgrade boot on systems with RAID and defined `resume` on kernel command line
+- ARM: Do not update EFI boot order if DNF dry run fails
+- Fix handling of Jboss EAP during the upgrade
+- Introduce upgrades with conversions from Rocky Linux
+- Resolves: RHEL-162410, RHEL-16320, RHEL-188369, RHEL-213986, RHEL-50161 , RHEL-95495 , RHEL-95541
+
+* Thu Jun 25 2026 Matej Matuska <mmatuska@redhat.com> - 0.24.0-3
+- Requires leapp-framework 6.6+
+- Initial implementation of upgrades on systems with configured Software RAID
+- Install the kernel variant matching the system memory page size on ARM systems
+- Fix multipath device initialization race in the upgrade environment
+- Detect misconfigured /var/run on the source system
+- Detect misconfigured kernel & systemd API mountpoints in FSTAB
+- Drop the inconsistent report about used CRB repositories
+- Ensure SELinux is set to permissive mode during the upgrade even when enforcing=1 is set on the kernel cmdline
+- FIX additional AVC SELinux warnings
+- Fix mount failures for FSTAB entries with the `nofail` option specified
+- Fix source and target distribution names in /etc/migration-results
+- Fix target system initramfs containing outdated configuration files in some circumstances
+- Fix upgrade crashing when dnf repofiles contain URL encoded characters
+- Fix upgrade incorrectly resuming during SELinux relabeling
+- Fix upgrades for systems with /boot/efi on a Software RAID
+- Fix upgrades on systems with multiple LUKS devices
+- Fix upgrades with the RealTime kernel on CentOS Stream
+- Inhibit the upgrade when network devices configured with ifcfg files could depend on NM
+- Introduce rhui.obsolete_gpg_keys configuration option for the removal of obsoleted RPM GPG keys of RHUI Cloud providers
+- LiveMode: Fix system version determination in the upgrade environment on CentOS Stream
+- LiveMode: Fix upgrade getting stuck when the `.leapp_upgrade_failed` file exists
+- Unify behaviour of upgrades on systems with enabled CRB repositories and explicitly required CRB repositories by user during the upgrade
+- Resolves: RHEL-3289, RHEL-17842, RHEL-36249, RHEL-56040, RHEL-56176, RHEL-60060, RHEL-76846, RHEL-104384, RHEL-145136, RHEL-148631, RHEL-162192, RHEL-185508
+
+* Fri Apr 17 2026 Matej Matuska <mmatuska@redhat.com> - 0.24.0-2
+- Introduce new upgrade paths 8.10 -> 9.9
+- Requires leapp-framework 6.5+
+- Modify keys for several reports that have been inconsistent between major releases. The keys are now independent of the used upgrade path.
+- Enable the logrotate timer automatically
+- Fix AVC SELinux warnings caused by leapp execution
+- Fix the upgrade with LiveMode on systems with FIPS
+- Livemode: Fix the upgrade on systems where the generated live image is not in rootfs
+- Fix failing upgrades with hugetlbfs file systems specified in FSTAB
+- Fix scan of physical network interfaces and ethX detection
+- Fix detection of network interfaces with biosdevname naming on Dell machines
+- Fix quoting in list representation of remediation commands
+- Consider RHUI source clients as signed by distribution vendor
+- Ensure that greenboot packages are removed during the upgrade
+- Respect names of distributions used for the IPU in preupgrade reports
+- Minor updates in reports
+- Regenerate GRUB2 config during conversions
+- Update leapp data files
+- Introduce DISTRO_REPORT_NAMES in the distro library to provide unified names for linux distributions for the use in leapp reports
+- Resolves: RHEL-3370, RHEL-17361, RHEL-104379, RHEL-110712, RHEL-129571, RHEL-130948
+
 * Tue Feb 10 2026 Matej Matuska <mmatuska@redhat.com> - 0.24.0-1
 - Rebase to new upstream 0.24.0
 - Introduce new IPU path 8.10 -> 9.8
